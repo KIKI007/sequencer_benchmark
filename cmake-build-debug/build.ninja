@@ -1,0 +1,1307 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: robo-craft
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build CMakeFiles/install.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build install: phony CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build install/local: phony CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build ext/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build ext/edit_cache: phony ext/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build ext/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build ext/rebuild_cache: phony ext/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build ext/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build ext/CMakeFiles/install.util: CUSTOM_COMMAND ext/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build ext/install: phony ext/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build ext/CMakeFiles/install/local.util: CUSTOM_COMMAND ext/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build ext/install/local: phony ext/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build ext/CMakeFiles/install/strip.util: CUSTOM_COMMAND ext/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build ext/install/strip: phony ext/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/ext/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build ext/json/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/json && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build ext/json/edit_cache: phony ext/json/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build ext/json/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/json && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build ext/json/rebuild_cache: phony ext/json/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build ext/json/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build ext/json/CMakeFiles/install.util: CUSTOM_COMMAND ext/json/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/json && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build ext/json/install: phony ext/json/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build ext/json/CMakeFiles/install/local.util: CUSTOM_COMMAND ext/json/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/json && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build ext/json/install/local: phony ext/json/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build ext/json/CMakeFiles/install/strip.util: CUSTOM_COMMAND ext/json/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/json && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build ext/json/install/strip: phony ext/json/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/ext/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for igl_core
+
+build ext/libigl/igl_core: phony
+
+
+#############################################
+# Utility command for edit_cache
+
+build ext/libigl/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/libigl && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build ext/libigl/edit_cache: phony ext/libigl/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build ext/libigl/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/libigl && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build ext/libigl/rebuild_cache: phony ext/libigl/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build ext/libigl/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build ext/libigl/CMakeFiles/install.util: CUSTOM_COMMAND ext/libigl/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/libigl && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build ext/libigl/install: phony ext/libigl/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build ext/libigl/CMakeFiles/install/local.util: CUSTOM_COMMAND ext/libigl/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/libigl && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build ext/libigl/install/local: phony ext/libigl/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build ext/libigl/CMakeFiles/install/strip.util: CUSTOM_COMMAND ext/libigl/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/libigl && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build ext/libigl/install/strip: phony ext/libigl/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/CMakeFiles/install.util: CUSTOM_COMMAND src/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/install: phony src/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/CMakeFiles/install/local.util: CUSTOM_COMMAND src/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/install/local: phony src/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/install/strip: phony src/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/apps/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/apps/edit_cache: phony src/apps/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/apps/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/apps/rebuild_cache: phony src/apps/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/apps/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/apps/CMakeFiles/install.util: CUSTOM_COMMAND src/apps/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/apps/install: phony src/apps/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/apps/CMakeFiles/install/local.util: CUSTOM_COMMAND src/apps/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/apps/install/local: phony src/apps/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/apps/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/apps/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/apps/install/strip: phony src/apps/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/apps/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target BenchmarkApp
+
+
+#############################################
+# Order-only phony target for BenchmarkApp
+
+build cmake_object_order_depends_target_BenchmarkApp: phony || cmake_object_order_depends_target_dto cmake_object_order_depends_target_frame cmake_object_order_depends_target_search
+
+build src/apps/benchmark/CMakeFiles/BenchmarkApp.dir/main.cpp.o: CXX_COMPILER__BenchmarkApp_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/apps/benchmark/main.cpp || cmake_object_order_depends_target_BenchmarkApp
+  DEFINES = -DCRL_DATA_FOLDER="" -DROBOCRAFT_DATA_FOLDER=\"/Users/wangziqi/Documents/GitHub/sequencer_benchmark/data\" -DTBB_USE_DEBUG
+  DEP_FILE = src/apps/benchmark/CMakeFiles/BenchmarkApp.dir/main.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/apps/benchmark -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/apps/benchmark/CMakeFiles/BenchmarkApp.dir
+  OBJECT_FILE_DIR = src/apps/benchmark/CMakeFiles/BenchmarkApp.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target BenchmarkApp
+
+
+#############################################
+# Link the executable src/apps/benchmark/BenchmarkApp
+
+build src/apps/benchmark/BenchmarkApp: CXX_EXECUTABLE_LINKER__BenchmarkApp_Debug src/apps/benchmark/CMakeFiles/BenchmarkApp.dir/main.cpp.o | src/libs/frame/libframe.a src/libs/search/libsearch.a src/libs/dto/libdto.a src/libs/search/libsearch.a src/libs/frame/libframe.a /usr/local/lib/libtbb.12.8.dylib /Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/lib/libknitro.dylib || src/libs/dto/libdto.a src/libs/frame/libframe.a src/libs/search/libsearch.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib -Wl,-rpath,/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/lib  src/libs/frame/libframe.a  src/libs/search/libsearch.a  src/libs/dto/libdto.a  src/libs/search/libsearch.a  src/libs/frame/libframe.a  /usr/local/lib/libtbb.12.8.dylib  /Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/lib/libknitro.dylib
+  OBJECT_DIR = src/apps/benchmark/CMakeFiles/BenchmarkApp.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/apps/benchmark/BenchmarkApp
+  TARGET_PDB = BenchmarkApp.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/apps/benchmark/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps/benchmark && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/apps/benchmark/edit_cache: phony src/apps/benchmark/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/apps/benchmark/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps/benchmark && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/apps/benchmark/rebuild_cache: phony src/apps/benchmark/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/apps/benchmark/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/apps/benchmark/CMakeFiles/install.util: CUSTOM_COMMAND src/apps/benchmark/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps/benchmark && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/apps/benchmark/install: phony src/apps/benchmark/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/apps/benchmark/CMakeFiles/install/local.util: CUSTOM_COMMAND src/apps/benchmark/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps/benchmark && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/apps/benchmark/install/local: phony src/apps/benchmark/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/apps/benchmark/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/apps/benchmark/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps/benchmark && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/apps/benchmark/install/strip: phony src/apps/benchmark/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/libs/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/libs/edit_cache: phony src/libs/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/libs/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/libs/rebuild_cache: phony src/libs/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/libs/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/libs/CMakeFiles/install.util: CUSTOM_COMMAND src/libs/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/libs/install: phony src/libs/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/libs/CMakeFiles/install/local.util: CUSTOM_COMMAND src/libs/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/libs/install/local: phony src/libs/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/libs/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/libs/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/libs/install/strip: phony src/libs/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target dto
+
+
+#############################################
+# Order-only phony target for dto
+
+build cmake_object_order_depends_target_dto: phony || cmake_object_order_depends_target_frame cmake_object_order_depends_target_search
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameComplianceDiff.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameComplianceDiff.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameComplianceDiff.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTO.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTO.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTO.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOAssemblability.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOAssemblability.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOAssemblability.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTORange.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTORange.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTORange.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTORangeSum.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTORangeSum.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTORangeSum.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSIMP.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSIMP.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSIMP.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequence.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSequence.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequence.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceDynamicHoldings.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSequenceDynamicHoldings.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceDynamicHoldings.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceMono.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSequenceMono.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceMono.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffolds.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSequenceStaticScaffolds.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffolds.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffoldsSum.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSequenceStaticScaffoldsSum.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffoldsSum.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffoldsSumFixedSequence.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSequenceStaticScaffoldsSumFixedSequence.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffoldsSumFixedSequence.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceSum.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSequenceSum.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceSum.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+build src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSupport.cpp.o: CXX_COMPILER__dto_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/src/FrameTOSupport.cpp || cmake_object_order_depends_target_dto
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSupport.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include -I/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src -isystem /usr/local/include
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  OBJECT_FILE_DIR = src/libs/dto/CMakeFiles/dto.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target dto
+
+
+#############################################
+# Link the static library src/libs/dto/libdto.a
+
+build src/libs/dto/libdto.a: CXX_STATIC_LIBRARY_LINKER__dto_Debug src/libs/dto/CMakeFiles/dto.dir/src/FrameComplianceDiff.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTO.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOAssemblability.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTORange.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTORangeSum.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSIMP.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequence.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceDynamicHoldings.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceMono.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffolds.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffoldsSum.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceStaticScaffoldsSumFixedSequence.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSequenceSum.cpp.o src/libs/dto/CMakeFiles/dto.dir/src/FrameTOSupport.cpp.o || src/libs/frame/libframe.a src/libs/search/libsearch.a /usr/local/lib/libtbb.12.8.dylib
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/libs/dto/CMakeFiles/dto.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/libs/dto/libdto.a
+  TARGET_PDB = dto.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/libs/dto/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/dto && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/libs/dto/edit_cache: phony src/libs/dto/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/libs/dto/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/dto && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/libs/dto/rebuild_cache: phony src/libs/dto/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/libs/dto/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/libs/dto/CMakeFiles/install.util: CUSTOM_COMMAND src/libs/dto/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/dto && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/libs/dto/install: phony src/libs/dto/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/libs/dto/CMakeFiles/install/local.util: CUSTOM_COMMAND src/libs/dto/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/dto && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/libs/dto/install/local: phony src/libs/dto/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/libs/dto/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/libs/dto/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/dto && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/libs/dto/install/strip: phony src/libs/dto/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target frame
+
+
+#############################################
+# Order-only phony target for frame
+
+build cmake_object_order_depends_target_frame: phony || src/libs/frame/CMakeFiles/frame.dir
+
+build src/libs/frame/CMakeFiles/frame.dir/src/Beam.cpp.o: CXX_COMPILER__frame_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/src/Beam.cpp || cmake_object_order_depends_target_frame
+  DEP_FILE = src/libs/frame/CMakeFiles/frame.dir/src/Beam.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/frame/CMakeFiles/frame.dir
+  OBJECT_FILE_DIR = src/libs/frame/CMakeFiles/frame.dir/src
+
+build src/libs/frame/CMakeFiles/frame.dir/src/BeamLinearElastic.cpp.o: CXX_COMPILER__frame_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/src/BeamLinearElastic.cpp || cmake_object_order_depends_target_frame
+  DEP_FILE = src/libs/frame/CMakeFiles/frame.dir/src/BeamLinearElastic.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/frame/CMakeFiles/frame.dir
+  OBJECT_FILE_DIR = src/libs/frame/CMakeFiles/frame.dir/src
+
+build src/libs/frame/CMakeFiles/frame.dir/src/FrameAssembly.cpp.o: CXX_COMPILER__frame_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/src/FrameAssembly.cpp || cmake_object_order_depends_target_frame
+  DEP_FILE = src/libs/frame/CMakeFiles/frame.dir/src/FrameAssembly.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/frame/CMakeFiles/frame.dir
+  OBJECT_FILE_DIR = src/libs/frame/CMakeFiles/frame.dir/src
+
+build src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyExternalForces.cpp.o: CXX_COMPILER__frame_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/src/FrameAssemblyExternalForces.cpp || cmake_object_order_depends_target_frame
+  DEP_FILE = src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyExternalForces.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/frame/CMakeFiles/frame.dir
+  OBJECT_FILE_DIR = src/libs/frame/CMakeFiles/frame.dir/src
+
+build src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyFixture.cpp.o: CXX_COMPILER__frame_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/src/FrameAssemblyFixture.cpp || cmake_object_order_depends_target_frame
+  DEP_FILE = src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyFixture.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/frame/CMakeFiles/frame.dir
+  OBJECT_FILE_DIR = src/libs/frame/CMakeFiles/frame.dir/src
+
+build src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyJoint.cpp.o: CXX_COMPILER__frame_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/src/FrameAssemblyJoint.cpp || cmake_object_order_depends_target_frame
+  DEP_FILE = src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyJoint.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/frame/CMakeFiles/frame.dir
+  OBJECT_FILE_DIR = src/libs/frame/CMakeFiles/frame.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target frame
+
+
+#############################################
+# Link the static library src/libs/frame/libframe.a
+
+build src/libs/frame/libframe.a: CXX_STATIC_LIBRARY_LINKER__frame_Debug src/libs/frame/CMakeFiles/frame.dir/src/Beam.cpp.o src/libs/frame/CMakeFiles/frame.dir/src/BeamLinearElastic.cpp.o src/libs/frame/CMakeFiles/frame.dir/src/FrameAssembly.cpp.o src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyExternalForces.cpp.o src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyFixture.cpp.o src/libs/frame/CMakeFiles/frame.dir/src/FrameAssemblyJoint.cpp.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/libs/frame/CMakeFiles/frame.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/libs/frame/libframe.a
+  TARGET_PDB = frame.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/libs/frame/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/frame && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/libs/frame/edit_cache: phony src/libs/frame/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/libs/frame/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/frame && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/libs/frame/rebuild_cache: phony src/libs/frame/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/libs/frame/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/libs/frame/CMakeFiles/install.util: CUSTOM_COMMAND src/libs/frame/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/frame && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/libs/frame/install: phony src/libs/frame/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/libs/frame/CMakeFiles/install/local.util: CUSTOM_COMMAND src/libs/frame/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/frame && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/libs/frame/install/local: phony src/libs/frame/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/libs/frame/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/libs/frame/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/frame && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/libs/frame/install/strip: phony src/libs/frame/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target search
+
+
+#############################################
+# Order-only phony target for search
+
+build cmake_object_order_depends_target_search: phony || cmake_object_order_depends_target_frame
+
+build src/libs/search/CMakeFiles/search.dir/src/InsertionDirection.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/InsertionDirection.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/InsertionDirection.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/PartGraph.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/PartGraph.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/PartGraph.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/PartGraphFrame.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/PartGraphFrame.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/PartGraphFrame.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithm.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/SearchAlgorithm.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithm.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmAStar.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/SearchAlgorithmAStar.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmAStar.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmBeamSearch.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/SearchAlgorithmBeamSearch.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmBeamSearch.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmGreedy.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/SearchAlgorithmGreedy.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmGreedy.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/StateGraph.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/StateGraph.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/StateGraph.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/StateGraphDynamicScaffold.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/StateGraphDynamicScaffold.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/StateGraphDynamicScaffold.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/StateGraphMultipleArms.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/StateGraphMultipleArms.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/StateGraphMultipleArms.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+build src/libs/search/CMakeFiles/search.dir/src/StateGraphViz.cpp.o: CXX_COMPILER__search_Debug /Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/src/StateGraphViz.cpp || cmake_object_order_depends_target_search
+  DEFINES = -DTBB_USE_DEBUG
+  DEP_FILE = src/libs/search/CMakeFiles/search.dir/src/StateGraphViz.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0 -std=gnu++17
+  INCLUDES = -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include -I/opt/homebrew/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include -I/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include -isystem /usr/local/include -isystem /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/eigen-src
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  OBJECT_FILE_DIR = src/libs/search/CMakeFiles/search.dir/src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target search
+
+
+#############################################
+# Link the static library src/libs/search/libsearch.a
+
+build src/libs/search/libsearch.a: CXX_STATIC_LIBRARY_LINKER__search_Debug src/libs/search/CMakeFiles/search.dir/src/InsertionDirection.cpp.o src/libs/search/CMakeFiles/search.dir/src/PartGraph.cpp.o src/libs/search/CMakeFiles/search.dir/src/PartGraphFrame.cpp.o src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithm.cpp.o src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmAStar.cpp.o src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmBeamSearch.cpp.o src/libs/search/CMakeFiles/search.dir/src/SearchAlgorithmGreedy.cpp.o src/libs/search/CMakeFiles/search.dir/src/StateGraph.cpp.o src/libs/search/CMakeFiles/search.dir/src/StateGraphDynamicScaffold.cpp.o src/libs/search/CMakeFiles/search.dir/src/StateGraphMultipleArms.cpp.o src/libs/search/CMakeFiles/search.dir/src/StateGraphViz.cpp.o || src/libs/frame/libframe.a /usr/local/lib/libtbb.12.8.dylib
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/libs/search/CMakeFiles/search.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/libs/search/libsearch.a
+  TARGET_PDB = search.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/libs/search/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/search && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build src/libs/search/edit_cache: phony src/libs/search/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/libs/search/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/search && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/libs/search/rebuild_cache: phony src/libs/search/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build src/libs/search/list_install_components: phony
+
+
+#############################################
+# Utility command for install
+
+build src/libs/search/CMakeFiles/install.util: CUSTOM_COMMAND src/libs/search/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/search && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build src/libs/search/install: phony src/libs/search/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for install/local
+
+build src/libs/search/CMakeFiles/install/local.util: CUSTOM_COMMAND src/libs/search/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/search && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build src/libs/search/install/local: phony src/libs/search/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install/strip
+
+build src/libs/search/CMakeFiles/install/strip.util: CUSTOM_COMMAND src/libs/search/all
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/search && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build src/libs/search/install/strip: phony src/libs/search/CMakeFiles/install/strip.util
+
+# =============================================================================
+# Target aliases.
+
+build BenchmarkApp: phony src/apps/benchmark/BenchmarkApp
+
+build dto: phony src/libs/dto/libdto.a
+
+build frame: phony src/libs/frame/libframe.a
+
+build igl_core: phony ext/libigl/igl_core
+
+build libdto.a: phony src/libs/dto/libdto.a
+
+build libframe.a: phony src/libs/frame/libframe.a
+
+build libsearch.a: phony src/libs/search/libsearch.a
+
+build search: phony src/libs/search/libsearch.a
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
+
+build all: phony ext/all src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext
+
+build ext/all: phony ext/json/all ext/libigl/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/json
+
+build ext/json/all: phony
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/ext/libigl
+
+build ext/libigl/all: phony ext/libigl/igl_core
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src
+
+build src/all: phony src/apps/all src/libs/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps
+
+build src/apps/all: phony src/apps/benchmark/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/apps/benchmark
+
+build src/apps/benchmark/all: phony src/apps/benchmark/BenchmarkApp
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs
+
+build src/libs/all: phony src/libs/dto/all src/libs/frame/all src/libs/search/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/dto
+
+build src/libs/dto/all: phony src/libs/dto/libdto.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/frame
+
+build src/libs/frame/all: phony src/libs/frame/libframe.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/src/libs/search
+
+build src/libs/search/all: phony src/libs/search/libsearch.a
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../cmake/FindKNITRO.cmake ../ext/CMakeLists.txt ../src/CMakeLists.txt ../src/apps/CMakeLists.txt ../src/apps/benchmark/CMakeLists.txt ../src/libs/CMakeLists.txt ../src/libs/dto/CMakeLists.txt ../src/libs/frame/CMakeLists.txt ../src/libs/search/CMakeLists.txt /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FetchContent.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindBoost.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindGit.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindThreads.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/WriteBasicConfigVersionFile.cmake /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfigVersion.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config-version.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config.cmake /usr/local/lib/cmake/TBB/TBBConfig.cmake /usr/local/lib/cmake/TBB/TBBConfigVersion.cmake /usr/local/lib/cmake/TBB/TBBTargets-release.cmake /usr/local/lib/cmake/TBB/TBBTargets.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/json-src/CMakeLists.txt _deps/json-src/cmake/config.cmake.in _deps/json-src/cmake/nlohmann_jsonConfigVersion.cmake.in _deps/json-src/cmake/pkg-config.pc.in _deps/libigl-src/CMakeLists.txt _deps/libigl-src/cmake/igl/igl_add_library.cmake _deps/libigl-src/cmake/igl/igl_add_test.cmake _deps/libigl-src/cmake/igl/igl_add_tutorial.cmake _deps/libigl-src/cmake/igl/igl_copy_dll.cmake _deps/libigl-src/cmake/igl/igl_include.cmake _deps/libigl-src/cmake/igl/igl_install.cmake _deps/libigl-src/cmake/igl/igl_target_sources.cmake _deps/libigl-src/cmake/igl/igl_windows.cmake _deps/libigl-src/cmake/igl/modules/core.cmake _deps/libigl-src/cmake/libigl.cmake _deps/libigl-src/cmake/recipes/external/eigen.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../CMakeLists.txt ../cmake/FindKNITRO.cmake ../ext/CMakeLists.txt ../src/CMakeLists.txt ../src/apps/CMakeLists.txt ../src/apps/benchmark/CMakeLists.txt ../src/libs/CMakeLists.txt ../src/libs/dto/CMakeLists.txt ../src/libs/frame/CMakeLists.txt ../src/libs/search/CMakeLists.txt /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCXXInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeCommonLanguageInclude.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeLanguageInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakePackageConfigHelpers.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckCSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckIncludeFile.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CheckLibraryExists.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Compiler/GNU.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FetchContent.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FetchContent/CMakeLists.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindBoost.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindGit.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageHandleStandardArgs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindPackageMessage.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/FindThreads.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/GNUInstallDirs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Internal/CheckSourceCompiles.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-C.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Apple-Clang.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/UnixPaths.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/WriteBasicConfigVersionFile.cmake /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfigVersion.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config-version.cmake /opt/homebrew/lib/cmake/boost_headers-1.79.0/boost_headers-config.cmake /usr/local/lib/cmake/TBB/TBBConfig.cmake /usr/local/lib/cmake/TBB/TBBConfigVersion.cmake /usr/local/lib/cmake/TBB/TBBTargets-release.cmake /usr/local/lib/cmake/TBB/TBBTargets.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCCompiler.cmake CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake _deps/json-src/CMakeLists.txt _deps/json-src/cmake/config.cmake.in _deps/json-src/cmake/nlohmann_jsonConfigVersion.cmake.in _deps/json-src/cmake/pkg-config.pc.in _deps/libigl-src/CMakeLists.txt _deps/libigl-src/cmake/igl/igl_add_library.cmake _deps/libigl-src/cmake/igl/igl_add_test.cmake _deps/libigl-src/cmake/igl/igl_add_tutorial.cmake _deps/libigl-src/cmake/igl/igl_copy_dll.cmake _deps/libigl-src/cmake/igl/igl_include.cmake _deps/libigl-src/cmake/igl/igl_install.cmake _deps/libigl-src/cmake/igl/igl_target_sources.cmake _deps/libigl-src/cmake/igl/igl_windows.cmake _deps/libigl-src/cmake/igl/modules/core.cmake _deps/libigl-src/cmake/libigl.cmake _deps/libigl-src/cmake/recipes/external/eigen.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all
