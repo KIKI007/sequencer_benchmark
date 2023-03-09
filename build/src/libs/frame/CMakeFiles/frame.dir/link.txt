@@ -1,0 +1,2 @@
+/usr/bin/ar qc libframe.a CMakeFiles/frame.dir/src/Beam.cpp.o CMakeFiles/frame.dir/src/BeamLinearElastic.cpp.o CMakeFiles/frame.dir/src/FrameAssembly.cpp.o CMakeFiles/frame.dir/src/FrameAssemblyExternalForces.cpp.o CMakeFiles/frame.dir/src/FrameAssemblyFixture.cpp.o CMakeFiles/frame.dir/src/FrameAssemblyJoint.cpp.o
+/usr/bin/ranlib libframe.a
