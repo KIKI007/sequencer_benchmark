@@ -9,6 +9,7 @@
 #include <string>
 #include <fstream>
 #include <Eigen/Dense>
+#include <memory>
 namespace search
 {
 

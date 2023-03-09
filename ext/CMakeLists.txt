@@ -24,14 +24,6 @@ FetchContent_Declare(
 fetch(json)
 add_subdirectory(${json_SOURCE_DIR} json)
 
-# tbb
-FetchContent_Declare(
-        tbb
-        GIT_REPOSITORY https://github.com/wjakob/tbb.git
-        GIT_TAG tbb44u4
-)
-fetch(tbb)
-add_subdirectory(${tbb_SOURCE_DIR} tbb)
 #------------------------------------------------------------------------------
 # libigl
 FetchContent_Declare(
