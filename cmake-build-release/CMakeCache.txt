@@ -310,6 +310,10 @@ FETCHCONTENT_SOURCE_DIR_JSON:PATH=
 // for libigl
 FETCHCONTENT_SOURCE_DIR_LIBIGL:PATH=
 
+//When not empty, overrides where to find pre-populated content
+// for tbb
+FETCHCONTENT_SOURCE_DIR_TBB:PATH=
+
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
@@ -321,6 +325,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_JSON:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of libigl
 FETCHCONTENT_UPDATES_DISCONNECTED_LIBIGL:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of tbb
+FETCHCONTENT_UPDATES_DISCONNECTED_TBB:BOOL=OFF
 
 //Git command line client
 GIT_EXECUTABLE:FILEPATH=/usr/bin/git
@@ -443,6 +450,18 @@ ROBOCRAFT_DEMO_YUMI:BOOL=OFF
 
 ROBOCRAFT_TOPLEVEL_FOLDER:STRING=/Users/wangziqi/Documents/GitHub/sequencer_benchmark
 
+//Build TBB shared library
+TBB_BUILD_SHARED:BOOL=ON
+
+//Build TBB static library
+TBB_BUILD_STATIC:BOOL=ON
+
+//Build TBB malloc library
+TBB_BUILD_TBBMALLOC:BOOL=ON
+
+//Build TBB malloc proxy library
+TBB_BUILD_TBBMALLOC_PROXY:BOOL=ON
+
 //The directory containing a CMake configuration file for TBB.
 TBB_DIR:PATH=/usr/local/lib/cmake/TBB
 
@@ -508,6 +527,18 @@ search_LIB_DEPENDS:STATIC=general;TBB::tbb;general;frame;
 
 //Value Computed by CMake
 search_SOURCE_DIR:STATIC=/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search
+
+//Value Computed by CMake
+tbb_BINARY_DIR:STATIC=/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/ext/tbb
+
+//Value Computed by CMake
+tbb_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+tbb_SOURCE_DIR:STATIC=/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/tbb-src
+
+//Dependencies for the target
+tbbmalloc_proxy_LIB_DEPENDS:STATIC=general;tbbmalloc_proxy_static;general;tbbmalloc;
 
 
 ########################
@@ -642,7 +673,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

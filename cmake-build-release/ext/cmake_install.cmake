@@ -40,6 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/ext/json/cmake_install.cmake")
+  include("/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/ext/tbb/cmake_install.cmake")
   include("/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/ext/libigl/cmake_install.cmake")
 
 endif()
