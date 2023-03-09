@@ -12,7 +12,6 @@ file(
 )
 
 option(CXX "enable C++ compilation" ON)
-find_package(TBB REQUIRED)
 find_package(Boost REQUIRED)
 
 # basic dependencies
