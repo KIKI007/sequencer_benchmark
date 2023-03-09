@@ -13,6 +13,15 @@
 -- Detecting CXX compile features - done
 -- fetching json ...
 -- Using the multi-header code from /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/json-src/include/
+-- fetching tbb ...
+CMake Deprecation Warning at cmake-build-release/_deps/tbb-src/CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
 -- fetching libigl ...
 -- Creating target: igl::core (igl_core)
 -- Third-party: creating target 'Eigen3::Eigen'
@@ -22,7 +31,42 @@
 -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
 -- Found Threads: TRUE  
 -- Found KNITRO: /Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/lib/libknitro.dylib  
--- Found Boost: /opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake (found version "1.79.0")  
 -- Configuring done
+CMake Error at CMakeLists.txt:41 (add_dependencies):
+  The dependency target "TBB::tbb" of target "search" does not exist.
+Call Stack (most recent call first):
+  src/libs/search/CMakeLists.txt:50 (create_crl_library)
+
+
+CMake Error at CMakeLists.txt:43 (target_link_libraries):
+  Target "search" links to:
+
+    TBB::tbb
+
+  but the target was not found.  Possible reasons include:
+
+    * There is a typo in the target name.
+    * A find_package call is missing for an IMPORTED target.
+    * An ALIAS target is missing.
+
+Call Stack (most recent call first):
+  src/libs/search/CMakeLists.txt:50 (create_crl_library)
+
+
 -- Generating done
--- Build files have been written to: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release
+CMake Error:
+  Running
+
+   '/Users/wangziqi/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/ninja/mac/ninja' '-C' '/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release' '-t' 'recompact'
+
+  failed with:
+
+   ninja: error: build.ninja:32: loading 'CMakeFiles/rules.ninja': No such file or directory
+
+  include CMakeFiles/rules.ninja
+
+                                ^ near here
+
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

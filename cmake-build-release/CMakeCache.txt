@@ -23,12 +23,6 @@ BenchmarkApp_IS_TOP_LEVEL:STATIC=OFF
 //Value Computed by CMake
 BenchmarkApp_SOURCE_DIR:STATIC=/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/apps/benchmark
 
-//The directory containing a CMake configuration file for Boost.
-Boost_DIR:PATH=/opt/homebrew/lib/cmake/Boost-1.79.0
-
-//Path to a file.
-Boost_INCLUDE_DIR:PATH=/opt/homebrew/include
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -462,12 +456,6 @@ TBB_BUILD_TBBMALLOC:BOOL=ON
 //Build TBB malloc proxy library
 TBB_BUILD_TBBMALLOC_PROXY:BOOL=ON
 
-//The directory containing a CMake configuration file for TBB.
-TBB_DIR:PATH=/usr/local/lib/cmake/TBB
-
-//The directory containing a CMake configuration file for boost_headers.
-boost_headers_DIR:PATH=/opt/homebrew/lib/cmake/boost_headers-1.79.0
-
 //Value Computed by CMake
 dto_BINARY_DIR:STATIC=/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/src/libs/dto
 
@@ -545,8 +533,6 @@ tbbmalloc_proxy_LIB_DEPENDS:STATIC=general;tbbmalloc_proxy_static;general;tbbmal
 # INTERNAL cache entries
 ########################
 
-//ADVANCED property for variable: Boost_DIR
-Boost_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_ADDR2LINE
 CMAKE_ADDR2LINE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
@@ -716,8 +702,6 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/opt/homebrew/lib/cmake/Boost-1.79.0/BoostConfig.cmake][c ][v1.79.0()]
 //Details about finding KNITRO
 FIND_PACKAGE_MESSAGE_DETAILS_KNITRO:INTERNAL=[/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/lib/libknitro.dylib][/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include][v()]
 //Details about finding Threads
@@ -731,6 +715,4 @@ KNITRO_LIBRARY-ADVANCED:INTERNAL=1
 NLOHMANN_JSON_CONFIG_INSTALL_DIR:INTERNAL=share/cmake/nlohmann_json
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
-//ADVANCED property for variable: boost_headers_DIR
-boost_headers_DIR-ADVANCED:INTERNAL=1
 
