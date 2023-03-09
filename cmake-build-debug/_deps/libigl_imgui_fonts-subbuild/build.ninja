@@ -1,0 +1,199 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: libigl_imgui_fonts-populate
+# Configurations: 
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/
+
+#############################################
+# Utility command for libigl_imgui_fonts-populate
+
+build libigl_imgui_fonts-populate: phony CMakeFiles/libigl_imgui_fonts-populate CMakeFiles/libigl_imgui_fonts-populate-complete libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-done libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-configure libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-download libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-mkdir libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-patch libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-test libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-update
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild && /opt/homebrew/Cellar/cmake/3.23.2/bin/ccmake -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake --regenerate-during-build -S/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild -B/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Phony custom command for CMakeFiles/libigl_imgui_fonts-populate
+
+build CMakeFiles/libigl_imgui_fonts-populate | ${cmake_ninja_workdir}CMakeFiles/libigl_imgui_fonts-populate: phony CMakeFiles/libigl_imgui_fonts-populate-complete
+
+
+#############################################
+# Custom command for CMakeFiles/libigl_imgui_fonts-populate-complete
+
+build CMakeFiles/libigl_imgui_fonts-populate-complete libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-done | ${cmake_ninja_workdir}CMakeFiles/libigl_imgui_fonts-populate-complete ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-done: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-mkdir libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-download libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-update libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-patch libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-configure libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-test
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E make_directory /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/CMakeFiles && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/CMakeFiles/libigl_imgui_fonts-populate-complete && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-done
+  DESC = Completed 'libigl_imgui_fonts-populate'
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-build
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-build | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-build: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-configure
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E echo_append && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-build
+  DESC = No build step for 'libigl_imgui_fonts-populate'
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-configure
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-configure | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-configure: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/tmp/libigl_imgui_fonts-populate-cfgcmd.txt libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-patch
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E echo_append && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-configure
+  DESC = No configure step for 'libigl_imgui_fonts-populate'
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-download
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-download | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-download: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-gitinfo.txt libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-mkdir
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/tmp/libigl_imgui_fonts-populate-gitclone.cmake && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-download
+  DESC = Performing download step (git clone) for 'libigl_imgui_fonts-populate'
+  pool = console
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-build
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E echo_append && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install
+  DESC = No install step for 'libigl_imgui_fonts-populate'
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-mkdir
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-mkdir | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-mkdir: CUSTOM_COMMAND
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/tmp/libigl_imgui_fonts-populate-mkdirs.cmake && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-mkdir
+  DESC = Creating directories for 'libigl_imgui_fonts-populate'
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-patch
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-patch | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-patch: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-update
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E echo_append && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-patch
+  DESC = No patch step for 'libigl_imgui_fonts-populate'
+  pool = console
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-test
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-test | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-test: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-install
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-build && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E echo_append && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -E touch /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-test
+  DESC = No test step for 'libigl_imgui_fonts-populate'
+  restat = 1
+
+
+#############################################
+# Custom command for libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-update
+
+build libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-update | ${cmake_ninja_workdir}libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-update: CUSTOM_COMMAND libigl_imgui_fonts-populate-prefix/src/libigl_imgui_fonts-populate-stamp/libigl_imgui_fonts-populate-download
+  COMMAND = cd /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-src && /opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -P /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild/libigl_imgui_fonts-populate-prefix/tmp/libigl_imgui_fonts-populate-gitupdate.cmake
+  DESC = Performing update step for 'libigl_imgui_fonts-populate'
+  pool = console
+
+# =============================================================================
+# Target aliases.
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/libigl_imgui_fonts-subbuild
+
+build all: phony libigl_imgui_fonts-populate
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/RepositoryInfo.txt.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/cfgcmd.txt.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/gitclone.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/gitupdate.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/mkdirs.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeSystem.cmake CMakeLists.txt libigl_imgui_fonts-populate-prefix/tmp/libigl_imgui_fonts-populate-mkdirs.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeDetermineSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeGenericSystem.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeInitializeConfigs.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystem.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInformation.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/RepositoryInfo.txt.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/cfgcmd.txt.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/gitclone.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/gitupdate.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/ExternalProject/mkdirs.cmake.in /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin-Initialize.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/Darwin.cmake /opt/homebrew/Cellar/cmake/3.23.2/share/cmake/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeSystem.cmake CMakeLists.txt libigl_imgui_fonts-populate-prefix/tmp/libigl_imgui_fonts-populate-mkdirs.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

@@ -1,0 +1,297 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "src/apps/benchmark/BenchmarkApp"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"create_crl_app",
+			"target_link_libraries",
+			"create_crl_library",
+			"add_dependencies",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt",
+			"src/apps/benchmark/CMakeLists.txt",
+			"src/libs/search/CMakeLists.txt",
+			"src/libs/dto/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 37,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 65,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 68,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 51,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 5
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 56,
+				"parent" : 7
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 8
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 66,
+				"parent" : 1
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 71,
+				"parent" : 1
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 67,
+				"parent" : 1
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-O3 -DNDEBUG -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -mmacosx-version-min=12.0"
+				},
+				{
+					"fragment" : "-std=gnu++17"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 11,
+					"define" : "CRL_DATA_FOLDER="
+				},
+				{
+					"backtrace" : 11,
+					"define" : "ROBOCRAFT_DATA_FOLDER=\"/Users/wangziqi/Documents/GitHub/sequencer_benchmark/data\""
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 12,
+					"path" : "/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/apps/benchmark"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/frame/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/json-src/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/search/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/opt/homebrew/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/wangziqi/Documents/GitHub/sequencer_benchmark/src/libs/dto/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/include/../examples/C++/include"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/eigen-src"
+				},
+				{
+					"backtrace" : 3,
+					"isSystem" : true,
+					"path" : "/usr/local/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					3
+				],
+				"standard" : "17"
+			},
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 10,
+			"id" : "dto::@8a677748c69febc4a5a1"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "frame::@335d6f99bddd71716f7f"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "search::@d92e0b8e3efd5cb4658d"
+		}
+	],
+	"folder" : 
+	{
+		"name" : "Apps"
+	},
+	"id" : "BenchmarkApp::@4c85770971c895f9b32c",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-O3 -DNDEBUG",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/usr/local/lib -Wl,-rpath,/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "src/libs/frame/libframe.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "src/libs/search/libsearch.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "src/libs/dto/libdto.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "src/libs/search/libsearch.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "src/libs/frame/libframe.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "/usr/local/lib/libtbb.12.8.dylib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "/Users/wangziqi/Documents/GitHub/knitro-13.1.0-MacOS-M1/lib/libknitro.dylib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "BenchmarkApp",
+	"nameOnDisk" : "BenchmarkApp",
+	"paths" : 
+	{
+		"build" : "src/apps/benchmark",
+		"source" : "src/apps/benchmark"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"path" : "src/apps/benchmark/benchmark.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/apps/benchmark/main.cpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "EXECUTABLE"
+}

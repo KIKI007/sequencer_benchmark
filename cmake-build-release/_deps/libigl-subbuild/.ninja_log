@@ -1,0 +1,21 @@
+# ninja log v5
+0	8	1678358483153177865	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-mkdir	d8606e55b7030e6e
+0	8	1678358483153177865	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-mkdir	d8606e55b7030e6e
+8	2270	1678358485414733888	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-download	756c4259516ae332
+8	2270	1678358485414733888	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-download	756c4259516ae332
+2270	2295	0	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-update	fd793999e315e2de
+2270	2295	0	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-update	fd793999e315e2de
+2295	2303	1678358485448215500	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-patch	2fb3250b140a1fe7
+2295	2303	1678358485448215500	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-patch	2fb3250b140a1fe7
+2303	2311	1678358485455878016	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-configure	eda2cc1ccec24f14
+2303	2311	1678358485455878016	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-configure	eda2cc1ccec24f14
+2311	2318	1678358485463460990	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-build	576c469d539bbe17
+2311	2318	1678358485463460990	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-build	576c469d539bbe17
+2318	2326	1678358485470995548	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-install	19568b01bd504eb5
+2318	2326	1678358485470995548	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-install	19568b01bd504eb5
+2326	2333	1678358485478602439	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-test	2775c6e1c2ad8fb2
+2326	2333	1678358485478602439	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-test	2775c6e1c2ad8fb2
+2333	2344	1678358485489145752	CMakeFiles/libigl-populate-complete	70f707589f416a6f
+2333	2344	1678358485489145752	libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-done	70f707589f416a6f
+2333	2344	1678358485489145752	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/CMakeFiles/libigl-populate-complete	70f707589f416a6f
+2333	2344	1678358485489145752	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/_deps/libigl-subbuild/libigl-populate-prefix/src/libigl-populate-stamp/libigl-populate-done	70f707589f416a6f

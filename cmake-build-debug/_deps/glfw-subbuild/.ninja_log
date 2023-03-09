@@ -1,0 +1,21 @@
+# ninja log v5
+0	8	1678357960508989052	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir	338af9b6a58958c3
+0	8	1678357960508989052	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-mkdir	338af9b6a58958c3
+8	4995	1678357965496199236	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download	47fa66b44ad6c8d6
+8	4995	1678357965496199236	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-download	47fa66b44ad6c8d6
+4995	5022	0	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update	aab421a1ad8db7ca
+4995	5022	0	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-update	aab421a1ad8db7ca
+5022	5029	1678357965530605016	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch	3a5c6f9332f9a714
+5022	5029	1678357965530605016	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-patch	3a5c6f9332f9a714
+5029	5038	1678357965539005201	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure	2638da5def2488d8
+5029	5038	1678357965539005201	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-configure	2638da5def2488d8
+5038	5045	1678357965546635633	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build	91f0796d15fa4821
+5038	5045	1678357965546635633	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-build	91f0796d15fa4821
+5045	5053	1678357965554273024	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install	1746111a599187e0
+5045	5053	1678357965554273024	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-install	1746111a599187e0
+5053	5061	1678357965561883790	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test	4b34af4dbeb54fa6
+5053	5061	1678357965561883790	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-test	4b34af4dbeb54fa6
+5061	5071	1678357965572388604	CMakeFiles/glfw-populate-complete	1691a827c9dfff9a
+5061	5071	1678357965572388604	glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done	1691a827c9dfff9a
+5061	5071	1678357965572388604	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/CMakeFiles/glfw-populate-complete	1691a827c9dfff9a
+5061	5071	1678357965572388604	/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/glfw-subbuild/glfw-populate-prefix/src/glfw-populate-stamp/glfw-populate-done	1691a827c9dfff9a
