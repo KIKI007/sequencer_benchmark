@@ -320,7 +320,6 @@ public:
         }
 
         error = KN_set_int_param(kc, KN_PARAM_CONVEX, KN_CONVEX_YES);
-        KN_set_int_param(kc, KN_PARAM_MIP_RESTART, KN_MIP_RESTART_ON);
         //KN_set_int_param(kc, KN_PARAM_MIP_OUTSUB, 2);
 
         KN_set_double_param(kc, KN_PARAM_DERIVCHECK_TOL, 1E-4);
@@ -338,7 +337,7 @@ public:
 #ifdef __APPLE__
         KN_set_int_param_by_name(kc, "mip_numthreads", num_thread);
 #else
-        KN_set_int_param_by_name(kc, "mip_numthreads", num_thread);
+        KN_set_int_param_by_name(kc, "mip_numthreads", 128 );
 #endif
         KN_set_int_param_by_name(kc, "convex", 1);
 

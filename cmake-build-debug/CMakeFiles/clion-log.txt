@@ -1,9 +1,0 @@
-/opt/homebrew/Cellar/cmake/3.23.2/bin/cmake -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/wangziqi/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/222.4345.21/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/wangziqi/Documents/GitHub/sequencer_benchmark -B /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
--- fetching json ...
--- Using the multi-header code from /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug/_deps/json-src/include/
--- fetching libigl ...
--- Creating target: igl::core (igl_core)
--- Third-party: creating target 'Eigen3::Eigen'
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-debug
