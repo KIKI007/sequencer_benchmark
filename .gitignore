@@ -1,20 +1,4 @@
 
+build/*
 cmake-build-debug/*
 cmake-build-release/*
-cmake-build-release/Testing/Temporary/LastTest.log
-cmake-build-release/ext/cmake_install.cmake
-cmake-build-release/CMakeFiles/TargetDirectories.txt
-cmake-build-release/CMakeFiles/rules.ninja
-cmake-build-release/CMakeCache.txt
-cmake-build-release/build.ninja
-cmake-build-release/_deps/libigl-subbuild/build.ninja
-cmake-build-release/_deps/libigl-subbuild/.ninja_log
-cmake-build-release/_deps/json-subbuild/build.ninja
-cmake-build-release/_deps/json-subbuild/.ninja_log
-cmake-build-release/_deps/eigen-subbuild/build.ninja
-cmake-build-release/_deps/eigen-subbuild/.ninja_log
-cmake-build-release/.ninja_log
-cmake-build-release/.cmake/api/v1/reply/index-2023-03-09T10-41-31-0386.json
-cmake-build-release/.cmake/api/v1/reply/codemodel-v2-278e9826d635864eee4a.json
-cmake-build-release/.cmake/api/v1/reply/cmakeFiles-v1-e92d5d698ac45a72a0ab.json
-cmake-build-release/.cmake/api/v1/reply/cache-v2-7e80118607e19d970c20.json
