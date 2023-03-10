@@ -181,6 +181,81 @@ public:
         return result;
     }
 
+    std::tuple<double, double, double> computeBnBSeq(std::shared_ptr<frame::FrameAssembly> beamAssembly,
+                                                     double maxtime,
+                                                     search::AssemblySequence &sequence)
+    {
+        std::shared_ptr<dto::FrameTOSequenceSum> frameTO = std::make_shared<dto::FrameTOSequenceSum>(*beamAssembly);
+        int numPart = beamAssembly->beams_.size();
+        frameTO->sections_.clear();
+        for(int id = 1; id < numPart; id += numHand){
+            frameTO->sections_.push_back({id, id});
+        }
+        frameTO->setParameters(1E-8, 0);
+        dto::FrameTOKnitroSolver solver(frameTO);
+        solver.mip_tol = 1E-8;
+        solver.nlp_tol = 1E-10;
+        solver.maxtime = maxtime;
+        solver.hessian_provided = true;
+        solver.MINLP = true;
+        solver.silence = false;
+        Eigen::VectorXd x;
+
+        double value = solver.solve(x) * 0.5;
+        double lnb = solver.data.low_bnd.back();
+        double time = 0;
+        for(int id = (int) solver.data.time.size() - 1; id >= 0; id --)
+        {
+            std::cout << solver.data.compliance[id] << " " << solver.data.low_bnd[id] << " " <<  1.05 * value << " "  << solver.data.time[id] << std::endl;
+            if(solver.data.compliance[id] > 1.05 * value)
+            {
+                break ;
+            }
+            time = solver.data.time[id];
+        }
+
+        std::vector<Eigen::VectorXd> rhos;
+        frameTO->computeRhos(x.data(), rhos);
+        std::vector<std::vector<int>> landmarks;
+        for(int id = 0; id < rhos.size(); id++)
+        {
+            std::vector<int> lm;
+            for(int jd = 0; jd < rhos[id].size(); jd++)
+            {
+                if(rhos[id][jd] > 0.5) lm.push_back(jd);
+            }
+            landmarks.push_back(lm);
+        }
+
+        landmarks.push_back(frameTO->end_partIDs_);
+
+        double compliance = 0;
+        double final_structural_compliance = 0;
+        std::vector<int> prev_partIDs = {};
+        for(int id = 0; id < landmarks.size(); id++)
+        {
+            Eigen::VectorXd displacement;
+            beamAssembly->solveElasticity(landmarks[id], {}, displacement);
+            compliance += beamAssembly->computeCompliance(displacement, landmarks[id]);
+            if(id + 1== landmarks.size()) final_structural_compliance = beamAssembly->computeCompliance(displacement, landmarks[id]);
+            search::AssemblyStep step;
+            for(int jd = 0; jd < landmarks[id].size(); jd++)
+            {
+                int partID = landmarks[id][jd];
+                if(find(prev_partIDs.begin(), prev_partIDs.end(), partID) == prev_partIDs.end()){
+                    step.installPartIDs.push_back(partID);
+                }
+            }
+            prev_partIDs = landmarks[id];
+            sequence.steps.push_back(step);
+        }
+
+        lnb += final_structural_compliance;
+        std::cout << "bnb, " << time <<  ", " << compliance << ", " << value + final_structural_compliance << ", " << lnb << ", " << compliance * time  << std::endl;
+
+        return {time, compliance, lnb};
+    }
+
     std::tuple<double, double, double> computeBnB(std::shared_ptr<frame::FrameAssembly> beamAssembly,
                                           double maxtime,
                                           search::AssemblySequence &sequence)
@@ -451,7 +526,7 @@ public:
             //double time = beamAssembly->beams_.size() >= 40 ? 800 : 300;
             double time = 3000;
             double values = 0.0;
-            auto [t6, c6, lnb] = computeBnB(beamAssembly, time, seq6); seqs.push_back(seq6); times.push_back(t6);
+            auto [t6, c6, lnb] = computeBnBSeq(beamAssembly, time, seq6); seqs.push_back(seq6); times.push_back(t6);
 
             for(int jd = 0; jd < seqs.size(); jd++)
             {

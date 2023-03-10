@@ -12,8 +12,10 @@
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/libigl-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/libigl_imgui_fonts-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/pybind11-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/tbb-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release/_deps/eigen-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release/_deps/json-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release/_deps/libigl-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-build-release/_deps/tbb-src" vcs="Git" />
   </component>
 </project>
