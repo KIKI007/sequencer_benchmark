@@ -6,4 +6,4 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt install -y libboost-all-dev cmake g++ gcc
 RUN apt install -y git
-RUN apt install -y libtbb-dev
+RUN apt install -y libtbb-dev vim

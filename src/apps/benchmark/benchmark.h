@@ -407,7 +407,7 @@ public:
 
         bool startCompute = false;
 
-        filenames = {"237632"};
+        filenames = {"roboarch_florian"};
 
         for(int id = 0; id < filenames.size(); id++)
         {
@@ -449,7 +449,7 @@ public:
 //            auto [t5, c5] = computeBottomUp(beamAssembly, maxtime, numLayer, seq5);seqs.push_back(seq5); times.push_back(t5);
 
             //double time = beamAssembly->beams_.size() >= 40 ? 800 : 300;
-            double time = 1000;
+            double time = 3000;
             double values = 0.0;
             auto [t6, c6, lnb] = computeBnB(beamAssembly, time, seq6); seqs.push_back(seq6); times.push_back(t6);
 
@@ -471,7 +471,7 @@ public:
     std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/dataset";
     std::vector<std::string> filenames;
     std::shared_ptr<frame::FrameAssembly> beamAssembly;
-    int numHand = 10;
+    int numHand = 4;
 };
 }
 
