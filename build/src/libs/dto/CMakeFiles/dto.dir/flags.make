@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/sequencer_benchmark/src/libs/dto/include -I/knitro/include -I/knitro/include/../examples/C++/include -I/sequencer_benchmark/src/libs/frame/include -I/sequencer_benchmark/build/_deps/json-src/include -I/sequencer_benchmark/src/libs/search/include -isystem /sequencer_benchmark/build/_deps/eigen-src
 
-CXX_FLAGS = -O3 -DNDEBUG
+CXX_FLAGS = 
 

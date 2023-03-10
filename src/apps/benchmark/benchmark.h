@@ -407,11 +407,7 @@ public:
 
         bool startCompute = false;
 
-<<<<<<< HEAD
-        filenames = {"237632"};
-=======
         filenames = {"roboarch_florian"};
->>>>>>> 2e94389022d7ad6dd198893d1a6e50f4efef434d
 
         for(int id = 0; id < filenames.size(); id++)
         {
@@ -475,11 +471,7 @@ public:
     std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/dataset";
     std::vector<std::string> filenames;
     std::shared_ptr<frame::FrameAssembly> beamAssembly;
-<<<<<<< HEAD
-    int numHand = 10;
-=======
-    int numHand = 4;
->>>>>>> 2e94389022d7ad6dd198893d1a6e50f4efef434d
+    int numHand = 1;
 };
 }
 
