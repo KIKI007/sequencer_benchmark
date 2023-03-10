@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/BenchmarkApp.dir/main.cpp.o -o BenchmarkApp  -Wl,-rpath,/knitro/lib ../../libs/frame/libframe.a ../../libs/search/libsearch.a ../../libs/dto/libdto.a ../../libs/search/libsearch.a ../../libs/frame/libframe.a /usr/lib/x86_64-linux-gnu/libtbb.so.12.5 /knitro/lib/libknitro.so 
