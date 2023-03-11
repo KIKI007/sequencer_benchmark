@@ -524,7 +524,7 @@ public:
 //            auto [t5, c5] = computeBottomUp(beamAssembly, maxtime, numLayer, seq5);seqs.push_back(seq5); times.push_back(t5);
 
             //double time = beamAssembly->beams_.size() >= 40 ? 800 : 300;
-            double time = 3000;
+            double time = 86400;
             double values = 0.0;
             auto [t6, c6, lnb] = computeBnBSeq(beamAssembly, time, seq6); seqs.push_back(seq6); times.push_back(t6);
 
