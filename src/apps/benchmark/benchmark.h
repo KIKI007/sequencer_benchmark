@@ -467,13 +467,14 @@ public:
             //ROBOCRAFT_DATA_FOLDER "/benchmark/1-backtrack",
             //ROBOCRAFT_DATA_FOLDER "/benchmark/1-beam-100",
             //ROBOCRAFT_DATA_FOLDER "/benchmark/1-beam-1000",
+            ROBOCRAFT_DATA_FOLDER "/benchmark/1-bnb",
             //ROBOCRAFT_DATA_FOLDER "/benchmark/1-landmark",
             //ROBOCRAFT_DATA_FOLDER "/benchmark/4-forward",
             //ROBOCRAFT_DATA_FOLDER "/benchmark/4-landmark-new",
             //ROBOCRAFT_DATA_FOLDER "/benchmark/4-landmark-new"
 //            ROBOCRAFT_DATA_FOLDER "/benchmark/6-forward",
 //            ROBOCRAFT_DATA_FOLDER "/benchmark/4-bnb-new"
-            ROBOCRAFT_DATA_FOLDER "/benchmark/10-bnb-errorbar"
+//            ROBOCRAFT_DATA_FOLDER "/benchmark/10-bnb-errorbar"
 //            ROBOCRAFT_DATA_FOLDER "/benchmark/6-greedy-merge"
 //            ROBOCRAFT_DATA_FOLDER "/benchmark/10-bnb",
             //ROBOCRAFT_DATA_FOLDER "/benchmark/10-greedy-merge",
@@ -482,15 +483,13 @@ public:
 
         bool startCompute = false;
 
-        filenames = {"roboarch_florian"};
-
         for(int id = 0; id < filenames.size(); id++)
         {
             beamAssembly = std::make_shared<frame::FrameAssembly>();
             beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
 
-//            if(beamAssembly->beams_.size() >= 60 || beamAssembly->beams_.size() <= 40)
-//                continue ;
+            if(beamAssembly->beams_.size() >= 40)
+                continue;
 
             std::cout << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
 
@@ -524,8 +523,7 @@ public:
 //            auto [t5, c5] = computeBottomUp(beamAssembly, maxtime, numLayer, seq5);seqs.push_back(seq5); times.push_back(t5);
 
             //double time = beamAssembly->beams_.size() >= 40 ? 800 : 300;
-            double time = 86400;
-            double values = 0.0;
+            double time = 3600;
             auto [t6, c6, lnb] = computeBnBSeq(beamAssembly, time, seq6); seqs.push_back(seq6); times.push_back(t6);
 
             for(int jd = 0; jd < seqs.size(); jd++)
@@ -535,6 +533,7 @@ public:
                 seqs[jd].writeToJson(json_output);
                 json_output["benchmark_time"] = times[jd];
                 json_output["obj_lnb"] = lnb;
+                json_output["obj"] = c6;
                 std::ofstream fout(folderNames[jd] + "/" + filenames[id] + ".json");
                 fout << json_output;
                 fout.close();
