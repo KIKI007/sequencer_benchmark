@@ -46,7 +46,7 @@ namespace benchmark {
 
             std::vector<std::string> folderNames = {
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/seach-forwardgreedy",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-holistic",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-holistic",
                     ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-beam-100",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-holistic",
             };
