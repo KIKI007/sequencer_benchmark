@@ -3,8 +3,11 @@
 //
 
 #include "singlebar_benchmark.h"
+#include "fourbars_benchmark.h"
 int main()
 {
-    simpApp::BenchMark app;
+    //benchmark::SingleBar_BenchMark app;
+    benchmark::FourBars_BenchMark app;
     app.launch();
+    return 0;
 }

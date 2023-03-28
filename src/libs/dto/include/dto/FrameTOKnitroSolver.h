@@ -386,6 +386,7 @@ public:
 
         /** Delete the Knitro solver instance. */
         KN_free (&kc);
+        data.objective = objSol;
 
         return objSol;
     }

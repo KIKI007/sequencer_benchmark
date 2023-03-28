@@ -31,7 +31,7 @@ namespace benchmark {
             std::vector<int> startPartIDs = landmarks[id];
             std::vector<int> endPartIDs = landmarks[id + 1];
             search::AssemblySequence tmp_sequence;
-            auto [tmp_value, tmp_time] = runOptimization_holistic_fixedsteplength(beamAssembly, numHand, maxHolisticSolverTime, startPartIDs, endPartIDs, silence, tmp_sequence);
+            auto [tmp_time, tmp_value] = runOptimization_holistic_fixedsteplength(beamAssembly, numHand, maxHolisticSolverTime, startPartIDs, endPartIDs, silence, tmp_sequence);
             sub_time = std::max(tmp_time, sub_time);
             sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
         }

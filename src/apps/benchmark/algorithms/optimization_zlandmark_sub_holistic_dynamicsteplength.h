@@ -4,5 +4,46 @@
 
 #ifndef GITIGNORE_OPTIMIZATION_ZLANDMARK_SUBPROBLEM_HOLISTIC_DYNAMICSTEPLENGTH_H
 #define GITIGNORE_OPTIMIZATION_ZLANDMARK_SUBPROBLEM_HOLISTIC_DYNAMICSTEPLENGTH_H
+#include "optimization_holistic_dynamicsteplength.h"
+
+namespace benchmark {
+
+    static std::tuple<double, double> runOptimization_zlandmark_sub_holistic_dynamicsteplength(std::shared_ptr<frame::FrameAssembly> beamAssembly,
+                                                                                             int numHand,
+                                                                                             int numLandmarks,
+                                                                                             double maxLandmarkSolverTime,
+                                                                                             double maxHolisticSolverTime,
+                                                                                             bool silence,
+                                                                                             search::AssemblySequence &sequence)
+    {
+
+        std::vector<std::vector<int>> landmarks;
+
+        tbb::tick_count timer = tbb::tick_count::now();
+        compute_zlandmarks(beamAssembly, maxLandmarkSolverTime / numLandmarks, numLandmarks, landmarks);
+        double time = (tbb::tick_count::now() - timer).seconds();
+
+        double sub_time = 0;
+        sequence.steps.clear();
+        for(int id = 0; id + 1 < landmarks.size(); id++)
+        {
+            std::vector<int> startPartIDs = landmarks[id];
+            std::vector<int> endPartIDs = landmarks[id + 1];
+            search::AssemblySequence tmp_sequence;
+            int numPart = endPartIDs.size() - startPartIDs.size();
+            int numStep = numPart / numHand - 1;
+            if(numPart % numHand != 0) numStep += 1;
+            auto [tmp_time, tmp_value] = runOptimization_holistic_dynamicsteplength(beamAssembly, numHand, numStep, maxHolisticSolverTime, startPartIDs, endPartIDs, silence, tmp_sequence);
+            sub_time = std::max(tmp_time, sub_time);
+            sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
+        }
+
+        time += sub_time;
+        std::vector<double> complianceList;
+        double value = runEvaluation(beamAssembly, sequence, numHand, complianceList, true);
+
+        return {time, value};
+    }
+}
 
 #endif //GITIGNORE_OPTIMIZATION_ZLANDMARK_SUBPROBLEM_HOLISTIC_DYNAMICSTEPLENGTH_H
