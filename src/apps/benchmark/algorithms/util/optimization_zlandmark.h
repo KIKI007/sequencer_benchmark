@@ -35,7 +35,7 @@ namespace benchmark
             solver.maxtime = maxtime;
             solver.hessian_provided = true;
             solver.MINLP = true;
-            solver.silence = false;
+            solver.silence = true;
 
             Eigen::VectorXd x;
             double value = solver.solve(x);

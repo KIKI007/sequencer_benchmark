@@ -137,7 +137,7 @@ namespace benchmark {
                                   << beamAssembly->beams_.size() << std::endl;
                         double maxHolisticSolverTime = 100;
                         int numLandmark = beamAssembly->beams_.size() / 30;
-                        double maxLandmarkTime = 20 * numLandmark;
+                        double maxLandmarkTime = 30 * numLandmark;
                         auto result = benchmark::runOptimization_zlandmark_sub_holistic_dynamicsteplength(beamAssembly,
                                                                                                           numHand,
                                                                                                           numLandmark,
@@ -150,7 +150,7 @@ namespace benchmark {
                     } else if (folderNames[solverID].find("opt-z-landmark-beam-100") != std::string::npos) {
                         std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-                        int numLandmark = beamAssembly->beams_.size() / 30;
+                        int numLandmark = beamAssembly->beams_.size() / 20;
                         double maxLandmarkTime = 30 * numLandmark;
                         int beamWidth = 100;
                         auto result = benchmark::runOptimization_zlandmark_sub_beamsearch(beamAssembly, numHand,
