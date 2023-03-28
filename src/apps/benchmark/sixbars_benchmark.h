@@ -55,9 +55,9 @@ namespace benchmark {
             {
                 for (int id = 0; id < filenames.size(); id++)
                 {
-                    if(filenames[id] != "70562"){
-                        continue;
-                    }
+//                    if(filenames[id] != "70562"){
+//                        continue;
+//                    }
 
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
