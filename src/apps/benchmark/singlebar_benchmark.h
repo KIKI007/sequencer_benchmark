@@ -48,32 +48,29 @@ namespace simpApp {
         void runBenchMark() {
 
             std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/seach-forwardgreedy",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backwardgreedy",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backtrackgreedy",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-100X",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-1000X",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/seach-forwardgreedy",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backwardgreedy",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backtrackgreedy",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-100X",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-1000X",
                     ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-2-landmark-holistic",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-2-landmark-beam-100",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-holistic",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-2-landmark-beam-100",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-holistic",
             };
 
             for (int solverID = 0; solverID < folderNames.size(); solverID++)
             {
-
                 for (int id = 0; id < filenames.size(); id++)
                 {
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
-
-                    if(filenames[id] != "82469")
-                        continue;
 
                     std::vector<int> startPartIDs = {};
                     std::vector<int> endPartIDs;
                     for (int jd = 0; jd < beamAssembly->beams_.size(); jd++) endPartIDs.push_back(jd);
                     int numHand = 1;
 
+                    nlohmann::json json_output;
                     search::AssemblySequence sequence;
                     double time = 0;
                     double compliance = 0;
@@ -120,7 +117,8 @@ namespace simpApp {
                         compliance = std::get<1>(result);
                         std::cout << "search-beam-1000" << ": ";
                     }
-                    else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
+                    else if (folderNames[solverID].find("opt-holistic") != std::string::npos)
+                    {
                         double maxtime = 1000;
                         auto result = benchmark::runOptimization_holistic_fixedsteplength(beamAssembly,
                                                                                           numHand,
@@ -134,13 +132,14 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("opt-2-landmark-holistic") != std::string::npos)
                     {
-                        double maxHolisticSolverTime = 300;
-                        double maxLandmarkTime = 10;
-                        int numLandmark = 2;
+                        double maxHolisticSolverTime = 1000;
+                        int numLandmark = beamAssembly->beams_.size() / 10;
+                        double maxLandmarkTime = 10 * numLandmark;
                         auto result = benchmark::runOptimization_zlandmark_sub_holistic_fixedsteplength(beamAssembly, numHand, numLandmark, maxLandmarkTime, maxHolisticSolverTime, true, sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         std::cout << "opt-2-landmark-holistic" << ": ";
+                        json_output["num_landmark"] = numLandmark;
                     }
                     else if (folderNames[solverID].find("opt-2-landmark-beam-100") != std::string::npos)
                     {
@@ -159,7 +158,6 @@ namespace simpApp {
                     std::cout << filenames[id] << ", " << beamAssembly->beams_.size() << ", " << benchmark_compliance << ", " << time << std::endl;
 
                     // output
-                    nlohmann::json json_output;
                     beamAssembly->writeToJson(json_output);
                     sequence.writeToJson(json_output);
                     json_output["benchmark_time"] = time;
