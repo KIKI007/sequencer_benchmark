@@ -61,7 +61,7 @@ namespace benchmark{
             {
                 break ;
             }
-            std::cout << solver.data.time[id] << ", " << solver.data.compliance[id] << ", " << value << std::endl;
+//            std::cout << solver.data.time[id] << ", " << solver.data.compliance[id] << ", " << value << std::endl;
             time = solver.data.time[id];
         }
 //        std::cout << time << std::endl;
