@@ -38,7 +38,7 @@ namespace benchmark
         solver.maxtime = maxTime;
         solver.hessian_provided = true;
         solver.MINLP = true;
-        solver.silence = true;
+        solver.silence = silence;
         Eigen::VectorXd x;
         solver.solve(x);
         std::vector<Eigen::VectorXd> rhos;

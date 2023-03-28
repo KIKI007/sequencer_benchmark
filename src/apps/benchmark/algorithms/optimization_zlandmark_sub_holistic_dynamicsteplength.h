@@ -34,7 +34,7 @@ namespace benchmark {
             int numStep = numPart / numHand - 1;
             if(numPart % numHand != 0) numStep += 1;
             auto [tmp_time, tmp_value] = runOptimization_holistic_dynamicsteplength(beamAssembly, numHand, numStep, maxHolisticSolverTime, startPartIDs, endPartIDs, silence, tmp_sequence);
-            sub_time = std::max(tmp_time, sub_time);
+            sub_time += tmp_time;
             sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
         }
 
