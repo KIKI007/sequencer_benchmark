@@ -53,7 +53,12 @@ namespace benchmark {
 
             for (int solverID = 0; solverID < folderNames.size(); solverID++)
             {
-                for (int id = 0; id < filenames.size(); id++) {
+                for (int id = 0; id < filenames.size(); id++)
+                {
+                    if(filenames[id] != "70562"){
+                        continue;
+                    }
+
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
 
@@ -132,7 +137,7 @@ namespace benchmark {
                                   << beamAssembly->beams_.size() << std::endl;
                         double maxHolisticSolverTime = 100;
                         int numLandmark = beamAssembly->beams_.size() / 30;
-                        double maxLandmarkTime = 10 * numLandmark;
+                        double maxLandmarkTime = 20 * numLandmark;
                         auto result = benchmark::runOptimization_zlandmark_sub_holistic_dynamicsteplength(beamAssembly,
                                                                                                           numHand,
                                                                                                           numLandmark,
@@ -146,7 +151,7 @@ namespace benchmark {
                         std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
                         int numLandmark = beamAssembly->beams_.size() / 30;
-                        double maxLandmarkTime = 10 * numLandmark;
+                        double maxLandmarkTime = 20 * numLandmark;
                         int beamWidth = 100;
                         auto result = benchmark::runOptimization_zlandmark_sub_beamsearch(beamAssembly, numHand,
                                                                                           numLandmark, beamWidth,
