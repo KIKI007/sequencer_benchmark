@@ -77,7 +77,7 @@ namespace simpApp {
                     //
                     if (folderNames[solverID].find("seach-forwardgreedy") != std::string::npos)
                     {
-                        std::cout << "seach-forwardgreedy"<< ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "seach-forwardgreedy"<< ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
 
                         auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, numHand, true, sequence);
                         time = std::get<0>(result);
@@ -85,7 +85,7 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("search-backwardgreedy") != std::string::npos)
                     {
-                        std::cout << "search-backwardgreedy" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "search-backwardgreedy" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
 
                         auto result = benchmark::runSearch_BackwardGreedy(beamAssembly, numHand, true, sequence);
                         time = std::get<0>(result);
@@ -93,7 +93,7 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("search-backtrackgreedy") != std::string::npos)
                     {
-                        std::cout << "search-backtrackgreedy"<< ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "search-backtrackgreedy"<< ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
 
                         int maxtime = 10;
                         auto result = benchmark::runSearch_BacktrackGreedy(beamAssembly, numHand, maxtime, true, sequence);
@@ -102,7 +102,7 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("search-beam-100X") != std::string::npos)
                     {
-                        std::cout << "search-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "search-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
 
                         int beamWidth = 100;
                         auto result = benchmark::runSearch_Beam(beamAssembly,
@@ -116,7 +116,7 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("search-beam-1000X") != std::string::npos)
                     {
-                        std::cout << "search-beam-1000" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "search-beam-1000" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
 
                         int beamWidth = 1000;
                         auto result = benchmark::runSearch_Beam(beamAssembly, numHand, beamWidth, startPartIDs, endPartIDs,
@@ -127,7 +127,7 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("opt-holistic") != std::string::npos)
                     {
-                        std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
 
                         double maxtime = 1000;
                         auto result = benchmark::runOptimization_holistic_fixedsteplength(beamAssembly,
@@ -141,7 +141,7 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("opt-2-landmark-holistic") != std::string::npos)
                     {
-                        std::cout << "opt-2-landmark-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "opt-2-landmark-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
                         double maxHolisticSolverTime = 100;
                         int numLandmark = beamAssembly->beams_.size() / 10;
                         double maxLandmarkTime = 10 * numLandmark;
@@ -152,7 +152,7 @@ namespace simpApp {
                     }
                     else if (folderNames[solverID].find("opt-2-landmark-beam-100") != std::string::npos)
                     {
-                        std::cout << "opt-2-landmark-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << ", ";
+                        std::cout << "opt-2-landmark-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
                         double maxLandmarkTime = 10;
                         int numLandmark = 2;
                         int beamWidth = 100;
