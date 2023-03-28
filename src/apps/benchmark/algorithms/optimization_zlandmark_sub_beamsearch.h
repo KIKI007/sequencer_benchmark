@@ -29,7 +29,7 @@ namespace benchmark
             std::vector<int> startPartIDs = landmarks[id];
             std::vector<int> endPartIDs = landmarks[id + 1];
             search::AssemblySequence tmp_sequence;
-            runSearch_Beam(beamAssembly, numHand, beamWidth, startPartIDs, endPartIDs, false, tmp_sequence);
+            runSearch_Beam(beamAssembly, numHand, beamWidth, startPartIDs, endPartIDs, true, tmp_sequence);
             sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
             sub_time = std::max(sub_time, (tbb::tick_count::now() - timer).seconds());
         }
