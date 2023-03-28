@@ -46,7 +46,7 @@ namespace benchmark {
 
             std::vector<std::string> folderNames = {
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/seach-forwardgreedy",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-holistic",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-holistic",
                     ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-beam-100",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-holistic",
             };
@@ -151,7 +151,7 @@ namespace benchmark {
                         std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
                         int numLandmark = beamAssembly->beams_.size() / 30;
-                        double maxLandmarkTime = 20 * numLandmark;
+                        double maxLandmarkTime = 30 * numLandmark;
                         int beamWidth = 100;
                         auto result = benchmark::runOptimization_zlandmark_sub_beamsearch(beamAssembly, numHand,
                                                                                           numLandmark, beamWidth,

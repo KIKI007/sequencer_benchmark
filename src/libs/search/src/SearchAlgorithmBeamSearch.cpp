@@ -22,31 +22,31 @@ double SearchAlgorithmBeamSearch::search(SearchAlgorithm::PtrS searchNode, Assem
             });
         std::vector<HeapNode> topNodes;
 
-//       std::cout << "step" << step << std::endl;
-//        for(int id = 0; id < candidates_.size(); id++)
-//        {
-//            auto u = candidates_[id];
-//            auto startPartIDs = stateGraph_->getInstalledParts(stateGraph_->nodes_[0]);
-//            auto partIDs = stateGraph_->getInstalledParts(stateGraph_->nodes_[u.searchNodeID]);
-//
-//            auto fixedPartIDs = std::static_pointer_cast<StateGraphDynamicScaffold>(stateGraph_)->getFixedParts(stateGraph_->nodes_[u.searchNodeID]);
-//
-//            for(int jd = 0; jd < partIDs.size(); jd++)
-//            {
-//                //if(find(startPartIDs.begin(), startPartIDs.end(), partIDs[jd]) == startPartIDs.end())
-//                {
-//                    std::cout << partIDs[jd];
-//                    if(find(fixedPartIDs.begin(), fixedPartIDs.end(), partIDs[jd]) != fixedPartIDs.end()){
-//                        std::cout << "* ";
-//                    }
-//                    else{
-//                        std::cout << " ";
-//                    }
-//                }
-//            }
-//            std::cout << ":" << u.value << ", " << searchNodes_[u.searchNodeID]->eval << std::endl;
-//        }
-//        std::cout << std::endl;
+       std::cout << "step" << step << std::endl;
+        for(int id = 0; id < candidates_.size(); id++)
+        {
+            auto u = candidates_[id];
+            auto startPartIDs = stateGraph_->getInstalledParts(stateGraph_->nodes_[0]);
+            auto partIDs = stateGraph_->getInstalledParts(stateGraph_->nodes_[u.searchNodeID]);
+
+            auto fixedPartIDs = std::static_pointer_cast<StateGraphDynamicScaffold>(stateGraph_)->getFixedParts(stateGraph_->nodes_[u.searchNodeID]);
+
+            for(int jd = 0; jd < partIDs.size(); jd++)
+            {
+                //if(find(startPartIDs.begin(), startPartIDs.end(), partIDs[jd]) == startPartIDs.end())
+                {
+                    std::cout << partIDs[jd];
+                    if(find(fixedPartIDs.begin(), fixedPartIDs.end(), partIDs[jd]) != fixedPartIDs.end()){
+                        std::cout << "* ";
+                    }
+                    else{
+                        std::cout << " ";
+                    }
+                }
+            }
+            std::cout << ":" << u.value << ", " << searchNodes_[u.searchNodeID]->eval << std::endl;
+        }
+        std::cout << std::endl;
 
         for(int id = 0; id < maxLayerNodeExplore && id < candidates_.size(); id++)
         {
