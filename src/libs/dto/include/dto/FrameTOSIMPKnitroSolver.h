@@ -365,6 +365,8 @@ public:
         for(int id = 0; id < x.size(); id++){
             xvar[id] = x[id];
         }
+
+        data.objective = objSol;
         return objSol;
     }
 
