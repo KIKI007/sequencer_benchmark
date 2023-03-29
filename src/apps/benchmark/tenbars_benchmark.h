@@ -53,8 +53,8 @@ namespace benchmark {
                 for (int id = 0; id < filenames.size(); id++)
                 {
 
-                    if(filenames[id] != "84622")
-                        continue;
+//                    if(filenames[id] != "84622")
+//                        continue;
 
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
@@ -92,7 +92,7 @@ namespace benchmark {
                                                                                             maxtime,
                                                                                             startPartIDs,
                                                                                             endPartIDs,
-                                                                                            false,
+                                                                                            true,
                                                                                             sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
