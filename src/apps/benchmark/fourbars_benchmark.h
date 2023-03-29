@@ -52,7 +52,7 @@ namespace benchmark {
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/search-beam-100X",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/search-beam-1000X",
                     ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-z-landmark-holistic",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-z-landmark-beam-100",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-z-landmark-beam-100",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-holistic",
             };
 
@@ -61,9 +61,6 @@ namespace benchmark {
                 for (int id = 0; id < filenames.size(); id++) {
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
-
-//                    if(filenames[id] != "84622")
-//                        continue;
 
                     std::vector<int> startPartIDs = {};
                     std::vector<int> endPartIDs;
@@ -138,9 +135,9 @@ namespace benchmark {
                     } else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos) {
                         std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-                        double maxHolisticSolverTime = 100;
+                        double maxHolisticSolverTime = 300;
                         int numLandmark = beamAssembly->beams_.size() / 30;
-                        double maxLandmarkTime = 10 * numLandmark;
+                        double maxLandmarkTime = 30 * numLandmark;
                         auto result = benchmark::runOptimization_zlandmark_sub_holistic_dynamicsteplength(beamAssembly,
                                                                                                         numHand,
                                                                                                         numLandmark,
@@ -154,7 +151,7 @@ namespace benchmark {
                         std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
                         int numLandmark = beamAssembly->beams_.size() / 30;
-                        double maxLandmarkTime = 10 * numLandmark;
+                        double maxLandmarkTime = 30 * numLandmark;
                         int beamWidth = 100;
                         auto result = benchmark::runOptimization_zlandmark_sub_beamsearch(beamAssembly, numHand,
                                                                                           numLandmark, beamWidth,

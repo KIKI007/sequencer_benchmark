@@ -8,8 +8,8 @@
 int main()
 {
     //benchmark::SingleBar_BenchMark app;
-    //benchmark::FourBars_BenchMark app;
-    benchmark::SixBars_BenchMark app;
+    benchmark::FourBars_BenchMark app;
+    //benchmark::SixBars_BenchMark app;
     app.launch();
     return 0;
 }
