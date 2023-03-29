@@ -14,7 +14,8 @@ namespace benchmark {
                                                                                              double maxLandmarkSolverTime,
                                                                                              double maxHolisticSolverTime,
                                                                                              bool silence,
-                                                                                             search::AssemblySequence &sequence)
+                                                                                             search::AssemblySequence &sequence,
+                                                                                             int additionalStep = 0)
     {
 
         std::vector<std::vector<int>> landmarks;
@@ -33,6 +34,7 @@ namespace benchmark {
             int numPart = endPartIDs.size() - startPartIDs.size();
             int numStep = numPart / numHand - 1;
             if(numPart % numHand != 0) numStep += 1;
+            numStep += additionalStep;
             auto [tmp_time, tmp_value] = runOptimization_holistic_dynamicsteplength(beamAssembly, numHand, numStep, maxHolisticSolverTime, startPartIDs, endPartIDs, silence, tmp_sequence);
             sub_time += tmp_time;
             sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
