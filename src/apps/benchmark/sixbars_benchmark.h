@@ -16,7 +16,7 @@
 /*
  * optimization algorithms
  */
-#include "algorithms/optimizatiom_holistic_fixedsteplength.h"
+#include "algorithms/optimization_holistic_dynamicsteplength.h"
 #include "algorithms/optimization_zlandmark_sub_beamsearch.h"
 #include "algorithms/optimization_zlandmark_sub_holistic_dynamicsteplength.h"
 
