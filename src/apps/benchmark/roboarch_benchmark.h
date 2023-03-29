@@ -64,8 +64,7 @@ namespace benchmark {
                                                                                                       maxLandmarkTime,
                                                                                                       maxHolisticSolverTime,
                                                                                                       false,
-                                                                                                      sequence,
-                                                                                                      1);
+                                                                                                      sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
                     json_output["num_landmark"] = numLandmark;
