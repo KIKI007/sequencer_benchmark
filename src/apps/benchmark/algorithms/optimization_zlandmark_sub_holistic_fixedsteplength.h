@@ -5,7 +5,7 @@
 #ifndef GITIGNORE_OPTIMIZATION_ZLANDMARK_SUB_HOLISTIC_FIXEDSTEPLENGTH_H
 #define GITIGNORE_OPTIMIZATION_ZLANDMARK_SUB_HOLISTIC_FIXEDSTEPLENGTH_H
 
-#include "optimizatiom_holistic_fixedsteplength.h"
+#include "optimization_holistic_fixedsteplength.h"
 
 namespace benchmark {
 
