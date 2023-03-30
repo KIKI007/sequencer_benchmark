@@ -42,9 +42,9 @@ namespace benchmark {
         void runBenchMark() {
 
             std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-10/merge",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-10/merge",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-10/opt-z-landmark-holistic",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-10/opt-holistic",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-10/opt-holistic",
             };
 
             for (int solverID = 0; solverID < folderNames.size(); solverID++)
@@ -76,10 +76,11 @@ namespace benchmark {
                     }
                     else if (folderNames[solverID].find("opt-holistic") != std::string::npos)
                     {
-                        int numPart = endPartIDs.size() - startPartIDs.size();
-                        if(numPart >= 60) continue;
+                        if (beamAssembly->beams_.size() >= 60)
+                            continue;
                         if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
                             continue;
+                        int numPart = endPartIDs.size() - startPartIDs.size();
                         int numStep = numPart / numHand - 1;
                         if (numPart % numHand != 0) numStep += 1;
                         std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
@@ -92,7 +93,7 @@ namespace benchmark {
                                                                                             maxtime,
                                                                                             startPartIDs,
                                                                                             endPartIDs,
-                                                                                            true,
+                                                                                            false,
                                                                                             sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);

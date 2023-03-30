@@ -48,9 +48,9 @@ namespace benchmark {
 
             std::vector<std::string> folderNames = {
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
                     //ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-z-landmark-holistic",
-                    //ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-holistic",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-holistic",
             };
 
             for (int solverID = 0; solverID < folderNames.size(); solverID++) {
@@ -87,17 +87,24 @@ namespace benchmark {
                     } else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
                         if (beamAssembly->beams_.size() >= 40)
                             continue;
+                        if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
+                            continue;
 
+                        int numPart = endPartIDs.size() - startPartIDs.size();
+                        int numStep = numPart / numHand - 1;
+                        if (numPart % numHand != 0) numStep += 1;
                         std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
                                   << std::endl;
 
                         double maxtime = 1000;
-                        auto result = benchmark::runOptimization_holistic_fixedsteplength(beamAssembly,
-                                                                                          numHand,
-                                                                                          maxtime,
-                                                                                          startPartIDs, endPartIDs,
-                                                                                          true,
-                                                                                          sequence);
+                        auto result = benchmark::runOptimization_holistic_dynamicsteplength(beamAssembly,
+                                                                                            numHand,
+                                                                                            numStep,
+                                                                                            maxtime,
+                                                                                            startPartIDs,
+                                                                                            endPartIDs,
+                                                                                            false,
+                                                                                            sequence);
                         time = std::get<0>(result);
                     } else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos) {
                         std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", "
