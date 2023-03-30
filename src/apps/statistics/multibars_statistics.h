@@ -140,9 +140,10 @@ namespace statistics {
                                 fin >> json_file;
                                 fin.close();
 
-                                if (json_file.contains("benchmark_compliance")) {
-                                    compliances[fid][id] = json_file["benchmark_compliance"].get<double>();
-                                } else {
+//                                if (json_file.contains("benchmark_compliance")) {
+//                                    compliances[fid][id] = json_file["benchmark_compliance"].get<double>();
+//                                } else {
+                                {
                                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                                     beamAssembly->loadFromJson(result_filename);
                                     search::AssemblySequence sequence;

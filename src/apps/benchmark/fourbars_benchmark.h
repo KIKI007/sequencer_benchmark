@@ -47,7 +47,7 @@ namespace benchmark {
         void runBenchMark() {
 
             std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
                     ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
                     //ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-z-landmark-holistic",
                     //ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-holistic",
@@ -68,23 +68,22 @@ namespace benchmark {
                     double time = 0;
                     double compliance = 0;
                     //
-                    if (folderNames[solverID].find("merge") != std::string::npos) {
+                    if (folderNames[solverID].find("merge") != std::string::npos)
+                    {
                         std::cout << "merge" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
 
                         auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, 1, true, sequence);
                         time = std::get<0>(result);
-                        compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("greedy") != std::string::npos) {
-                        if (beamAssembly->beams_.size() >= 60)
-                            continue;
+//                        if (beamAssembly->beams_.size() >= 60)
+//                            continue;
                         std::cout << "Greedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
 
                         auto result = benchmark::runSearch_Beam(beamAssembly, numHand, 1, startPartIDs, endPartIDs,
                                                                 true, sequence);
                         time = std::get<0>(result);
-                        compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
                         if (beamAssembly->beams_.size() >= 40)
                             continue;
@@ -100,7 +99,6 @@ namespace benchmark {
                                                                                           true,
                                                                                           sequence);
                         time = std::get<0>(result);
-                        compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos) {
                         std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
@@ -115,7 +113,6 @@ namespace benchmark {
                                                                                                           true,
                                                                                                           sequence);
                         time = std::get<0>(result);
-                        compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
                     }
 
@@ -129,7 +126,7 @@ namespace benchmark {
                     beamAssembly->writeToJson(json_output);
                     sequence.writeToJson(json_output);
                     json_output["benchmark_time"] = time;
-                    json_output["benchmark_compliance"] = compliance;
+                    json_output["benchmark_compliance"] = benchmark_compliance;
                     std::ofstream fout(folderNames[solverID] + "/" + filenames[id] + ".json");
                     fout << json_output;
                     fout.close();
