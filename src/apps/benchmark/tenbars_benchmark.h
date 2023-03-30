@@ -44,7 +44,7 @@ namespace benchmark {
             std::vector<std::string> folderNames = {
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/seach-forwardgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-beam-100",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-10/opt-z-landmark-holistic",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-10/opt-z-landmark-holistic",
                     ROBOCRAFT_DATA_FOLDER "/benchmark-10/opt-holistic",
             };
 
@@ -80,6 +80,9 @@ namespace benchmark {
                     else if (folderNames[solverID].find("opt-holistic") != std::string::npos)
                     {
                         int numPart = endPartIDs.size() - startPartIDs.size();
+                        if(numPart >= 60) continue;
+                        if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
+                            continue;
                         int numStep = numPart / numHand - 1;
                         if (numPart % numHand != 0) numStep += 1;
                         std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
@@ -111,7 +114,8 @@ namespace benchmark {
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
-                    } else if (folderNames[solverID].find("opt-z-landmark-beam-100") != std::string::npos) {
+                    }
+                    else if (folderNames[solverID].find("opt-z-landmark-beam-100") != std::string::npos) {
                         std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
                         int numLandmark = beamAssembly->beams_.size() / 20;

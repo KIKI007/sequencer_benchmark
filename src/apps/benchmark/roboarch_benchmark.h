@@ -39,7 +39,7 @@ namespace benchmark {
                 if (folderNames[solverID].find("holistic") != std::string::npos) {
                     std::cout << "opt-holistic" << ": " << beamAssembly->beams_.size()
                               << std::endl;
-
+                    
                     double maxtime = 30000;
                     int numPart = endPartIDs.size() - startPartIDs.size();
                     int numStep = numPart / numHand - 1;

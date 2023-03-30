@@ -54,8 +54,8 @@ namespace benchmark
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backtrackgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-100X",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-1000X",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-2-landmark-holistic",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-2-landmark-beam-100",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-holistic",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-beam-100",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-holistic",
             };
 
@@ -140,9 +140,9 @@ namespace benchmark
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     }
-                    else if (folderNames[solverID].find("opt-2-landmark-holistic") != std::string::npos)
+                    else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos)
                     {
-                        std::cout << "opt-2-landmark-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
+                        std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
                         double maxHolisticSolverTime = 100;
                         int numLandmark = beamAssembly->beams_.size() / 10;
                         double maxLandmarkTime = 10 * numLandmark;
@@ -151,9 +151,9 @@ namespace benchmark
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
                     }
-                    else if (folderNames[solverID].find("opt-2-landmark-beam-100") != std::string::npos)
+                    else if (folderNames[solverID].find("opt-z-landmark-beam-100") != std::string::npos)
                     {
-                        std::cout << "opt-2-landmark-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
+                        std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
                         double maxLandmarkTime = 10;
                         int numLandmark = 2;
                         int beamWidth = 100;

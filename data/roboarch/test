@@ -1,0 +1,1131 @@
+/Users/wangziqi/Documents/GitHub/sequencer_benchmark/cmake-build-release/src/apps/benchmark/BenchmarkApp
+opt-z-landmark-holistic: 45
+
+=======================================
+*** NO CHECK MADE FOR LICENSE ***
+         Artelys Knitro 13.1.0
+=======================================
+
+convex:                  1
+derivcheck_tol:          0.0001
+eval_fcga:               1
+hessopt:                 1
+opttol:                  1e-12
+outlev:                  4
+mip_heuristic_strategy:  2
+mip_maxtime_real:        30
+mip_numthreads:          10
+mip_opt_gap_abs:         1e-10
+mip_opt_gap_rel:         1e-10
+Knitro changing mip_method from AUTO to 1.
+Knitro changing mip_rootalg from AUTO to 1.
+Knitro changing mip_lpalg from AUTO to 3.
+Knitro changing mip_branchrule from AUTO to 2.
+Knitro changing mip_selectrule from AUTO to 2.
+Knitro changing mip_mir from AUTO to 2.
+Knitro changing mip_rounding from AUTO to 3.
+Knitro changing mip_heuristic_feaspump from AUTO to 1.
+Knitro changing mip_heuristic_misqp from AUTO to 0.
+Knitro changing mip_heuristic_mpec from AUTO to 1.
+Knitro changing mip_heuristic_diving from AUTO to 31.
+Knitro changing mip_heuristic_lns from AUTO to 0.
+Knitro changing mip_pseudoinit from AUTO to 1.
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Objective type:  general
+Number of variables:                                 45
+    bounded below only:                               0
+    bounded above only:                               0
+    bounded below and above:                         45
+    fixed:                                            0
+    free:                                             0
+Number of binary variables:                          45
+Number of integer variables:                          0
+Number of constraints:                                1
+    linear equalities:                                0
+    quadratic equalities:                             0
+    gen. nonlinear equalities:                        0
+    linear one-sided inequalities:                    0
+    quadratic one-sided inequalities:                 0
+    gen. nonlinear one-sided inequalities:            0
+    linear two-sided inequalities:                    0
+    quadratic two-sided inequalities:                 0
+    gen. nonlinear two-sided inequalities:            1
+Number of nonzeros in Jacobian:                      45
+Number of nonzeros in Hessian:                     1035
+
+Knitro detected 0 GUB constraints
+Knitro derived 0 knapsack covers after examining 0 constraints
+Knitro using Branch and Bound method with 10 threads.
+
+       Nodes        Best solution   Best bound      Gap       Time
+   Expl  |  Unexpl      value         value                  (secs)
+   ---------------  -------------   ----------      ---      ------
+      0       0                           -inf                0.002
+      1       2                    8.89578e-07                0.022
+node1= { 6, 7, 18, 22, 23, 33, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+15, 0.161613, 420.13
+      3       4     0.323226 MPEC  9.54081e-07     32.32%     0.078
+node1= { 6, 7, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+15, 8.71013e-07, 0.0011402
+      7       8  1.74203e-06 FDIV  1.03240e-06      0.00%     0.121
+    177       0  1.74203e-06       1.74220e-06     -0.00%     0.973
+
+EXIT: Optimal solution found.
+
+Final Statistics for MIP
+------------------------
+Final objective value               =  1.74202647294992e-06
+Final bound value                   =  1.74219837146260e-06
+Final optimality gap (abs / rel)    =  -1.72e-10 / -1.72e-10 (-0.00%)
+# of nodes processed                =  177 (2.778s)
+# of strong branching evaluations   =  0 (0.000s)
+# of function evaluations           =  5668 (1.272s)
+# of gradient evaluations           =  5668 (0.000s)
+# of hessian evaluations            =  3781 (2.135s)
+# of hessian-vector evaluations     =  0
+# of subproblems processed          =  211 (4.004s)
+Total program time (secs)           =  0.98286 (3.399 CPU time)
+Time spent in evaluations (secs)    =  3.40780
+
+Cuts statistics (computed / added)
+----------------------------------
+Knapsack cuts                       =  0 / 0
+Mixed-Integer Rounding cuts         =  0 / 0
+
+Heuristics statistics (calls / successes / time)
+------------------------------------------------
+Feasibility pump                    =  1 / 1 / 0.059s
+Rounding heuristic                  =  21 / 1 / 0.069s
+MPEC heuristic                      =  1 / 1 / 0.033s
+Fractional diving heuristic         =  1 / 1 / 0.100s
+Vectorlength diving heuristic       =  1 / 1 / 0.168s
+Coefficient diving heuristic        =  1 / 1 / 0.851s
+Guided diving heuristic             =  0 / 0 / 0.000s
+Line search diving heuristic        =  0 / 0 / 0.000s
+
+===========================================================================
+
+
+=======================================
+*** NO CHECK MADE FOR LICENSE ***
+         Artelys Knitro 13.1.0
+=======================================
+
+convex:                  1
+derivcheck_tol:          0.0001
+eval_fcga:               1
+hessopt:                 1
+opttol:                  1e-12
+outlev:                  4
+mip_heuristic_strategy:  2
+mip_maxtime_real:        30
+mip_numthreads:          10
+mip_opt_gap_abs:         1e-10
+mip_opt_gap_rel:         1e-10
+Knitro changing mip_method from AUTO to 1.
+Knitro changing mip_rootalg from AUTO to 1.
+Knitro changing mip_lpalg from AUTO to 3.
+Knitro changing mip_branchrule from AUTO to 2.
+Knitro changing mip_selectrule from AUTO to 2.
+Knitro changing mip_mir from AUTO to 2.
+Knitro changing mip_rounding from AUTO to 3.
+Knitro changing mip_heuristic_feaspump from AUTO to 1.
+Knitro changing mip_heuristic_misqp from AUTO to 0.
+Knitro changing mip_heuristic_mpec from AUTO to 1.
+Knitro changing mip_heuristic_diving from AUTO to 31.
+Knitro changing mip_heuristic_lns from AUTO to 0.
+Knitro changing mip_pseudoinit from AUTO to 1.
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Objective type:  general
+Number of variables:                                 30
+    bounded below only:                               0
+    bounded above only:                               0
+    bounded below and above:                         30
+    fixed:                                            0
+    free:                                             0
+Number of binary variables:                          30
+Number of integer variables:                          0
+Number of constraints:                                1
+    linear equalities:                                0
+    quadratic equalities:                             0
+    gen. nonlinear equalities:                        0
+    linear one-sided inequalities:                    0
+    quadratic one-sided inequalities:                 0
+    gen. nonlinear one-sided inequalities:            0
+    linear two-sided inequalities:                    0
+    quadratic two-sided inequalities:                 0
+    gen. nonlinear two-sided inequalities:            1
+Number of nonzeros in Jacobian:                      30
+Number of nonzeros in Hessian:                      465
+
+Knitro detected 0 GUB constraints
+Knitro derived 0 knapsack covers after examining 0 constraints
+Knitro using Branch and Bound method with 10 threads.
+
+       Nodes        Best solution   Best bound      Gap       Time
+   Expl  |  Unexpl      value         value                  (secs)
+   ---------------  -------------   ----------      ---      ------
+      0       0                           -inf                0.001
+      1       2                    6.25348e-06                0.007
+node1= { 3, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+30, 1.60559e-05, 0.00695195
+      2       3  3.21118e-05 FCRD  6.25348e-06      0.00%     0.024
+node1= { 1, 3, 5, 6, 7, 8, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+30, 1.27692e-05, 0.0105936
+      3       4  2.55383e-05 FCRD  6.37506e-06      0.00%     0.027
+node1= { 1, 3, 4, 5, 6, 7, 8, 14, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+30, 1.12812e-05, 0.0594567
+     17      18  2.25625e-05 FDIV  6.56552e-06      0.00%     0.093
+node1= { 1, 2, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+30, 8.43359e-06, 0.00290312
+    576      64  1.68672e-05 FCRD  1.29691e-05      0.00%     1.079
+node1= { 0, 1, 3, 5, 6, 7, 8, 9, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+30, 7.98322e-06, 0.00303965
+    647      69  1.59664e-05 FDIV  1.29691e-05      0.00%     1.215
+node1= { 0, 1, 3, 5, 6, 7, 8, 9, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+30, 7.98322e-06, 0.00303965
+    756      34  1.59664e-05 FCRD  1.35437e-05      0.00%     1.347
+node1= { 0, 1, 2, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+30, 7.51234e-06, 0.00310206
+    916      34  1.50247e-05 FCRD  1.40953e-05      0.00%     1.658
+   1016       0  1.50247e-05       1.50247e-05     -0.00%     1.851
+
+EXIT: Optimal solution found.
+
+Final Statistics for MIP
+------------------------
+Final objective value               =  1.50246862898676e-05
+Final bound value                   =  1.50246862899556e-05
+Final optimality gap (abs / rel)    =  -8.80e-17 / -8.80e-17 (-0.00%)
+# of nodes processed                =  1016 (11.538s)
+# of strong branching evaluations   =  8 (0.556s)
+# of function evaluations           =  14153 (4.394s)
+# of gradient evaluations           =  14153 (0.000s)
+# of hessian evaluations            =  11898 (7.815s)
+# of hessian-vector evaluations     =  0
+# of subproblems processed          =  917 (14.969s)
+Total program time (secs)           =  1.85113 (10.695 CPU time)
+Time spent in evaluations (secs)    =  12.20932
+
+Cuts statistics (computed / added)
+----------------------------------
+Knapsack cuts                       =  0 / 0
+Mixed-Integer Rounding cuts         =  0 / 0
+
+Heuristics statistics (calls / successes / time)
+------------------------------------------------
+Feasibility pump                    =  2 / 1 / 0.148s
+Rounding heuristic                  =  140 / 8 / 0.654s
+MPEC heuristic                      =  6 / 1 / 0.143s
+Fractional diving heuristic         =  6 / 2 / 0.481s
+Vectorlength diving heuristic       =  5 / 1 / 0.583s
+Coefficient diving heuristic        =  4 / 1 / 0.470s
+Guided diving heuristic             =  3 / 0 / 0.526s
+Line search diving heuristic        =  3 / 0 / 0.320s
+
+===========================================================================
+
+
+=======================================
+*** NO CHECK MADE FOR LICENSE ***
+         Artelys Knitro 13.1.0
+=======================================
+
+convex:                  1
+derivcheck_tol:          0.0001
+eval_fcga:               1
+hessopt:                 1
+opttol:                  1e-10
+outlev:                  4
+mip_heuristic_strategy:  2
+mip_maxtime_real:        300
+mip_numthreads:          10
+mip_opt_gap_abs:         1e-08
+mip_opt_gap_rel:         1e-08
+Knitro changing mip_method from AUTO to 1.
+Knitro changing mip_rootalg from AUTO to 1.
+Knitro changing mip_lpalg from AUTO to 3.
+Knitro changing mip_branchrule from AUTO to 2.
+Knitro changing mip_selectrule from AUTO to 2.
+Knitro changing mip_mir from AUTO to 2.
+Knitro changing mip_rounding from AUTO to 3.
+Knitro changing mip_heuristic_feaspump from AUTO to 1.
+Knitro changing mip_heuristic_misqp from AUTO to 0.
+Knitro changing mip_heuristic_mpec from AUTO to 1.
+Knitro changing mip_heuristic_diving from AUTO to 31.
+Knitro changing mip_heuristic_lns from AUTO to 0.
+Knitro changing mip_pseudoinit from AUTO to 1.
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Objective type:  general
+Number of variables:                                 45
+    bounded below only:                               0
+    bounded above only:                               0
+    bounded below and above:                         45
+    fixed:                                            0
+    free:                                             0
+Number of binary variables:                          45
+Number of integer variables:                          0
+Number of constraints:                               34
+    linear equalities:                                0
+    quadratic equalities:                             0
+    gen. nonlinear equalities:                        0
+    linear one-sided inequalities:                    0
+    quadratic one-sided inequalities:                 0
+    gen. nonlinear one-sided inequalities:           30
+    linear two-sided inequalities:                    0
+    quadratic two-sided inequalities:                 0
+    gen. nonlinear two-sided inequalities:            4
+Number of nonzeros in Jacobian:                     150
+Number of nonzeros in Hessian:                      360
+
+Knitro detected 0 GUB constraints
+Knitro derived 0 knapsack covers after examining 0 constraints
+Knitro using Branch and Bound method with 10 threads.
+
+       Nodes        Best solution   Best bound      Gap       Time
+   Expl  |  Unexpl      value         value                  (secs)
+   ---------------  -------------   ----------      ---      ------
+      0       0                           -inf                0.002
+node1= { 36, 41, 43, };
+node2= { 6, 36, 37, 40, 41, 42, 43, };
+node3= { 6, 7, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+3, 5.79497e-08
+7, 1.36263e-06
+11, 1.8483e-07
+      1       2  3.21082e-06 FCRD  4.50053e-07      0.00%     0.070
+node1= { 40, 41, 43, };
+node2= { 6, 36, 37, 40, 41, 42, 43, };
+node3= { 6, 7, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+3, 2.60843e-08
+7, 1.36263e-06
+11, 1.8483e-07
+      3       4  3.14709e-06 FCRD  4.54403e-07      0.00%     0.148
+node1= { 36, 41, 43, };
+node2= { 7, 36, 37, 40, 41, 42, 43, };
+node3= { 6, 7, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+3, 5.79497e-08
+7, 9.89674e-07
+11, 1.8483e-07
+      3       4  2.46491e-06 FDIV  4.54403e-07      0.00%     0.217
+node1= { 40, 41, 43, };
+node2= { 6, 7, 36, 37, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+3, 2.60843e-08
+7, 9.75784e-08
+11, 1.8483e-07
+      7       8  6.16986e-07 FCRD  4.57975e-07      0.00%     0.288
+node1= { 40, 41, 43, };
+node2= { 6, 7, 36, 37, 40, 41, 43, };
+node3= { 6, 7, 22, 36, 37, 38, 40, 41, 42, 43, 44, };
+3, 2.60843e-08
+7, 9.75784e-08
+11, 1.72562e-07
+     28      23  5.92449e-07 FCRD  4.71521e-07      0.00%     0.585
+node1= { 40, 41, 42, 43, };
+node2= { 6, 7, 36, 40, 41, 42, 43, };
+node3= { 6, 7, 22, 36, 37, 38, 39, 40, 41, 42, 43, };
+4, 4.06266e-08
+7, 7.68603e-08
+11, 1.76124e-07
+    113      46  5.87222e-07 FCRD  4.83361e-07      0.00%     1.222
+node1= { 40, 41, 42, 43, };
+node2= { 6, 7, 36, 40, 41, 42, 43, };
+node3= { 6, 7, 22, 36, 37, 38, 40, 41, 42, 43, 44, };
+4, 4.06266e-08
+7, 7.68603e-08
+11, 1.72562e-07
+    444       4  5.80098e-07 GDIV  4.95565e-07      0.00%     2.916
+node1= { 40, 41, 43, };
+node2= { 6, 7, 36, 40, 41, 42, 43, };
+node3= { 6, 7, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+3, 2.60843e-08
+7, 7.68603e-08
+11, 1.8483e-07
+    468       6  5.75550e-07 FCRD  5.14012e-07      0.00%     3.345
+node1= { 40, 41, 43, };
+node2= { 6, 7, 36, 40, 41, 42, 43, };
+node3= { 6, 7, 22, 36, 37, 38, 40, 41, 42, 43, 44, };
+3, 2.60843e-08
+7, 7.68603e-08
+11, 1.72562e-07
+    486       6  5.51013e-07 FCRD  5.47862e-07      0.00%     3.486
+
+EXIT: Optimal solution found.
+
+Final Statistics for MIP
+------------------------
+Final objective value               =  5.51013201143798e-07
+Final bound value                   =  5.47862146829350e-07
+Final optimality gap (abs / rel)    =  3.15e-09 / 3.15e-09 (0.00%)
+# of nodes processed                =  486 (18.609s)
+# of strong branching evaluations   =  14 (1.399s)
+# of function evaluations           =  12272 (9.564s)
+# of gradient evaluations           =  12272 (0.000s)
+# of hessian evaluations            =  10949 (12.892s)
+# of hessian-vector evaluations     =  0
+# of subproblems processed          =  632 (24.744s)
+Total program time (secs)           =  3.48676 (22.638 CPU time)
+Time spent in evaluations (secs)    =  22.45646
+
+Cuts statistics (computed / added)
+----------------------------------
+Knapsack cuts                       =  0 / 0
+Mixed-Integer Rounding cuts         =  0 / 0
+
+Heuristics statistics (calls / successes / time)
+------------------------------------------------
+Feasibility pump                    =  2 / 1 / 0.108s
+Rounding heuristic                  =  227 / 8 / 1.274s
+MPEC heuristic                      =  3 / 1 / 0.112s
+Fractional diving heuristic         =  2 / 1 / 0.322s
+Vectorlength diving heuristic       =  2 / 0 / 1.258s
+Coefficient diving heuristic        =  2 / 0 / 1.431s
+Guided diving heuristic             =  2 / 1 / 0.762s
+Line search diving heuristic        =  0 / 0 / 0.000s
+
+===========================================================================
+
+
+=======================================
+*** NO CHECK MADE FOR LICENSE ***
+         Artelys Knitro 13.1.0
+=======================================
+
+convex:                  1
+derivcheck_tol:          0.0001
+eval_fcga:               1
+hessopt:                 1
+opttol:                  1e-10
+outlev:                  4
+mip_heuristic_strategy:  2
+mip_maxtime_real:        300
+mip_numthreads:          10
+mip_opt_gap_abs:         1e-08
+mip_opt_gap_rel:         1e-08
+Knitro changing mip_method from AUTO to 1.
+Knitro changing mip_rootalg from AUTO to 1.
+Knitro changing mip_lpalg from AUTO to 3.
+Knitro changing mip_branchrule from AUTO to 2.
+Knitro changing mip_selectrule from AUTO to 2.
+Knitro changing mip_mir from AUTO to 2.
+Knitro changing mip_rounding from AUTO to 3.
+Knitro changing mip_heuristic_feaspump from AUTO to 1.
+Knitro changing mip_heuristic_misqp from AUTO to 0.
+Knitro changing mip_heuristic_mpec from AUTO to 1.
+Knitro changing mip_heuristic_diving from AUTO to 31.
+Knitro changing mip_heuristic_lns from AUTO to 0.
+Knitro changing mip_pseudoinit from AUTO to 1.
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Objective type:  general
+Number of variables:                                 45
+    bounded below only:                               0
+    bounded above only:                               0
+    bounded below and above:                         45
+    fixed:                                            0
+    free:                                             0
+Number of binary variables:                          45
+Number of integer variables:                          0
+Number of constraints:                               34
+    linear equalities:                                0
+    quadratic equalities:                             0
+    gen. nonlinear equalities:                        0
+    linear one-sided inequalities:                    0
+    quadratic one-sided inequalities:                 0
+    gen. nonlinear one-sided inequalities:           30
+    linear two-sided inequalities:                    0
+    quadratic two-sided inequalities:                 0
+    gen. nonlinear two-sided inequalities:            4
+Number of nonzeros in Jacobian:                     150
+Number of nonzeros in Hessian:                      360
+
+Knitro detected 0 GUB constraints
+Knitro derived 0 knapsack covers after examining 0 constraints
+Knitro using Branch and Bound method with 10 threads.
+
+       Nodes        Best solution   Best bound      Gap       Time
+   Expl  |  Unexpl      value         value                  (secs)
+   ---------------  -------------   ----------      ---      ------
+      0       0                           -inf                0.002
+      1       2                    1.53610e-05                0.027
+node1= { 3, 6, 7, 17, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 1, 3, 5, 6, 7, 17, 19, 20, 21, 22, 23, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 4.11895e-06
+22, 9.44022e-06
+26, 5.5559e-06
+      3       4  3.82301e-05 MPEC  1.55859e-05      0.00%     0.077
+node1= { 3, 6, 7, 17, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 1, 3, 6, 7, 17, 19, 20, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 4.11895e-06
+22, 7.54832e-06
+26, 5.5559e-06
+      6       7  3.44463e-05   FP  1.57535e-05      0.00%     0.132
+node1= { 1, 6, 7, 8, 17, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 31, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 2.07816e-06
+22, 8.49244e-06
+26, 5.5559e-06
+     62      63  3.22530e-05 FDIV  1.63642e-05      0.00%     0.694
+node1= { 1, 6, 7, 8, 17, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 1, 3, 5, 6, 7, 8, 17, 18, 19, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 1, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 2.07816e-06
+22, 6.90731e-06
+26, 4.91467e-06
+    744     288  2.78003e-05 FDIV  1.91065e-05      0.00%     3.482
+node1= { 1, 3, 6, 7, 17, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 1, 3, 5, 6, 7, 17, 18, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 2.73365e-06
+22, 5.26053e-06
+26, 5.65518e-06
+    954     468  2.72987e-05 LDIV  2.06445e-05      0.00%     4.550
+node1= { 3, 6, 7, 17, 18, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 3, 5, 6, 7, 17, 18, 20, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 1, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 3.90321e-06
+22, 4.56167e-06
+26, 4.91467e-06
+   1041     531  2.67591e-05 CDIV  2.21719e-05      0.00%     5.100
+node1= { 3, 6, 7, 17, 19, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 3, 5, 6, 7, 17, 19, 20, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 3.47822e-06
+22, 4.32665e-06
+26, 5.5559e-06
+   1423     695  2.67215e-05 FCRD  2.34231e-05      0.00%     7.045
+node1= { 3, 6, 7, 17, 19, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 3, 5, 6, 7, 17, 19, 20, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 1, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+18, 3.47822e-06
+22, 4.32665e-06
+26, 4.91467e-06
+   1461     699  2.54391e-05   FP  2.35418e-05      0.00%     7.286
+   2797     175  2.54391e-05       2.54394e-05     -0.00%    12.829
+
+EXIT: Optimal solution found.
+
+Final Statistics for MIP
+------------------------
+Final objective value               =  2.54390648036543e-05
+Final bound value                   =  2.54394004840003e-05
+Final optimality gap (abs / rel)    =  -3.36e-10 / -3.36e-10 (-0.00%)
+# of nodes processed                =  2797 (90.131s)
+# of strong branching evaluations   =  16 (0.772s)
+# of function evaluations           =  56227 (46.384s)
+# of gradient evaluations           =  56227 (0.000s)
+# of hessian evaluations            =  48336 (59.697s)
+# of hessian-vector evaluations     =  0
+# of subproblems processed          =  2702 (117.502s)
+Total program time (secs)           =  12.82918 (107.949 CPU time)
+Time spent in evaluations (secs)    =  106.08136
+
+Cuts statistics (computed / added)
+----------------------------------
+Knapsack cuts                       =  0 / 0
+Mixed-Integer Rounding cuts         =  0 / 0
+
+Heuristics statistics (calls / successes / time)
+------------------------------------------------
+Feasibility pump                    =  5 / 2 / 0.404s
+Rounding heuristic                  =  68 / 1 / 2.855s
+MPEC heuristic                      =  25 / 1 / 1.397s
+Fractional diving heuristic         =  17 / 3 / 3.248s
+Vectorlength diving heuristic       =  16 / 1 / 4.726s
+Coefficient diving heuristic        =  13 / 2 / 6.933s
+Guided diving heuristic             =  12 / 0 / 6.565s
+Line search diving heuristic        =  14 / 1 / 3.316s
+
+===========================================================================
+
+
+=======================================
+*** NO CHECK MADE FOR LICENSE ***
+         Artelys Knitro 13.1.0
+=======================================
+
+convex:                  1
+derivcheck_tol:          0.0001
+eval_fcga:               1
+hessopt:                 1
+opttol:                  1e-10
+outlev:                  4
+mip_heuristic_strategy:  2
+mip_maxtime_real:        300
+mip_numthreads:          10
+mip_opt_gap_abs:         1e-08
+mip_opt_gap_rel:         1e-08
+Knitro changing mip_method from AUTO to 1.
+Knitro changing mip_rootalg from AUTO to 1.
+Knitro changing mip_lpalg from AUTO to 3.
+Knitro changing mip_branchrule from AUTO to 2.
+Knitro changing mip_selectrule from AUTO to 2.
+Knitro changing mip_mir from AUTO to 2.
+Knitro changing mip_rounding from AUTO to 3.
+Knitro changing mip_heuristic_feaspump from AUTO to 1.
+Knitro changing mip_heuristic_misqp from AUTO to 0.
+Knitro changing mip_heuristic_mpec from AUTO to 1.
+Knitro changing mip_heuristic_diving from AUTO to 31.
+Knitro changing mip_heuristic_lns from AUTO to 0.
+Knitro changing mip_pseudoinit from AUTO to 1.
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Objective type:  general
+Number of variables:                                 45
+    bounded below only:                               0
+    bounded above only:                               0
+    bounded below and above:                         45
+    fixed:                                            0
+    free:                                             0
+Number of binary variables:                          45
+Number of integer variables:                          0
+Number of constraints:                               34
+    linear equalities:                                0
+    quadratic equalities:                             0
+    gen. nonlinear equalities:                        0
+    linear one-sided inequalities:                    0
+    quadratic one-sided inequalities:                 0
+    gen. nonlinear one-sided inequalities:           30
+    linear two-sided inequalities:                    0
+    quadratic two-sided inequalities:                 0
+    gen. nonlinear two-sided inequalities:            4
+Number of nonzeros in Jacobian:                     150
+Number of nonzeros in Hessian:                      360
+
+Knitro detected 0 GUB constraints
+Knitro derived 0 knapsack covers after examining 0 constraints
+Knitro using Branch and Bound method with 10 threads.
+
+       Nodes        Best solution   Best bound      Gap       Time
+   Expl  |  Unexpl      value         value                  (secs)
+   ---------------  -------------   ----------      ---      ------
+      0       0                           -inf                0.002
+      1       2                    4.10001e-05                0.029
+node1= { 0, 1, 2, 3, 5, 6, 7, 8, 9, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 30, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+33, 1.21838e-05
+37, 2.7687e-05
+41, 3.32057e-05
+      3       4  1.46153e-04 MPEC  4.12674e-05      0.01%     0.081
+node1= { 0, 1, 2, 3, 5, 6, 7, 8, 9, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+33, 1.21838e-05
+37, 1.93615e-05
+41, 3.32057e-05
+      7       8  1.29502e-04   FP  4.14933e-05      0.01%     0.160
+node1= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+33, 1.2629e-05
+37, 2.25647e-05
+41, 1.90199e-05
+     15      16  1.08427e-04 FDIV  4.15720e-05      0.01%     0.273
+node1= { 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+34, 1.2471e-05
+38, 1.71441e-05
+42, 1.66062e-05
+     59      60  9.24427e-05 FCRD  4.20172e-05      0.01%     0.549
+node1= { 0, 1, 2, 3, 5, 6, 7, 8, 13, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 13, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+34, 1.27699e-05
+38, 1.6357e-05
+42, 1.44569e-05
+   1371     811  8.71678e-05 FCRD  7.20461e-05      0.00%     7.199
+node1= { 0, 1, 2, 3, 5, 6, 7, 8, 13, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 5, 6, 7, 8, 13, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+33, 1.10837e-05
+37, 1.63234e-05
+41, 1.56406e-05
+   1654     978  8.60953e-05 FDIV  7.37645e-05      0.00%     8.790
+node1= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+34, 1.05284e-05
+38, 1.6114e-05
+42, 1.44569e-05
+   1920    1122  8.21986e-05 VDIV  7.49028e-05      0.00%    10.164
+node1= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+34, 1.05284e-05
+37, 1.41964e-05
+41, 1.56406e-05
+   3014    1496  8.07309e-05 FCRD  7.71616e-05      0.00%    15.487
+node1= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node2= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node3= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+33, 9.52952e-06
+37, 1.41964e-05
+41, 1.56406e-05
+   3923    1513  7.87332e-05 FCRD  7.82089e-05      0.00%    19.513
+   4310    1216  7.87332e-05       7.87261e-05      0.00%    20.454
+
+EXIT: Optimal solution found.
+
+Final Statistics for MIP
+------------------------
+Final objective value               =  7.87331884228863e-05
+Final bound value                   =  7.87260925951056e-05
+Final optimality gap (abs / rel)    =  7.10e-09 / 7.10e-09 (0.00%)
+# of nodes processed                =  4310 (149.379s)
+# of strong branching evaluations   =  27 (1.573s)
+# of function evaluations           =  97263 (77.731s)
+# of gradient evaluations           =  97263 (0.000s)
+# of hessian evaluations            =  85053 (98.199s)
+# of hessian-vector evaluations     =  0
+# of subproblems processed          =  4357 (193.085s)
+Total program time (secs)           =  20.45748 (186.654 CPU time)
+Time spent in evaluations (secs)    =  175.92979
+
+Cuts statistics (computed / added)
+----------------------------------
+Knapsack cuts                       =  0 / 0
+Mixed-Integer Rounding cuts         =  0 / 0
+
+Heuristics statistics (calls / successes / time)
+------------------------------------------------
+Feasibility pump                    =  8 / 1 / 0.742s
+Rounding heuristic                  =  122 / 4 / 5.231s
+MPEC heuristic                      =  46 / 1 / 2.393s
+Fractional diving heuristic         =  24 / 2 / 4.087s
+Vectorlength diving heuristic       =  25 / 2 / 6.932s
+Coefficient diving heuristic        =  28 / 1 / 12.826s
+Guided diving heuristic             =  27 / 0 / 9.639s
+Line search diving heuristic        =  25 / 0 / 5.494s
+
+===========================================================================
+
+7.59337e-05, 23.6631
+opt-holistic: 45
+
+=======================================
+*** NO CHECK MADE FOR LICENSE ***
+         Artelys Knitro 13.1.0
+=======================================
+
+convex:                  1
+derivcheck_tol:          0.0001
+eval_fcga:               1
+hessopt:                 1
+opttol:                  1e-10
+outlev:                  4
+mip_heuristic_strategy:  2
+mip_maxtime_real:        30000
+mip_numthreads:          10
+mip_opt_gap_abs:         1e-08
+mip_opt_gap_rel:         1e-08
+Knitro changing mip_method from AUTO to 1.
+Knitro changing mip_rootalg from AUTO to 1.
+Knitro changing mip_lpalg from AUTO to 3.
+Knitro changing mip_branchrule from AUTO to 2.
+Knitro changing mip_selectrule from AUTO to 2.
+Knitro changing mip_mir from AUTO to 2.
+Knitro changing mip_rounding from AUTO to 3.
+Knitro changing mip_heuristic_feaspump from AUTO to 1.
+Knitro changing mip_heuristic_misqp from AUTO to 0.
+Knitro changing mip_heuristic_mpec from AUTO to 1.
+Knitro changing mip_heuristic_diving from AUTO to 31.
+Knitro changing mip_heuristic_lns from AUTO to 0.
+Knitro changing mip_pseudoinit from AUTO to 1.
+
+Problem Characteristics
+-----------------------
+Objective goal:  Minimize
+Objective type:  general
+Number of variables:                                495
+    bounded below only:                               0
+    bounded above only:                               0
+    bounded below and above:                        495
+    fixed:                                            0
+    free:                                             0
+Number of binary variables:                         495
+Number of integer variables:                          0
+Number of constraints:                              462
+    linear equalities:                                0
+    quadratic equalities:                             0
+    gen. nonlinear equalities:                        0
+    linear one-sided inequalities:                    0
+    quadratic one-sided inequalities:                 0
+    gen. nonlinear one-sided inequalities:          450
+    linear two-sided inequalities:                    0
+    quadratic two-sided inequalities:                 0
+    gen. nonlinear two-sided inequalities:           12
+Number of nonzeros in Jacobian:                    1890
+Number of nonzeros in Hessian:                    11385
+
+Knitro detected 0 GUB constraints
+Knitro derived 0 knapsack covers after examining 0 constraints
+Knitro using Branch and Bound method with 10 threads.
+
+       Nodes        Best solution   Best bound      Gap       Time
+   Expl  |  Unexpl      value         value                  (secs)
+   ---------------  -------------   ----------      ---      ------
+      0       0                           -inf                0.006
+      1       2                    5.13361e-05                0.824
+node1= { 42, };
+node2= { 36, 37, 41, 42, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 24, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 6, 7, 14, 19, 21, 22, 24, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 3, 6, 7, 14, 17, 19, 21, 22, 23, 24, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 3, 5, 6, 7, 13, 14, 17, 18, 19, 20, 21, 22, 23, 24, 31, 32, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 1, 3, 5, 6, 7, 13, 14, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 1, 3, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 1, 3, 4, 5, 6, 7, 8, 9, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+1, 1.45423e-08
+5, 1.07741e-07
+9, 1.35679e-07
+13, 3.20711
+17, 3.06254
+21, 1.35293e-05
+25, 1.01679e-05
+29, 1.26234e-05
+33, 1.80821e-05
+37, 3.21037e-05
+41, 3.32057e-05
+     29      30      12.5395   FP  5.17523e-05    100.00%    10.271
+node1= { 36, 41, };
+node2= { 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 3, 5, 6, 7, 8, 14, 17, 19, 20, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 0, 1, 3, 5, 6, 7, 8, 14, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+5, 9.39883e-07
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 7.60781e-06
+29, 8.62411e-06
+33, 1.55666e-05
+37, 2.25647e-05
+41, 1.90199e-05
+     80      81  1.64773e-04 FDIV  5.20195e-05      0.01%    15.429
+   1801    1802  1.64773e-04       5.40764e-05      0.01%   143.533
+   3803     324  1.64773e-04       5.42975e-05      0.01%   167.747
+node1= { 36, 41, };
+node2= { 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 0, 1, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 26, 27, 28, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+5, 9.39883e-07
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 4.76411e-06
+29, 7.57047e-06
+33, 1.03397e-05
+37, 3.07242e-05
+41, 1.71621e-05
+   4597     459  1.59128e-04 FDIV  7.34517e-05      0.01%   331.601
+node1= { 36, 41, };
+node2= { 6, 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 0, 1, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 3, 4, 5, 6, 7, 8, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 3, 4, 5, 6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+6, 6.2318e-08
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 4.76411e-06
+29, 7.57047e-06
+33, 1.45924e-05
+37, 2.28638e-05
+41, 1.71621e-05
+   4733     595  1.50157e-04 FDIV  7.63697e-05      0.01%   357.014
+   4844     716  1.50157e-04       8.07897e-05      0.01%   374.685
+node1= { 36, 41, };
+node2= { 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 0, 1, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 3, 4, 5, 6, 7, 8, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+5, 9.39883e-07
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 4.76411e-06
+29, 7.57047e-06
+33, 1.45924e-05
+37, 1.44192e-05
+41, 1.99516e-05
+   5074     930  1.40602e-04 FDIV  8.18995e-05      0.01%   446.589
+node1= { 36, 41, };
+node2= { 6, 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 0, 1, 3, 5, 6, 7, 8, 16, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 3, 4, 5, 6, 7, 8, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 3, 4, 5, 6, 7, 8, 11, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+6, 6.2318e-08
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 4.76411e-06
+29, 8.10812e-06
+33, 1.50203e-05
+37, 2.20182e-05
+41, 1.14229e-05
+   5907    1655  1.38919e-04 FDIV  8.54698e-05      0.01%   699.402
+   6678    2312  1.38919e-04       8.72553e-05      0.01%   892.679
+node1= { 36, 41, };
+node2= { 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 2, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 1, 2, 3, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+5, 9.39883e-07
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 6.79065e-06
+29, 7.28143e-06
+33, 1.34775e-05
+37, 1.31253e-05
+41, 1.84784e-05
+   7088    2650  1.36313e-04 FDIV  8.78411e-05      0.00%   969.833
+node1= { 7, 41, };
+node2= { 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 0, 1, 3, 6, 7, 8, 17, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 0, 1, 3, 5, 6, 7, 8, 9, 16, 17, 20, 21, 22, 23, 24, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 0, 1, 3, 5, 6, 7, 8, 9, 16, 17, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 13, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 28, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 8.82845e-07
+5, 9.39883e-07
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.69436e-06
+25, 1.10699e-05
+29, 7.83274e-06
+33, 1.2131e-05
+37, 1.60351e-05
+41, 1.14229e-05
+   8045    3469  1.36201e-04 LDIV  8.97956e-05      0.00%  1199.626
+   8515    3881  1.36201e-04       8.97956e-05      0.00%  1270.130
+node1= { 36, 41, };
+node2= { 6, 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 1, 3, 5, 6, 7, 8, 13, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 1, 3, 4, 5, 6, 7, 8, 13, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 33, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 1, 3, 4, 5, 6, 7, 8, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+6, 6.2318e-08
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 4.76411e-06
+29, 8.21112e-06
+33, 1.25099e-05
+37, 1.34879e-05
+41, 1.17532e-05
+   9569    4771  1.17704e-04 FDIV  9.09002e-05      0.00%  1421.254
+  10330    5338  1.17704e-04       9.11363e-05      0.00%  1611.666
+  12211    6797  1.17704e-04       9.22763e-05      0.00%  2043.306
+  14061    8289  1.17704e-04       9.29439e-05      0.00%  2516.207
+  15943    9821  1.17704e-04       9.34871e-05      0.00%  2884.179
+  17815   11379  1.17704e-04       9.39835e-05      0.00%  3129.774
+  19691   12977  1.17704e-04       9.43501e-05      0.00%  3433.255
+  21570   14440  1.17704e-04       9.45729e-05      0.00%  3676.494
+  23383   15991  1.17704e-04       9.48852e-05      0.00%  3955.008
+  25273   17395  1.17704e-04       9.51482e-05      0.00%  4249.417
+  27156   18856  1.17704e-04       9.53834e-05      0.00%  4494.196
+  29025   20401  1.17704e-04       9.55407e-05      0.00%  4729.571
+  30907   21879  1.17704e-04       9.58480e-05      0.00%  4899.721
+  32783   23361  1.17704e-04       9.59873e-05      0.00%  5060.985
+  34654   24858  1.17704e-04       9.62251e-05      0.00%  5213.214
+  36536   26396  1.17704e-04       9.64025e-05      0.00%  5369.912
+  38404   27732  1.17704e-04       9.65104e-05      0.00%  5529.450
+  40293   29081  1.17704e-04       9.66139e-05      0.00%  5685.356
+  42162   30376  1.17704e-04       9.67190e-05      0.00%  5844.267
+  44053   31687  1.17704e-04       9.68476e-05      0.00%  5995.383
+  45937   32925  1.17704e-04       9.69804e-05      0.00%  6155.686
+node1= { 36, 41, };
+node2= { 7, 36, 40, 41, 43, };
+node3= { 6, 7, 36, 37, 40, 41, 42, 43, 44, };
+node4= { 6, 7, 22, 23, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node5= { 1, 6, 7, 8, 17, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node6= { 1, 3, 6, 7, 8, 17, 19, 20, 21, 22, 23, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node7= { 1, 3, 5, 6, 7, 8, 17, 19, 20, 21, 22, 23, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node8= { 0, 1, 3, 4, 5, 6, 7, 8, 17, 18, 19, 20, 21, 22, 23, 24, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node9= { 0, 1, 3, 4, 5, 6, 7, 8, 13, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 31, 32, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node10= { 0, 1, 3, 4, 5, 6, 7, 8, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+node11= { 0, 1, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30, 31, 32, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, };
+2, 5.32857e-08
+5, 9.39883e-07
+9, 1.35679e-07
+13, 3.63415e-07
+17, 1.59243e-06
+21, 5.91861e-06
+25, 4.76411e-06
+29, 6.84818e-06
+33, 1.23726e-05
+37, 1.32053e-05
+41, 1.14229e-05
+  46431   33239  1.15233e-04 FDIV  9.69923e-05      0.00%  6198.021
+  47840   34044  1.15233e-04       9.70809e-05      0.00%  6310.968
+  49731   35079  1.15233e-04       9.71734e-05      0.00%  6467.102
+  51628   36092  1.15233e-04       9.73080e-05      0.00%  6621.280
+  53524   37018  1.15233e-04       9.73953e-05      0.00%  6768.795
+  55431   37995  1.15233e-04       9.74953e-05      0.00%  6922.551
+  57327   38917  1.15233e-04       9.75682e-05      0.00%  7107.587
+  59238   39842  1.15233e-04       9.76758e-05      0.00%  7357.090
+  61134   40804  1.15233e-04       9.77258e-05      0.00%  7615.172
+  63039   41747  1.15233e-04       9.78375e-05      0.00%  7808.872
+  64944   42668  1.15233e-04       9.78846e-05      0.00%  8171.145
+  66844   43604  1.15233e-04       9.79574e-05      0.00%  8595.463
+  68744   44640  1.15233e-04       9.80555e-05      0.00%  8819.546
+  70635   45723  1.15233e-04       9.81434e-05      0.00%  9129.247
+  72541   46761  1.15233e-04       9.82201e-05      0.00%  9390.266
+  74441   47759  1.15233e-04       9.83086e-05      0.00%  9786.289
+  76329   48715  1.15233e-04       9.83585e-05      0.00% 10109.628
+  78225   49723  1.15233e-04       9.84353e-05      0.00% 10433.442
+  80131   50747  1.15233e-04       9.85145e-05      0.00% 10772.177
+  82028   51758  1.15233e-04       9.85764e-05      0.00% 11168.765
+  83929   52823  1.15233e-04       9.86465e-05      0.00% 11529.570
+  85821   53883  1.15233e-04       9.87143e-05      0.00% 11880.320
+  87716   54992  1.15233e-04       9.87747e-05      0.00% 12244.840
+  89614   56066  1.15233e-04       9.88155e-05      0.00% 12528.841
+  91529   57185  1.15233e-04       9.88804e-05      0.00% 12839.084
+  93416   58236  1.15233e-04       9.89113e-05      0.00% 13190.454
+  95316   59274  1.15233e-04       9.89599e-05      0.00% 13478.886
+  97215   60261  1.15233e-04       9.90121e-05      0.00% 13760.468
+  99126   61204  1.15233e-04       9.90532e-05      0.00% 14013.922
+ 101031   62181  1.15233e-04       9.90920e-05      0.00% 14277.801
+ 102916   63168  1.15233e-04       9.91374e-05      0.00% 14551.519
+ 104823   64107  1.15233e-04       9.91648e-05      0.00% 14844.542
+ 106727   65027  1.15233e-04       9.92050e-05      0.00% 15138.876
+ 108613   66039  1.15233e-04       9.92447e-05      0.00% 15423.730
+ 110502   67056  1.15233e-04       9.92774e-05      0.00% 15705.129
+ 112404   68028  1.15233e-04       9.92997e-05      0.00% 15976.886
+ 114294   68962  1.15233e-04       9.93429e-05      0.00% 16257.003
+ 116205   69827  1.15233e-04       9.93765e-05      0.00% 16550.312
+ 118099   70721  1.15233e-04       9.94027e-05      0.00% 16846.043
+ 120014   71584  1.15233e-04       9.94372e-05      0.00% 17122.662
+ 121915   72455  1.15233e-04       9.94706e-05      0.00% 17426.158
+ 123815   73421  1.15233e-04       9.94974e-05      0.00% 17712.074
+ 125709   74323  1.15233e-04       9.95194e-05      0.00% 18004.430
+ 127611   75215  1.15233e-04       9.95529e-05      0.00% 18282.516
+ 129509   76117  1.15233e-04       9.95737e-05      0.00% 18576.162
+ 131426   76958  1.15233e-04       9.95957e-05      0.00% 18855.918
+ 133330   77864  1.15233e-04       9.96322e-05      0.00% 19103.400
+ 135228   78728  1.15233e-04       9.96539e-05      0.00% 19378.266
+ 137138   79596  1.15233e-04       9.96809e-05      0.00% 19642.850
+ 139044   80456  1.15233e-04       9.97035e-05      0.00% 19933.533
+ 140940   81318  1.15233e-04       9.97226e-05      0.00% 20148.650
+ 142848   82188  1.15233e-04       9.97400e-05      0.00% 20497.617
+ 144754   83010  1.15233e-04       9.97625e-05      0.00% 20779.396
+ 146656   83806  1.15233e-04       9.97820e-05      0.00% 21044.512
+ 148563   84515  1.15233e-04       9.98155e-05      0.00% 21300.826
+ 150456   85272  1.15233e-04       9.98353e-05      0.00% 21567.457
+ 152362   85860  1.15233e-04       9.98516e-05      0.00% 21839.188
+ 154272   86522  1.15233e-04       9.98659e-05      0.00% 22104.945
+ 156180   87272  1.15233e-04       9.98849e-05      0.00% 22371.391
+ 158083   88055  1.15233e-04       9.98948e-05      0.00% 22645.107
+ 159990   88772  1.15233e-04       9.99099e-05      0.00% 22908.377
+ 161900   89534  1.15233e-04       9.99266e-05      0.00% 23195.020
+ 163800   90424  1.15233e-04       9.99367e-05      0.00% 23458.898
+ 165698   91318  1.15233e-04       9.99600e-05      0.00% 23782.145
+ 167600   92136  1.15233e-04       9.99751e-05      0.00% 24003.701
+ 169507   93019  1.15233e-04       9.99865e-05      0.00% 24330.771
+ 171425   93875  1.15233e-04       1.00004e-04      0.00% 24600.117
+ 173319   94769  1.15233e-04       1.00016e-04      0.00% 24868.494
+ 175221   95575  1.15233e-04       1.00032e-04      0.00% 25138.104
+ 177122   96406  1.15233e-04       1.00046e-04      0.00% 25396.203
+ 179031   97259  1.15233e-04       1.00056e-04      0.00% 25663.621
+ 180939   98051  1.15233e-04       1.00082e-04      0.00% 25922.750
+ 182846   98830  1.15233e-04       1.00096e-04      0.00% 26187.395
+ 184750   99676  1.15233e-04       1.00107e-04      0.00% 26445.793
+ 186650  100536  1.15233e-04       1.00120e-04      0.00% 26710.764
+ 188561  101253  1.15233e-04       1.00135e-04      0.00% 26965.666
+ 190466  102124  1.15233e-04       1.00149e-04      0.00% 27249.127
+ 192367  102953  1.15233e-04       1.00164e-04      0.00% 27520.441
+ 194273  103759  1.15233e-04       1.00183e-04      0.00% 27817.156
+ 196189  104597  1.15233e-04       1.00199e-04      0.00% 28105.973
+ 198093  105363  1.15233e-04       1.00216e-04      0.00% 28359.988
+ 200001  106191  1.15233e-04       1.00227e-04      0.00% 28517.578
+ 201906  107024  1.15233e-04       1.00239e-04      0.00% 28678.807
+ 203815  107811  1.15233e-04       1.00258e-04      0.00% 28829.941
+ 205723  108649  1.15233e-04       1.00267e-04      0.00% 28996.951
+ 207619  109469  1.15233e-04       1.00286e-04      0.00% 29169.021
+ 209523  110331  1.15233e-04       1.00300e-04      0.00% 29329.658
+ 211424  111202  1.15233e-04       1.00309e-04      0.00% 29507.889
+ 213338  112048  1.15233e-04       1.00322e-04      0.00% 29668.035
+
+Process finished with exit code 143 (interrupted by signal 15: SIGTERM)
