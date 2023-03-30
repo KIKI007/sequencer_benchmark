@@ -11,11 +11,11 @@
 int main()
 {
     //benchmark::SingleBar_BenchMark app;
-    //benchmark::FourBars_BenchMark app;
+    benchmark::FourBars_BenchMark app;
     //benchmark::SixBars_BenchMark app;
     //benchmark::Roboarch_BenchMark app;
     //benchmark::TenBars_BenchMark app;
-    benchmark::Bridge_BenchMark app;
+    //benchmark::Bridge_BenchMark app;
     app.launch();
     return 0;
 }
