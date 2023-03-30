@@ -21,7 +21,7 @@ namespace benchmark {
         std::vector<std::vector<int>> landmarks;
 
         tbb::tick_count timer = tbb::tick_count::now();
-        compute_zlandmarks(beamAssembly, maxLandmarkSolverTime / numLandmarks, numLandmarks, landmarks);
+        compute_zlandmarks(beamAssembly, maxLandmarkSolverTime / numLandmarks, numLandmarks, landmarks, silence);
         double time = (tbb::tick_count::now() - timer).seconds();
 
         double sub_time = 0;

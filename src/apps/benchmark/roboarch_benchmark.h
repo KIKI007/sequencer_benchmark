@@ -40,7 +40,7 @@ namespace benchmark {
                     std::cout << "opt-holistic" << ": " << beamAssembly->beams_.size()
                               << std::endl;
 
-                    double maxtime = 1000;
+                    double maxtime = 30000;
                     int numPart = endPartIDs.size() - startPartIDs.size();
                     int numStep = numPart / numHand - 1;
                     if (numPart % numHand != 0) numStep += 1;

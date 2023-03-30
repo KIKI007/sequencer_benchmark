@@ -13,7 +13,8 @@ namespace benchmark
     void compute_zlandmarks(std::shared_ptr<frame::FrameAssembly> beamAssembly,
                             double maxtime,
                             int numLandmarks,
-                            std::vector<std::vector<int>> &landmarks_barIDs)
+                            std::vector<std::vector<int>> &landmarks_barIDs,
+                            bool silence = true)
     {
         std::shared_ptr<dto::FrameTOSequenceSum> frameTO = std::make_shared<dto::FrameTOSequenceSum>(*beamAssembly);
 
@@ -35,7 +36,7 @@ namespace benchmark
             solver.maxtime = maxtime;
             solver.hessian_provided = true;
             solver.MINLP = true;
-            solver.silence = true;
+            solver.silence = silence;
 
             Eigen::VectorXd x;
             double value = solver.solve(x);
