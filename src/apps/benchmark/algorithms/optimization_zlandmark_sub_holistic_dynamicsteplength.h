@@ -20,8 +20,14 @@ namespace benchmark {
 
         std::vector<std::vector<int>> landmarks;
 
+        std::vector<int> startPartIDs = {};
+        std::vector<int> endPartIDs = {};
+        for(int id = 0; id < beamAssembly->beams_.size(); id++){
+            endPartIDs.push_back(id);
+        }
+
         tbb::tick_count timer = tbb::tick_count::now();
-        compute_zlandmarks(beamAssembly, maxLandmarkSolverTime / numLandmarks, numLandmarks, landmarks, silence);
+        compute_zlandmarks(beamAssembly, maxLandmarkSolverTime / numLandmarks, numLandmarks, startPartIDs, endPartIDs, landmarks, silence);
         double time = (tbb::tick_count::now() - timer).seconds();
 
         double sub_time = 0;

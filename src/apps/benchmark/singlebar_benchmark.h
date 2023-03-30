@@ -21,7 +21,7 @@
 #include "algorithms/optimization_holistic_fixedsteplength.h"
 #include "algorithms/optimization_zlandmark_sub_beamsearch.h"
 #include "algorithms/optimization_zlandmark_sub_holistic_fixedsteplength.h"
-
+#include "algorithms/optimization_zlandmark_recursive.h"
 #include <filesystem>
 
 namespace benchmark
@@ -54,7 +54,8 @@ namespace benchmark
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backtrackgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-100X",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-1000X",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-holistic",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-recursive-holistic",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-holistic",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-beam-100",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-holistic",
             };
@@ -140,13 +141,38 @@ namespace benchmark
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     }
+                    else if (folderNames[solverID].find("opt-recursive-holistic") != std::string::npos){
+                        std::cout << "opt-recursive-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
+                        double maxHolisticSolverTime = 20;
+                        int numLandmark = 2;
+                        double maxLandmarkTime = 10 * numLandmark;
+                        int maxHolisticNumPart = 10;
+                        auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
+                                                                                     numHand,
+                                                                                     numLandmark,
+                                                                                     maxHolisticNumPart,
+                                                                                     maxLandmarkTime,
+                                                                                     maxHolisticSolverTime,
+                                                                                     startPartIDs,
+                                                                                     endPartIDs,
+                                                                                     true,
+                                                                                     sequence);
+                        time = std::get<0>(result);
+                        compliance = std::get<1>(result);
+                        json_output["num_landmark"] = numLandmark;
+                    }
                     else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos)
                     {
-                        std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size() << std::endl;
-                        double maxHolisticSolverTime = 100;
+                        double maxHolisticSolverTime = 10;
                         int numLandmark = beamAssembly->beams_.size() / 10;
                         double maxLandmarkTime = 10 * numLandmark;
-                        auto result = benchmark::runOptimization_zlandmark_sub_holistic_fixedsteplength(beamAssembly, numHand, numLandmark, maxLandmarkTime, maxHolisticSolverTime, true, sequence);
+                        auto result = benchmark::runOptimization_zlandmark_sub_holistic_fixedsteplength(beamAssembly,
+                                                                                                        numHand,
+                                                                                                        numLandmark,
+                                                                                                        maxLandmarkTime,
+                                                                                                        maxHolisticSolverTime,
+                                                                                                        true,
+                                                                                                        sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
