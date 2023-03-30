@@ -48,9 +48,9 @@ namespace benchmark {
 
             std::vector<std::string> folderNames = {
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
-                   ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
+//                   ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
                     //ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-z-landmark-holistic",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-holistic",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-holistic",
             };
 
             for (int solverID = 0; solverID < folderNames.size(); solverID++)
@@ -59,9 +59,6 @@ namespace benchmark {
                 {
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
-
-                    if(filenames[id] != "82469")
-                        continue;
 
                     std::vector<int> startPartIDs = {};
                     std::vector<int> endPartIDs;

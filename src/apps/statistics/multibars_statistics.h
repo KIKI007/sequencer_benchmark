@@ -95,20 +95,20 @@ namespace statistics {
         void launch() {
             getFileNames();
 
-            std::vector<int> benchmark_hands = {4};
+            std::vector<int> benchmark_hands = {4, 6, 10};
 
             std::vector<std::string> table_captions = {
-                    //"Merge",
+                    "Merge",
                     "Greedy",
-                    //"z-Landmark (Ours)",
-                    //"Holistic (Ours)"
+                    "z-Landmark (Ours)",
+                    "Holistic (Ours)"
             };
 
             std::vector<std::string> folderNames = {
-                    //"merge",
+                    "merge",
                     "greedy",
-                    //"opt-z-landmark-holistic",
-                    //"opt-holistic",
+                    "opt-z-landmark-holistic",
+                    "opt-holistic",
             };
             print_table_head();
 
@@ -155,7 +155,6 @@ namespace statistics {
                                                                                  complianceList,
                                                                                  true);
                                     compliances[fid][id] = compliance;
-                                    std::cout << filenames[id] << ", " << beamAssembly->beams_.size() << ", " << compliance << std::endl;
                                 }
 
                                 times[fid][id] = json_file["benchmark_time"].get<double>();
