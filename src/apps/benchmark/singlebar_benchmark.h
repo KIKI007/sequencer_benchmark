@@ -147,6 +147,8 @@ namespace benchmark
                         int numLandmark = 2;
                         double maxLandmarkTime = 10 * numLandmark;
                         int maxHolisticNumPart = 10;
+                        if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
+                            continue;
                         auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
                                                                                      numHand,
                                                                                      numLandmark,
