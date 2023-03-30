@@ -47,8 +47,8 @@ namespace benchmark {
         void runBenchMark() {
 
             std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
+                   ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
                     //ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-z-landmark-holistic",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/opt-holistic",
             };
@@ -57,12 +57,11 @@ namespace benchmark {
             {
                 for (int id = 0; id < filenames.size(); id++)
                 {
-                    if(filenames[id] != "82469"){
-                        continue;
-                    }
-
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
+
+                    if(filenames[id] != "82469")
+                        continue;
 
                     std::vector<int> startPartIDs = {};
                     std::vector<int> endPartIDs;
@@ -72,18 +71,15 @@ namespace benchmark {
                     nlohmann::json json_output;
                     search::AssemblySequence sequence;
                     double time = 0;
-                    double compliance = 0;
                     //
                     if (folderNames[solverID].find("merge") != std::string::npos)
                     {
                         std::cout << "merge" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-
                         auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, 1, true, sequence);
                         time = std::get<0>(result);
-                    } else if (folderNames[solverID].find("greedy") != std::string::npos) {
-                        if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
-                            continue;
+                    } else if (folderNames[solverID].find("greedy") != std::string::npos)
+                    {
                         std::cout << "Greedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
 

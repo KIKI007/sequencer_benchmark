@@ -26,7 +26,7 @@ namespace benchmark{
         stateGraph->startPartIDs_ = startPartIDs;
         stateGraph->endPartIDs_ = endPartIDs;
 
-        std::shared_ptr<search::SearchAlgorithmBeamSearch> searcher = std::make_shared<search::SearchAlgorithmBeamSearch>(stateGraph, beamWidth, 0.1);
+        std::shared_ptr<search::SearchAlgorithmBeamSearch> searcher = std::make_shared<search::SearchAlgorithmBeamSearch>(stateGraph, beamWidth, 100);
         searcher->use_max_operator_ = false;
 
         tbb::tick_count timer = tbb::tick_count::now();
