@@ -76,8 +76,8 @@ namespace benchmark {
                         auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, 1, true, sequence);
                         time = std::get<0>(result);
                     } else if (folderNames[solverID].find("greedy") != std::string::npos) {
-//                        if (beamAssembly->beams_.size() >= 60)
-//                            continue;
+                        if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
+                            continue;
                         std::cout << "Greedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
 
