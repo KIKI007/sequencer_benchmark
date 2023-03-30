@@ -45,8 +45,8 @@ namespace benchmark {
         void runBenchMark() {
 
             std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/merge",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/greedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-holistic",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-holistic",
             };
