@@ -95,20 +95,20 @@ namespace statistics {
         void launch() {
             getFileNames();
 
-            std::vector<int> benchmark_hands = {4, 6, 10};
+            std::vector<int> benchmark_hands = {4};
 
             std::vector<std::string> table_captions = {
-                    "Merge",
+                    //"Merge",
                     "Greedy",
-                    "z-Landmark (Ours)",
-                    "Holistic (Ours)"
+                    //"z-Landmark (Ours)",
+                    //"Holistic (Ours)"
             };
 
             std::vector<std::string> folderNames = {
-                    "merge",
+                    //"merge",
                     "greedy",
-                    "opt-z-landmark-holistic",
-                    "opt-holistic",
+                    //"opt-z-landmark-holistic",
+                    //"opt-holistic",
             };
             print_table_head();
 
@@ -149,10 +149,15 @@ namespace statistics {
                                     search::AssemblySequence sequence;
                                     sequence.loadFromJson(json_file);
                                     std::vector<double> complianceList;
-                                    double compliance = benchmark::runEvaluation(beamAssembly, sequence, benchmark,
-                                                                                 complianceList, true);
+                                    double compliance = benchmark::runEvaluation(beamAssembly,
+                                                                                 sequence,
+                                                                                 benchmark,
+                                                                                 complianceList,
+                                                                                 true);
                                     compliances[fid][id] = compliance;
+                                    std::cout << filenames[id] << ", " << beamAssembly->beams_.size() << ", " << compliance << std::endl;
                                 }
+
                                 times[fid][id] = json_file["benchmark_time"].get<double>();
                             }
                         }
@@ -160,10 +165,12 @@ namespace statistics {
                 }
 
                 std::cout << R"(\multirow{)" << num_row << "}{*}{" << benchmark << "}";
-                for (int fid = 0; fid < folderNames.size(); fid++) {
+                for (int fid = 0; fid < folderNames.size(); fid++)
+                {
                     std::string foldername =
                             ROBOCRAFT_DATA_FOLDER "/benchmark-" + std::to_string(benchmark) + "/" + folderNames[fid];
-                    if (std::filesystem::exists(foldername)) {
+                    if (std::filesystem::exists(foldername))
+                    {
                         Eigen::Vector3i num_c;
                         num_c.setZero();
 
@@ -179,18 +186,21 @@ namespace statistics {
                         Eigen::Vector3d max_t;
                         max_t.setZero();
 
-                        for (int id = 0; id < filenames.size(); id++) {
+                        for (int id = 0; id < filenames.size(); id++)
+                        {
                             double base_compliance = compliances[0][id];
                             double curr_compliance = compliances[fid][id];
                             double curr_time = times[fid][id];
-                            if (curr_compliance < 0) {
+                            if (curr_compliance < 0)
+                            {
                                 continue;
                             } else {
                                 int index = -1;
-
-                                if (numParts[id] < 40) {
+                                if (numParts[id] < 40)
+                                {
                                     index = 0;
-                                } else if (numParts[id] < 60) {
+                                } else if (numParts[id] < 60)
+                                {
                                     index = 1;
                                 } else {
                                     index = 2;
