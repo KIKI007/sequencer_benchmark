@@ -149,6 +149,9 @@ namespace benchmark
                         int maxHolisticNumPart = 10;
                         if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
                             continue;
+			if(filenames[id] == "619670"){
+				continue;
+			}
                         auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
                                                                                      numHand,
                                                                                      numLandmark,
@@ -157,8 +160,7 @@ namespace benchmark
                                                                                      maxHolisticSolverTime,
                                                                                      startPartIDs,
                                                                                      endPartIDs,
-                                                                                     true,
-                                                                                     sequence);
+                                                                                     true,                                                                                     sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
