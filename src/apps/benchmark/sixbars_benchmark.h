@@ -77,7 +77,7 @@ namespace benchmark {
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("greedy") != std::string::npos) {
-                        if (beamAssembly->beams_.size() >= 40)
+                        if (beamAssembly->beams_.size() >= 60)
                             continue;
                         std::cout << "Greedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
