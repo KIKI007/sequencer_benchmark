@@ -13,21 +13,21 @@ namespace benchmark
     void compute_zlandmarks(std::shared_ptr<frame::FrameAssembly> beamAssembly,
                             double maxtime,
                             int numLandmarks,
+                            const std::vector<int> &startPartIDs,
+                            const std::vector<int> &endPartIDs,
                             std::vector<std::vector<int>> &landmarks_barIDs,
                             bool silence = true)
     {
         std::shared_ptr<dto::FrameTOSequenceSum> frameTO = std::make_shared<dto::FrameTOSequenceSum>(*beamAssembly);
 
-        std::vector<int> start = {};
-        std::vector<int> end = frameTO->end_partIDs_;
-        int num_bar_per_step = beamAssembly->beams_.size() / (numLandmarks + 1);
-
-        landmarks_barIDs.push_back({});
+        std::vector<int> start = startPartIDs;
+        std::vector<int> end = endPartIDs;
+        int num_bar_per_step = (end.size() - start.size())/ (numLandmarks + 1);
+        landmarks_barIDs.push_back(start);
         for(int step = 1; step < numLandmarks + 1; step++)
         {
             frameTO->setStartnEnd(start, end);
-            frameTO->sections_ = {{num_bar_per_step * ((double)step), num_bar_per_step * ((double)step )}};
-
+            frameTO->sections_ = {{num_bar_per_step * ((double)step) + startPartIDs.size(), num_bar_per_step * ((double)step ) + startPartIDs.size()}};
             frameTO->setParameters(1E-8, 0);
             dto::FrameTOKnitroSolver solver(frameTO);
 

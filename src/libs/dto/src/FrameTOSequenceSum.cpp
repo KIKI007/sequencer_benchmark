@@ -341,7 +341,7 @@ void dto::FrameTOSequenceSum::computePriorities(std::vector<int> &priorities) {
         for(int jd = 0; jd < nE_dynamic(); jd++)
         {
 //            priorities.push_back(bar_prior[jd]);
-//            priorities.push_back(id + 1);
+            priorities.push_back(nS() - id + 1);
         }
     }
 }

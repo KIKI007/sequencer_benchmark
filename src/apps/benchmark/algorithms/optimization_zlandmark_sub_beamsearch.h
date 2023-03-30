@@ -18,9 +18,15 @@ namespace benchmark
                                                                                search::AssemblySequence &sequence)
     {
         std::vector<std::vector<int>> landmarks;
-
         tbb::tick_count timer = tbb::tick_count::now();
-        compute_zlandmarks(beamAssembly, maxTime / numLandmarks, numLandmarks, landmarks);
+
+        std::vector<int> startPartIDs = {};
+        std::vector<int> endPartIDs = {};
+        for(int id = 0; id < beamAssembly->beams_.size(); id++){
+            endPartIDs.push_back(id);
+        }
+
+        compute_zlandmarks(beamAssembly, maxTime / numLandmarks, numLandmarks, startPartIDs, endPartIDs, landmarks);
         double time = (tbb::tick_count::now() - timer).seconds();
         double sub_time = 0;
         for(int id = 0; id + 1 < landmarks.size(); id++)
