@@ -45,9 +45,9 @@ namespace benchmark {
         void runBenchMark() {
 
             std::vector<std::string> folderNames = {
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/seach-forwardgreedy",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-holistic",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-beam-100",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/merge",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-4/greedy",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-z-landmark-holistic",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-6/opt-holistic",
             };
 
@@ -72,54 +72,25 @@ namespace benchmark {
                     double time = 0;
                     double compliance = 0;
                     //
-                    if (folderNames[solverID].find("seach-forwardgreedy") != std::string::npos) {
-                        std::cout << "seach-forwardgreedy" << ": " << filenames[id] << ", "
+                    if (folderNames[solverID].find("merge") != std::string::npos) {
+                        std::cout << "merge" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
 
-                        auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, numHand, true, sequence);
+                        auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, 1, true, sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("search-backwardgreedy") != std::string::npos) {
-                        std::cout << "search-backwardgreedy" << ": " << filenames[id] << ", "
+                    } else if (folderNames[solverID].find("greedy") != std::string::npos) {
+                        if (beamAssembly->beams_.size() >= 40)
+                            continue;
+                        std::cout << "Greedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
 
-                        auto result = benchmark::runSearch_BackwardGreedy(beamAssembly, numHand, true, sequence);
+                        auto result = benchmark::runSearch_Beam(beamAssembly, numHand, 1, startPartIDs, endPartIDs,
+                                                                true, sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("search-backtrackgreedy") != std::string::npos) {
-                        std::cout << "search-backtrackgreedy" << ": " << filenames[id] << ", "
-                                  << beamAssembly->beams_.size() << std::endl;
-
-                        int maxtime = 10;
-                        auto result = benchmark::runSearch_BacktrackGreedy(beamAssembly, numHand, maxtime, true,
-                                                                           sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("search-beam-100X") != std::string::npos) {
-                        std::cout << "search-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
-                                  << std::endl;
-
-                        int beamWidth = 100;
-                        auto result = benchmark::runSearch_Beam(beamAssembly,
-                                                                numHand, beamWidth,
-                                                                startPartIDs,
-                                                                endPartIDs,
-                                                                true,
-                                                                sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("search-beam-1000X") != std::string::npos) {
-                        std::cout << "search-beam-1000" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
-                                  << std::endl;
-
-                        int beamWidth = 1000;
-                        auto result = benchmark::runSearch_Beam(beamAssembly, numHand, beamWidth, startPartIDs,
-                                                                endPartIDs,
-                                                                true,
-                                                                sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
+                    }
+                    else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
                         std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
                                   << std::endl;
 
@@ -147,17 +118,6 @@ namespace benchmark {
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
-                    } else if (folderNames[solverID].find("opt-z-landmark-beam-100") != std::string::npos) {
-                        std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", "
-                                  << beamAssembly->beams_.size() << std::endl;
-                        int numLandmark = beamAssembly->beams_.size() / 20;
-                        double maxLandmarkTime = 30 * numLandmark;
-                        int beamWidth = 100;
-                        auto result = benchmark::runOptimization_zlandmark_sub_beamsearch(beamAssembly, numHand,
-                                                                                          numLandmark, beamWidth,
-                                                                                          maxLandmarkTime, sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
                     }
 
                     std::vector<double> complianceList;
