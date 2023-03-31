@@ -21,10 +21,10 @@ int main()
     //    benchmark::Bridge_BenchMark app;
     benchmark::MipHeuristicApp app;
 
-    app.launch();
-    //app10.launch();
-    //app6.launch();
-    //app4.launch();
+    //app.launch();
+    app10.launch();
+    app6.launch();
+    app4.launch();
     //app1.launch();
     return 0;
 }

@@ -11,7 +11,7 @@ public:
 
     void launch(){
         std::vector<std::string> filenames = {
-                ROBOCRAFT_DATA_FOLDER "/mip_heuristics/roboarch_none.json",
+                //ROBOCRAFT_DATA_FOLDER "/mip_heuristics/roboarch_none.json",
                 ROBOCRAFT_DATA_FOLDER "/mip_heuristics/roboarch_basic.json",
                 ROBOCRAFT_DATA_FOLDER "/mip_heuristics/roboarch_advanced.json",
                 ROBOCRAFT_DATA_FOLDER "/mip_heuristics/roboarch_extensive.json",
