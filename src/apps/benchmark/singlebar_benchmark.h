@@ -47,12 +47,12 @@ namespace benchmark {
         void runBenchMark() {
 
             std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-forwardgreedy",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-forwardgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backwardgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backtrackgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-100X",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-1000X",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-recursive-holistic",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-recursive-holistic",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-holistic",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-beam-100",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-holistic",
@@ -96,30 +96,6 @@ namespace benchmark {
                                                                            sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("search-beam-100X") != std::string::npos) {
-                        std::cout << "search-beam-100" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
-                                  << std::endl;
-
-                        int beamWidth = 100;
-                        auto result = benchmark::runSearch_Beam(beamAssembly,
-                                                                numHand, beamWidth,
-                                                                startPartIDs,
-                                                                endPartIDs,
-                                                                true,
-                                                                sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("search-beam-1000X") != std::string::npos) {
-                        std::cout << "search-beam-1000" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
-                                  << std::endl;
-
-                        int beamWidth = 1000;
-                        auto result = benchmark::runSearch_Beam(beamAssembly, numHand, beamWidth, startPartIDs,
-                                                                endPartIDs,
-                                                                true,
-                                                                sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
                         std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
                                   << std::endl;
@@ -136,15 +112,17 @@ namespace benchmark {
                     } else if (folderNames[solverID].find("opt-recursive-holistic") != std::string::npos) {
                         std::cout << "opt-recursive-holistic" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-                        double maxHolisticSolverTime = 20;
+                        double maxHolisticSolverTime = 100;
                         int numLandmark = 2;
                         double maxLandmarkTime = 10 * numLandmark;
-                        int maxHolisticNumPart = 10;
+                        int maxHolisticNumPart = 15;
                         if (std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
                             continue;
                         if (filenames[id] == "619670") {
                             continue;
                         }
+                        if(beamAssembly->beams_.size() >= 40)
+                            continue;
                         auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
                                                                                      numHand,
                                                                                      numLandmark,
@@ -153,13 +131,18 @@ namespace benchmark {
                                                                                      maxHolisticSolverTime,
                                                                                      startPartIDs,
                                                                                      endPartIDs,
-                                                                                     true, sequence);
+                                                                                     false, sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
-                    } else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos) {
+                    } else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos)
+                    {
+                        std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", "
+                                  << beamAssembly->beams_.size() << std::endl;
+                        if(beamAssembly->beams_.size() >= 40)
+                            continue;
                         double maxHolisticSolverTime = 10;
-                        int numLandmark = beamAssembly->beams_.size() / 10;
+                        int numLandmark = beamAssembly->beams_.size() / 5;
                         double maxLandmarkTime = 10 * numLandmark;
                         auto result = benchmark::runOptimization_zlandmark_sub_holistic_fixedsteplength(beamAssembly,
                                                                                                         numHand,
@@ -171,17 +154,6 @@ namespace benchmark {
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
-                    } else if (folderNames[solverID].find("opt-z-landmark-beam-100") != std::string::npos) {
-                        std::cout << "opt-z-landmark-beam-100" << ": " << filenames[id] << ", "
-                                  << beamAssembly->beams_.size() << std::endl;
-                        double maxLandmarkTime = 10;
-                        int numLandmark = 2;
-                        int beamWidth = 100;
-                        auto result = benchmark::runOptimization_zlandmark_sub_beamsearch(beamAssembly, numHand,
-                                                                                          numLandmark, beamWidth,
-                                                                                          maxLandmarkTime, sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
                     }
 
                     std::vector<double> complianceList;

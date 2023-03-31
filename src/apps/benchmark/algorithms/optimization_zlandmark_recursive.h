@@ -41,7 +41,7 @@ namespace benchmark {
                                                                                       maxHolisticSolverTime,
                                                                                       start,
                                                                                       end,
-                                                                                      true,
+                                                                                      silence,
                                                                                       tmp_sequence);
                 sub_time += tmp_time;
             } else {
