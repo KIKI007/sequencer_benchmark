@@ -22,9 +22,9 @@ int main()
     benchmark::MipHeuristicApp app;
 
     //app.launch();
-    app10.launch();
-    app6.launch();
-    app4.launch();
-    //app1.launch();
+    //app10.launch();
+    //app6.launch();
+    //app4.launch();
+    app1.launch();
     return 0;
 }
