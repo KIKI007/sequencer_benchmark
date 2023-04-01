@@ -96,16 +96,20 @@ namespace benchmark {
                                                                            sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
-                    } else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
+                    } else if (folderNames[solverID].find("opt-holistic") != std::string::npos)
+                    {
                         std::cout << "opt-holistic" << ": " << filenames[id] << ", " << beamAssembly->beams_.size()
                                   << std::endl;
 
-                        double maxtime = 1000;
+                        if(beamAssembly->beams_.size() >= 40)
+                            continue;
+
+                        double maxtime = 3600;
                         auto result = benchmark::runOptimization_holistic_fixedsteplength(beamAssembly,
                                                                                           numHand,
                                                                                           maxtime,
                                                                                           startPartIDs, endPartIDs,
-                                                                                          true,
+                                                                                          false,
                                                                                           sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
