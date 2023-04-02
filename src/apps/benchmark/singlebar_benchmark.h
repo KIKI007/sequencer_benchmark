@@ -50,12 +50,8 @@ namespace benchmark {
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-forwardgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backwardgreedy",
 //                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-backtrackgreedy",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-100X",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/search-beam-1000X",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-recursive-holistic",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-holistic",
-//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-z-landmark-beam-100",
-                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-holistic",
+                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-recursive-holistic",
+//                    ROBOCRAFT_DATA_FOLDER "/benchmark-1/opt-holistic",
             };
 
             for (int solverID = 0; solverID < folderNames.size(); solverID++) {
