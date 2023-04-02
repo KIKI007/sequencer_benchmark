@@ -112,7 +112,7 @@ namespace benchmark {
                     } else if (folderNames[solverID].find("opt-recursive-holistic") != std::string::npos) {
                         std::cout << "opt-recursive-holistic" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-                        double maxHolisticSolverTime = 100;
+                        double maxHolisticSolverTime = 500;
                         int numLandmark = 2;
                         double maxLandmarkTime = 10 * numLandmark;
                         int maxHolisticNumPart = 15;
@@ -137,26 +137,27 @@ namespace benchmark {
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
-                    } else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos)
-                    {
-                        std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", "
-                                  << beamAssembly->beams_.size() << std::endl;
-                        if(beamAssembly->beams_.size() >= 40)
-                            continue;
-                        double maxHolisticSolverTime = 10;
-                        int numLandmark = beamAssembly->beams_.size() / 5;
-                        double maxLandmarkTime = 10 * numLandmark;
-                        auto result = benchmark::runOptimization_zlandmark_sub_holistic_fixedsteplength(beamAssembly,
-                                                                                                        numHand,
-                                                                                                        numLandmark,
-                                                                                                        maxLandmarkTime,
-                                                                                                        maxHolisticSolverTime,
-                                                                                                        true,
-                                                                                                        sequence);
-                        time = std::get<0>(result);
-                        compliance = std::get<1>(result);
-                        json_output["num_landmark"] = numLandmark;
                     }
+//                    else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos)
+//                    {
+//                        std::cout << "opt-z-landmark-holistic" << ": " << filenames[id] << ", "
+//                                  << beamAssembly->beams_.size() << std::endl;
+//                        if(beamAssembly->beams_.size() >= 40)
+//                            continue;
+//                        double maxHolisticSolverTime = 10;
+//                        int numLandmark = beamAssembly->beams_.size() / 5;
+//                        double maxLandmarkTime = 10 * numLandmark;
+//                        auto result = benchmark::runOptimization_zlandmark_sub_holistic_fixedsteplength(beamAssembly,
+//                                                                                                        numHand,
+//                                                                                                        numLandmark,
+//                                                                                                        maxLandmarkTime,
+//                                                                                                        maxHolisticSolverTime,
+//                                                                                                        true,
+//                                                                                                        sequence);
+//                        time = std::get<0>(result);
+//                        compliance = std::get<1>(result);
+//                        json_output["num_landmark"] = numLandmark;
+//                    }
 
                     std::vector<double> complianceList;
                     double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand,

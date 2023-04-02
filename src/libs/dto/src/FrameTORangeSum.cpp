@@ -412,7 +412,7 @@ void dto::FrameTORangeSum::computePriorities(std::vector<int> &priorities) {
     {
         for(int jd = 0; jd < nE_dynamic(); jd++)
         {
-            int iP = std::min(id, nS() - id);
+
             //priorities.push_back(iP + 1);
 //            priorities.push_back(id + 1);
         }
