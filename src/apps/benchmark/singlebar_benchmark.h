@@ -117,8 +117,8 @@ namespace benchmark {
                         double maxLandmarkTime = 10 * numLandmark;
                         int maxHolisticNumPart = 15;
 
-                        if (std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
-                            continue;
+//                        if (std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
+//                            continue;
                         if (filenames[id] == "619670") {
                             continue;
                         }
