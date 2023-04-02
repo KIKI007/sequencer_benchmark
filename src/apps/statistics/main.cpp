@@ -6,8 +6,8 @@
 #include "multibars_statistics.h"
 int main()
 {
-    //statistics::SingleBar_Statistics app;
-    statistics::MultiBars_Statistics app;
+    statistics::SingleBar_Statistics app;
+    //statistics::MultiBars_Statistics app;
     app.launch();
     return 0;
 }
