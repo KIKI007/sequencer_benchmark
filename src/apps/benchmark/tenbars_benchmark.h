@@ -8,7 +8,7 @@
 /*
  * search algorithms
  */
-#include "algorithms/search_fowardgreedy.h"
+#include "algorithms/search.h"
 
 /*
  * optimization algorithms
@@ -70,7 +70,8 @@ namespace benchmark {
                         std::cout << "merge" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
 
-                        auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, 1, true, sequence);
+                        algorithms::Search search(beamAssembly, 1, startPartIDs, endPartIDs, true);
+                        auto result = search.runSearch_ForwardGreedy(sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     }
@@ -78,8 +79,7 @@ namespace benchmark {
                     {
                         if (beamAssembly->beams_.size() >= 60)
                             continue;
-                        if(std::filesystem::exists(folderNames[solverID] + "/" + filenames[id] + ".json"))
-                            continue;
+
                         int numPart = endPartIDs.size() - startPartIDs.size();
                         int numStep = numPart / numHand - 1;
                         if (numPart % numHand != 0) numStep += 1;

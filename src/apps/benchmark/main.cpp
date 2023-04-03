@@ -5,9 +5,7 @@
 #include "singlebar_benchmark.h"
 #include "fourbars_benchmark.h"
 #include "sixbars_benchmark.h"
-#include "roboarch_benchmark.h"
 #include "tenbars_benchmark.h"
-#include "bridge_benchmark.h"
 #include "mip_heuristics_benchmark.h"
 int main()
 {

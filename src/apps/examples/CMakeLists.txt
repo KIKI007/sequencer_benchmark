@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(BenchmarkApp)
+project(examplesApp)
 
 file(GLOB CRL_SOURCES #
      "${CMAKE_CURRENT_SOURCE_DIR}/*.h" #

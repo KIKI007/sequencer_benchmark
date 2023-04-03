@@ -4,7 +4,7 @@
 
 #ifndef GITIGNORE_MIP_HEURISTICS_BENCHMARK_H
 #define GITIGNORE_MIP_HEURISTICS_BENCHMARK_H
-#include "algorithms/util/evaluation.h"
+#include "algorithms/evaluation.h"
 namespace benchmark{
 class MipHeuristicApp{
 public:

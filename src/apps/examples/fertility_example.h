@@ -7,24 +7,27 @@
 
 #include "algorithms/optimization_zlandmark_sub_holistic_dynamicsteplength.h"
 #include "algorithms/optimization_holistic_dynamicsteplength.h"
+#include "algorithms/optimization_zlandmark_recursive.h"
+#include "algorithms/search.h"
 
-namespace benchmark
+namespace examples
 {
-    class Bridge_BenchMark {
+    class Fertility_Example{
     public:
         void launch() {
             runBenchMark();
         }
 
         void runBenchMark() {
-            std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/bridge/hand5",
-                    ROBOCRAFT_DATA_FOLDER "/bridge/hand1",
+            std::vector<std::string> outputFileNames = {
+                    ROBOCRAFT_DATA_FOLDER "/examples/fertility/greedy.json",
+                    ROBOCRAFT_DATA_FOLDER "/examples/fertility/zlandmark_recursive.json",
             };
 
-            for (int solverID = 0; solverID < folderNames.size(); solverID++) {
+            for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
+            {
                 beamAssembly = std::make_shared<frame::FrameAssembly>();
-                beamAssembly->loadFromJson(dataFolderString + "/bridge.json");
+                beamAssembly->loadFromJson(dataFolderString + "/fertility.json");
 
                 std::vector<int> startPartIDs = {};
                 std::vector<int> endPartIDs;
@@ -35,33 +38,23 @@ namespace benchmark
                 double time = 0;
                 double compliance = 0;
                 //
-                int numHand = 0;
-                if (folderNames[solverID].find("hand5") != std::string::npos)
+                int numHand = 1;
+                if (outputFileNames[solverID].find("greedy") != std::string::npos)
                 {
-                    numHand = 5;
-                    std::cout << "hand5" << ": " << beamAssembly->beams_.size()
+                    std::cout << "greedy" << ": " << beamAssembly->beams_.size()
                               << std::endl;
-                    
-                    double maxtime = 1000;
-                    int numPart = endPartIDs.size() - startPartIDs.size();
-                    int numStep = numPart / numHand - 1;
-                    if (numPart % numHand != 0) numStep += 1;
-                    auto result = benchmark::runOptimization_holistic_dynamicsteplength(beamAssembly,
-                                                                                        numHand,
-                                                                                        numStep,
-                                                                                        maxtime,
-                                                                                        startPartIDs, endPartIDs,
-                                                                                        false,
-                                                                                        sequence);
+
+                    algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, true);
+                    auto result = search.runSearch_ForwardGreedy(sequence);
+
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
-                } else if (folderNames[solverID].find("hand1") != std::string::npos)
+                } else if (outputFileNames[solverID].find("zlandmark_recursive") != std::string::npos)
                 {
-                    numHand = 1;
-                    std::cout << "hand1" << ": " << beamAssembly->beams_.size() << std::endl;
-                    double maxHolisticSolverTime = 20;
-                    int numLandmark = 2;
-                    double maxLandmarkTime = 10 * numLandmark;
+                    std::cout << "zlandmark_recursive" << ": " << beamAssembly->beams_.size() << std::endl;
+                    double maxHolisticSolverTime = 100;
+                    int numLandmark = 4;
+                    double maxLandmarkTime = 100 * numLandmark;
                     int maxHolisticNumPart = 10;
                     auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
                                                                                  numHand,
@@ -71,7 +64,7 @@ namespace benchmark
                                                                                  maxHolisticSolverTime,
                                                                                  startPartIDs,
                                                                                  endPartIDs,
-                                                                                 true,
+                                                                                 false,
                                                                                  sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
@@ -80,7 +73,7 @@ namespace benchmark
 
                 std::vector<double> complianceList;
                 double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand,
-                                                                       complianceList, true);
+                                                                       complianceList, false);
 
                 std::cout << benchmark_compliance << ", " << time << std::endl;
 
@@ -89,14 +82,15 @@ namespace benchmark
                 sequence.writeToJson(json_output);
                 json_output["benchmark_time"] = time;
                 json_output["benchmark_compliance"] = compliance;
-                std::ofstream fout(folderNames[solverID] + "/bridge.json");
+
+                std::ofstream fout(outputFileNames[solverID]);
                 fout << json_output;
                 fout.close();
             }
         }
 
     public:
-        std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/model";
+        std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/examples/model";
         std::shared_ptr<frame::FrameAssembly> beamAssembly;
     };
 }

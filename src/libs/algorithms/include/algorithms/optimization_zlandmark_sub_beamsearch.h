@@ -5,9 +5,9 @@
 #ifndef GITIGNORE_OPTIMIZATION_ZLANDMARK_BEAMSEARCH_H
 #define GITIGNORE_OPTIMIZATION_ZLANDMARK_BEAMSEARCH_H
 
-#include "search_beam.h"
-#include "util/optimization_zlandmark.h"
-#include "util/evaluation.h"
+#include "search.h"
+#include "optimization_zlandmark.h"
+#include "evaluation.h"
 namespace benchmark
 {
     static std::tuple<double, double> runOptimization_zlandmark_sub_beamsearch(std::shared_ptr<frame::FrameAssembly> beamAssembly,
@@ -35,7 +35,8 @@ namespace benchmark
             std::vector<int> startPartIDs = landmarks[id];
             std::vector<int> endPartIDs = landmarks[id + 1];
             search::AssemblySequence tmp_sequence;
-            runSearch_Beam(beamAssembly, numHand, beamWidth, startPartIDs, endPartIDs, true, tmp_sequence);
+            algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, true);
+            search.runSearch_Beam(beamWidth, tmp_sequence);
             sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
             sub_time = std::max(sub_time, (tbb::tick_count::now() - timer).seconds());
         }

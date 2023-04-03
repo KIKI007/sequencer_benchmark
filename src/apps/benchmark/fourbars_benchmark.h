@@ -10,10 +10,7 @@
 /*
  * search algorithms
  */
-#include "algorithms/search_fowardgreedy.h"
-#include "algorithms/search_backwardgreedy.h"
-#include "algorithms/search_backtrackgreedy.h"
-#include "algorithms/search_beam.h"
+#include "algorithms/search.h"
 
 /*
  * optimization algorithms
@@ -73,15 +70,15 @@ namespace benchmark {
                     {
                         std::cout << "merge" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-                        auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, 1, true, sequence);
+                        algorithms::Search search(beamAssembly, 1, startPartIDs, endPartIDs, true);
+                        auto result = search.runSearch_ForwardGreedy(sequence);
                         time = std::get<0>(result);
                     } else if (folderNames[solverID].find("greedy") != std::string::npos)
                     {
                         std::cout << "Greedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-
-                        auto result = benchmark::runSearch_Beam(beamAssembly, numHand, 1, startPartIDs, endPartIDs,
-                                                                true, sequence);
+                        algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, true);
+                        auto result = search.runSearch_ForwardGreedy(sequence);
                         time = std::get<0>(result);
                     } else if (folderNames[solverID].find("opt-holistic") != std::string::npos) {
                         if (beamAssembly->beams_.size() >= 40)

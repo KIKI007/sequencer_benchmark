@@ -7,7 +7,7 @@
 
 #include "dto/FrameTOSequenceSum.h"
 #include "dto/FrameTOKnitroSolver.h"
-#include "util/evaluation.h"
+#include "evaluation.h"
 
 namespace benchmark
 {

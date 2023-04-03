@@ -10,10 +10,7 @@
 /*
  * search algorithms
  */
-#include "algorithms/search_fowardgreedy.h"
-#include "algorithms/search_backwardgreedy.h"
-#include "algorithms/search_backtrackgreedy.h"
-#include "algorithms/search_beam.h"
+#include "algorithms/search.h"
 
 /*
  * optimization algorithms
@@ -72,24 +69,23 @@ namespace benchmark {
                     if (folderNames[solverID].find("search-forwardgreedy") != std::string::npos) {
                         std::cout << "search-forwardgreedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-
-                        auto result = benchmark::runSearch_ForwardGreedy(beamAssembly, numHand, true, sequence);
+                        algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, true);
+                        auto result = search.runSearch_ForwardGreedy(sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("search-backwardgreedy") != std::string::npos) {
                         std::cout << "search-backwardgreedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-
-                        auto result = benchmark::runSearch_BackwardGreedy(beamAssembly, numHand, true, sequence);
+                        algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, true);
+                        auto result = search.runSearch_BackwardGreedy(sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("search-backtrackgreedy") != std::string::npos) {
                         std::cout << "search-backtrackgreedy" << ": " << filenames[id] << ", "
                                   << beamAssembly->beams_.size() << std::endl;
-
+                        algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, true);
                         int maxtime = 10;
-                        auto result = benchmark::runSearch_BacktrackGreedy(beamAssembly, numHand, maxtime, true,
-                                                                           sequence);
+                        auto result = search.runSearch_BacktrackGreedy(maxtime, sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("opt-holistic") != std::string::npos)

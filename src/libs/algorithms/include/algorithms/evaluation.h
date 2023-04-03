@@ -7,8 +7,8 @@
 #include "frame/FrameAssembly.h"
 #include "search/PartGraphFrame.h"
 #include "search/StateGraphMultipleArms.h"
-namespace benchmark{
-
+namespace benchmark
+{
     static double computeOptimizationSequence(std::shared_ptr<frame::FrameAssembly> assembly,
                                               std::vector<int> startPartIDs,
                                               std::vector<int> endPartIDs,

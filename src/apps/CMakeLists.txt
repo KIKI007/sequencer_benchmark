@@ -1,2 +1,3 @@
 add_subdirectory(benchmark)
 add_subdirectory(statistics)
+add_subdirectory(examples)

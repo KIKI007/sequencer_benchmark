@@ -2,14 +2,15 @@
 // Created by 汪子琦 on 29.03.23.
 //
 
-#ifndef GITIGNORE_ROBOARCH_BENCHMARK_H
-#define GITIGNORE_ROBOARCH_BENCHMARK_H
+#ifndef GITIGNORE_ROBOARCH_EXAMPLE_H
+#define GITIGNORE_ROBOARCH_EXAMPLE_H
 
 #include "algorithms/optimization_zlandmark_sub_holistic_dynamicsteplength.h"
 #include "algorithms/optimization_holistic_dynamicsteplength.h"
 
-namespace benchmark {
-    class Roboarch_BenchMark {
+namespace examples
+{
+    class Roboarch_Example {
     public:
         void launch() {
             runBenchMark();
@@ -92,4 +93,4 @@ namespace benchmark {
         std::shared_ptr<frame::FrameAssembly> beamAssembly;
     };
 }
-#endif //GITIGNORE_ROBOARCH_BENCHMARK_H
+#endif //GITIGNORE_ROBOARCH_EXAMPLE_H
