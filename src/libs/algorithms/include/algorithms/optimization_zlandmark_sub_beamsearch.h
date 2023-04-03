@@ -15,6 +15,7 @@ namespace benchmark
                                                                                int numLandmarks,
                                                                                int beamWidth,
                                                                                double maxTime,
+                                                                               bool silence,
                                                                                search::AssemblySequence &sequence)
     {
         std::vector<std::vector<int>> landmarks;
@@ -26,23 +27,23 @@ namespace benchmark
             endPartIDs.push_back(id);
         }
 
-        compute_zlandmarks(beamAssembly, maxTime / numLandmarks, numLandmarks, startPartIDs, endPartIDs, landmarks);
+        compute_zlandmarks(beamAssembly, maxTime / numLandmarks, numLandmarks, startPartIDs, endPartIDs, landmarks, silence);
+
         double time = (tbb::tick_count::now() - timer).seconds();
-        double sub_time = 0;
         for(int id = 0; id + 1 < landmarks.size(); id++)
         {
             timer = tbb::tick_count::now();
             std::vector<int> startPartIDs = landmarks[id];
             std::vector<int> endPartIDs = landmarks[id + 1];
             search::AssemblySequence tmp_sequence;
-            algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, true);
-            search.runSearch_Beam(beamWidth, tmp_sequence);
+            algorithms::Search search(beamAssembly, numHand, startPartIDs, endPartIDs, silence);
+            auto [tmp_time, tmp_compliance] = search.runSearch_Beam(beamWidth, tmp_sequence);
             sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
-            sub_time = std::max(sub_time, (tbb::tick_count::now() - timer).seconds());
+            time += tmp_time;
         }
-        time += sub_time;
+
         std::vector<double> compliance_list;
-        double compliance = runEvaluation(beamAssembly, sequence, numHand, compliance_list, true);
+        double compliance = runEvaluation(beamAssembly, sequence, numHand, compliance_list, silence);
         //std::cout << numLandmarks << "-landmark-beam-" << beamWidth << ", " << time <<  ", " << compliance << ", " << compliance * time  << std::endl;
         return {time, compliance};
     }
