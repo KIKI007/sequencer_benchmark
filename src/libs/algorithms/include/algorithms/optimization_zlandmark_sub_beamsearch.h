@@ -32,7 +32,6 @@ namespace benchmark
         double time = (tbb::tick_count::now() - timer).seconds();
         for(int id = 0; id + 1 < landmarks.size(); id++)
         {
-            timer = tbb::tick_count::now();
             std::vector<int> startPartIDs = landmarks[id];
             std::vector<int> endPartIDs = landmarks[id + 1];
             search::AssemblySequence tmp_sequence;
