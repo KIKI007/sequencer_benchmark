@@ -14,17 +14,32 @@ namespace examples
 {
     class Fertility_Example{
     public:
+        std::vector<std::string> outputFileNames ={
+                ROBOCRAFT_DATA_FOLDER "/examples/fertility/forwardgreedy.json",
+                ROBOCRAFT_DATA_FOLDER "/examples/fertility/zlandmark_greedy.json",
+                //ROBOCRAFT_DATA_FOLDER "/examples/fertility/holisticlandmark_greedy.json",
+        };
+
+    public:
         void launch() {
             runBenchMark();
         }
 
-        void runBenchMark() {
-            std::vector<std::string> outputFileNames = {
-                    //ROBOCRAFT_DATA_FOLDER "/examples/fertility/forwardgreedy.json",
-                    //ROBOCRAFT_DATA_FOLDER "/examples/fertility/zlandmark_greedy.json",
-                    ROBOCRAFT_DATA_FOLDER "/examples/fertility/holisticlandmark_greedy.json",
-            };
+        void read(){
+            for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
+            {
+                beamAssembly = std::make_shared<frame::FrameAssembly>();
+                beamAssembly->loadFromJson(outputFileNames[solverID]);
+                search::AssemblySequence sequence;
+                sequence.loadFromFile(outputFileNames[solverID]);
+                std::vector<double> complianceList;
+                int numHand = 1;
+                double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand, complianceList, false);
+            }
+        }
 
+        void runBenchMark()
+        {
             for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
             {
                 beamAssembly = std::make_shared<frame::FrameAssembly>();
