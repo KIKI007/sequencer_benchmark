@@ -67,8 +67,6 @@ namespace benchmark
             }
         }
         landmarks.push_back(endPartIDs);
-
-        computeOptimizationSequence(beamAssembly, startPartIDs, endPartIDs, rhos, sequence);
         double time =  computeShortestTimeFindingIncumbentSolution(solver);
 
         for(int id = 0; id + 1 < landmarks.size(); id++)

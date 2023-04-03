@@ -77,7 +77,7 @@ std::tuple<double, double> algorithms::Search::runSearch_Beam(int beamWidth, sea
     stateGraph->startPartIDs_ = startPartIDs_;
     stateGraph->endPartIDs_ = endPartIDs_;
 
-    std::shared_ptr<search::SearchAlgorithmBeamSearch> searcher = std::make_shared<search::SearchAlgorithmBeamSearch>(stateGraph, beamWidth, 100);
+    std::shared_ptr<search::SearchAlgorithmBeamSearch> searcher = std::make_shared<search::SearchAlgorithmBeamSearch>(stateGraph, beamWidth, 0.1);
     searcher->use_max_operator_ = false;
 
     tbb::tick_count timer = tbb::tick_count::now();
