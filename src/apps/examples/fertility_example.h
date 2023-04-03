@@ -7,6 +7,7 @@
 
 #include "algorithms/optimization_zlandmark_sub_beamsearch.h"
 #include "algorithms/optimization_zlandmark_recursive.h"
+#include "algorithms/optimization_holisticlandmark_sub_beamsearch.h"
 #include "algorithms/search.h"
 
 namespace examples
@@ -19,8 +20,9 @@ namespace examples
 
         void runBenchMark() {
             std::vector<std::string> outputFileNames = {
-                    ROBOCRAFT_DATA_FOLDER "/examples/fertility/forwardgreedy.json",
-                    ROBOCRAFT_DATA_FOLDER "/examples/fertility/zlandmark_greedy.json",
+                    //ROBOCRAFT_DATA_FOLDER "/examples/fertility/forwardgreedy.json",
+                    //ROBOCRAFT_DATA_FOLDER "/examples/fertility/zlandmark_greedy.json",
+                    ROBOCRAFT_DATA_FOLDER "/examples/fertility/holisticlandmark_greedy.json",
             };
 
             for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
@@ -48,7 +50,23 @@ namespace examples
 
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
-                } else if (outputFileNames[solverID].find("zlandmark_greedy") != std::string::npos)
+                }
+                else if(outputFileNames[solverID].find("holisticlandmark_greedy") != std::string::npos){
+                    std::cout << "holisticlandmark_greedy" << ": " << beamAssembly->beams_.size() << std::endl;
+                    int numLandmark = 3;
+                    int maxTime = 300;
+                    auto result = benchmark::runOptimization_holisticlandmark_sub_beamsearch(beamAssembly,
+                                                                                             numHand,
+                                                                                             numLandmark,
+                                                                                             1,
+                                                                                             maxTime,
+                                                                                             false,
+                                                                                             sequence);
+                    time = std::get<0>(result);
+                    compliance = std::get<1>(result);
+                    json_output["num_landmark"] = numLandmark;
+                }
+                else if (outputFileNames[solverID].find("zlandmark_greedy") != std::string::npos)
                 {
                     std::cout << "zlandmark_greedy" << ": " << beamAssembly->beams_.size() << std::endl;
                     int numLandmark = 3;
