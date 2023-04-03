@@ -53,8 +53,8 @@ namespace examples
                 }
                 else if(outputFileNames[solverID].find("holisticlandmark_greedy") != std::string::npos){
                     std::cout << "holisticlandmark_greedy" << ": " << beamAssembly->beams_.size() << std::endl;
-                    int numLandmark = 2;
-                    int maxTime = 300;
+                    int numLandmark = 3;
+                    int maxTime = 10000;
                     auto result = benchmark::runOptimization_holisticlandmark_sub_beamsearch(beamAssembly,
                                                                                              numHand,
                                                                                              numLandmark,
