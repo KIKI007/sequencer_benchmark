@@ -53,8 +53,8 @@ namespace examples
                 {
                     std::cout << "zlandmark_recursive" << ": " << beamAssembly->beams_.size() << std::endl;
                     double maxHolisticSolverTime = 100;
-                    int numLandmark = 4;
-                    double maxLandmarkTime = 100 * numLandmark;
+                    int numLandmark = 3;
+                    double maxLandmarkTime = 300 * numLandmark;
                     int maxHolisticNumPart = 10;
                     auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
                                                                                  numHand,
