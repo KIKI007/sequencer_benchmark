@@ -110,7 +110,7 @@ namespace examples
                 {
                     std::cout << "zlandmark_greedy" << ": " << beamAssembly->beams_.size() << std::endl;
                     int numLandmark = 3;
-                    double maxLandmarkTime = 300 * numLandmark;
+                    double maxLandmarkTime = 3000 * numLandmark;
                     auto result = algorithms::runOptimization_zlandmark_sub_beamsearch(beamAssembly,
                                                                                        numHand,
                                                                                        numLandmark,
