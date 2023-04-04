@@ -11,6 +11,6 @@ int main(){
     examples::Roboarch_Example roboarchApp;
     examples::Fertility_Example fertilityApp;
     examples::Frustum_Example frustumApp;
-    fertilityApp.read();
+    fertilityApp.launch();
     //fertilityApp.render();
 }
