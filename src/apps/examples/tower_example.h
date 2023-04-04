@@ -85,16 +85,23 @@ namespace examples
                               << std::endl;
 
                     double maxtime = 1000;
-                    auto result = algorithms::runOptimization_holistic_dynamicsteplength(beamAssembly,
-                                                                                         numHand,
-                                                                                         numStep,
-                                                                                         maxtime,
-                                                                                         startPartIDs,
-                                                                                         endPartIDs,
-                                                                                         false,
-                                                                                         sequence);
-                    time = std::get<0>(result);
-                    compliance = std::get<1>(result);
+                    std::vector<double> time;
+                    std::vector<double> c;
+                    std::vector<double> lb;
+                    algorithms::runOptimization_holistic_dynamicsteplength_return_intermediate_solutions(beamAssembly,
+                                                                                                         numHand,
+                                                                                                         numStep,
+                                                                                                         maxtime,
+                                                                                                         startPartIDs,
+                                                                                                         endPartIDs,
+                                                                                                         false,
+                                                                                                         sequence,
+                                                                                                         time,
+                                                                                                         c,
+                                                                                                         lb);
+                    json_output["benchmark_time"] = time;
+                    json_output["benchmark_compliance"] = c;
+                    json_output["benchmark_lowerbound"] = lb;
                 }
 
                 std::vector<double> complianceList;
@@ -106,8 +113,6 @@ namespace examples
                 // output
                 beamAssembly->writeToJson(json_output);
                 sequence.writeToJson(json_output);
-                json_output["benchmark_time"] = time;
-                json_output["benchmark_compliance"] = benchmark_compliance;
 
                 std::ofstream fout(outputFileNames[solverID]);
                 fout << json_output;

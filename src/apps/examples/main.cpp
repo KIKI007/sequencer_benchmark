@@ -14,6 +14,7 @@ int main(){
     examples::Frustum_Example frustumApp;
     examples::Tower_Example towerApp;
     //fertilityApp.launch();
+    //fertilityApp.read();
     //fertilityApp.render();
     towerApp.launch();
 }
