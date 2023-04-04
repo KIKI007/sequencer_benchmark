@@ -113,12 +113,12 @@ static int frameMIPNodeCallBack (KN_context_ptr  kcSub,
     xdata.resize(nV, 0);
     if(KN_get_mip_incumbent_x(kc, xdata.data()) == 0)
     {
-        if(objective < data->objective){
+        //if(objective < data->objective){
         //if(objective < data->objective || bnd > data->lbnd_obj ){
             data->time.push_back(time);
             data->compliance.push_back(objective / 2);
             data->low_bnd.push_back(bnd / 2);
-        }
+        //}
 
         if(objective < data->objective)
         {
@@ -126,10 +126,6 @@ static int frameMIPNodeCallBack (KN_context_ptr  kcSub,
             if(!data->silence)
             {
                 data->assembly->printSolution(xdata.data());
-//                for(int id = 0; id < data->time.size(); id++)
-//                {
-//                    std::cout << data->time[id] << " " << data->compliance[id] << " " << data->low_bnd[id] << std::endl;
-//                }
             }
         }
 
