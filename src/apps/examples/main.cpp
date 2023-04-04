@@ -16,5 +16,6 @@ int main(){
     //fertilityApp.launch();
     //fertilityApp.read();
     //fertilityApp.render();
-    towerApp.launch();
+    //towerApp.launch();
+    roboarchApp.launch();
 }

@@ -31,6 +31,7 @@ namespace algorithms
         tbb::tick_count timer = tbb::tick_count::now();
         compute_zlandmarks(beamAssembly, maxLandmarkSolverTime / numLandmarks, numLandmarks, startPartIDs, endPartIDs, landmarks, silence);
         double time = (tbb::tick_count::now() - timer).seconds();
+        std::cout << "landmark time:\t" << time << std::endl;
 
         double sub_time = 0;
         sequence.steps.clear();
@@ -45,6 +46,7 @@ namespace algorithms
             numStep += additionalStep;
             auto [tmp_time, tmp_value] = runOptimization_holistic_dynamicsteplength(beamAssembly, numHand, numStep, maxHolisticSolverTime, startPartIDs, endPartIDs, silence, tmp_sequence);
             sub_time += tmp_time;
+            std::cout << "sub problem " << id << ", " << "time:\t" << tmp_time << std::endl;
             sequence.steps.insert(sequence.steps.end(), tmp_sequence.steps.begin(), tmp_sequence.steps.end());
         }
 

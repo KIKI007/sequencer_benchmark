@@ -12,17 +12,21 @@ namespace examples
 {
     class Roboarch_Example {
     public:
+        std::vector<std::string> outputFileNames ={
+                ROBOCRAFT_DATA_FOLDER "/examples/roboarch/z-landmark.json",
+                ROBOCRAFT_DATA_FOLDER "/examples/roboarch/holistic.json",
+        };
+
+
+    public:
         void launch() {
             runBenchMark();
         }
 
         void runBenchMark() {
-            std::vector<std::string> folderNames = {
-                    ROBOCRAFT_DATA_FOLDER "/roboarch/z-landmark",
-                    ROBOCRAFT_DATA_FOLDER "/roboarch/holistic",
-            };
 
-            for (int solverID = 0; solverID < folderNames.size(); solverID++) {
+            for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
+            {
                 beamAssembly = std::make_shared<frame::FrameAssembly>();
                 beamAssembly->loadFromJson(dataFolderString + "/roboarch_florian.json");
 
@@ -37,7 +41,7 @@ namespace examples
                 double compliance = 0;
                 //
 
-                if (folderNames[solverID].find("holistic") != std::string::npos) {
+                if (outputFileNames[solverID].find("holistic") != std::string::npos) {
                     std::cout << "opt-holistic" << ": " << beamAssembly->beams_.size()
                               << std::endl;
                     
@@ -50,11 +54,11 @@ namespace examples
                                                                                          numStep,
                                                                                          maxtime,
                                                                                          startPartIDs, endPartIDs,
-                                                                                         false,
+                                                                                         true,
                                                                                          sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
-                } else if (folderNames[solverID].find("z-landmark") != std::string::npos) {
+                } else if (outputFileNames[solverID].find("z-landmark") != std::string::npos) {
                     std::cout << "opt-z-landmark-holistic" << ": " << beamAssembly->beams_.size() << std::endl;
                     double maxHolisticSolverTime = 300;
                     int numLandmark = 2;
@@ -64,7 +68,7 @@ namespace examples
                                                                                                        numLandmark,
                                                                                                        maxLandmarkTime,
                                                                                                        maxHolisticSolverTime,
-                                                                                                       false,
+                                                                                                       true,
                                                                                                        sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
@@ -82,14 +86,14 @@ namespace examples
                 sequence.writeToJson(json_output);
                 json_output["benchmark_time"] = time;
                 json_output["benchmark_compliance"] = compliance;
-                std::ofstream fout(folderNames[solverID] + "/roboarch_florian.json");
+                std::ofstream fout(outputFileNames[solverID]);
                 fout << json_output;
                 fout.close();
             }
         }
 
     public:
-        std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/dataset";
+        std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/examples/model";
         std::shared_ptr<frame::FrameAssembly> beamAssembly;
     };
 }
