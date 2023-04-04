@@ -7,7 +7,7 @@
 #include "frame/FrameAssembly.h"
 #include "search/PartGraphFrame.h"
 #include "search/StateGraphMultipleArms.h"
-namespace benchmark
+namespace algorithms
 {
     static double runEvaluation(std::shared_ptr<frame::FrameAssembly> beamAssembly,
                                 search::AssemblySequence &sequence,

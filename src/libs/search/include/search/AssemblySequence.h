@@ -31,7 +31,8 @@ public:
 
 public:
 
-    void loadFromFile(std::string filename){
+    void loadFromFile(std::string filename)
+    {
         std::ifstream fin(filename);
         nlohmann::json json_content;
         fin >> json_content;
@@ -48,7 +49,9 @@ public:
             AssemblyStep step;
             step.installPartIDs = step_node["installPartIDs"].get<std::vector<int>>();
             step.holdPartIDs = step_node["holdPartIDs"].get<std::vector<int>>();
-            steps.push_back(step);
+            if(!step.installPartIDs.empty() || !step.holdPartIDs.empty()){
+                steps.push_back(step);
+            }
         }
     }
 
@@ -57,6 +60,8 @@ public:
         nlohmann::json assembly_node = nlohmann::json::array();
         for (int id = 0; id < steps.size(); id++)
         {
+            if(steps[id].installPartIDs.empty() && steps[id].holdPartIDs.empty()) continue;
+
             nlohmann::json step_node;
             step_node["installPartIDs"] = steps[id].installPartIDs;
             step_node["holdPartIDs"] = steps[id].holdPartIDs;

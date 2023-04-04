@@ -9,7 +9,7 @@
 #include "optimization_zlandmark.h"
 #include "evaluation.h"
 
-namespace benchmark
+namespace algorithms
 {
     static std::tuple<double, double> runOptimization_holisticlandmark_sub_beamsearch(std::shared_ptr<frame::FrameAssembly> beamAssembly,
                                                                                int numHand,

@@ -9,7 +9,7 @@
 #include "dto/FrameTOKnitroSolver.h"
 #include "evaluation.h"
 
-namespace benchmark
+namespace algorithms
 {
     static std::tuple<double, double> runOptimization_holistic_dynamicsteplength(std::shared_ptr<frame::FrameAssembly> beamAssembly,
                                                                                int numHand,

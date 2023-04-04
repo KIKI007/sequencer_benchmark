@@ -149,11 +149,11 @@ namespace statistics {
                                     search::AssemblySequence sequence;
                                     sequence.loadFromJson(json_file);
                                     std::vector<double> complianceList;
-                                    double compliance = benchmark::runEvaluation(beamAssembly,
-                                                                                 sequence,
-                                                                                 benchmark,
-                                                                                 complianceList,
-                                                                                 true);
+                                    double compliance = algorithms::runEvaluation(beamAssembly,
+                                                                                  sequence,
+                                                                                  benchmark,
+                                                                                  complianceList,
+                                                                                  true);
                                     compliances[fid][id] = compliance;
                                 }
 

@@ -21,7 +21,7 @@
 #include "algorithms/optimization_zlandmark_recursive.h"
 #include <filesystem>
 
-namespace benchmark {
+namespace algorithms {
     class SingleBar_BenchMark {
     public:
 
@@ -97,12 +97,12 @@ namespace benchmark {
                             continue;
 
                         double maxtime = 3600;
-                        auto result = benchmark::runOptimization_holistic_fixedsteplength(beamAssembly,
-                                                                                          numHand,
-                                                                                          maxtime,
-                                                                                          startPartIDs, endPartIDs,
-                                                                                          false,
-                                                                                          sequence);
+                        auto result = algorithms::runOptimization_holistic_fixedsteplength(beamAssembly,
+                                                                                           numHand,
+                                                                                           maxtime,
+                                                                                           startPartIDs, endPartIDs,
+                                                                                           false,
+                                                                                           sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("opt-recursive-holistic") != std::string::npos) {
@@ -121,15 +121,15 @@ namespace benchmark {
 //                        if(beamAssembly->beams_.size() >= 40)
 //                            continue;
 
-                        auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
-                                                                                     numHand,
-                                                                                     numLandmark,
-                                                                                     maxHolisticNumPart,
-                                                                                     maxLandmarkTime,
-                                                                                     maxHolisticSolverTime,
-                                                                                     startPartIDs,
-                                                                                     endPartIDs,
-                                                                                     false, sequence);
+                        auto result = algorithms::runOptimization_zlandmark_recursive(beamAssembly,
+                                                                                      numHand,
+                                                                                      numLandmark,
+                                                                                      maxHolisticNumPart,
+                                                                                      maxLandmarkTime,
+                                                                                      maxHolisticSolverTime,
+                                                                                      startPartIDs,
+                                                                                      endPartIDs,
+                                                                                      false, sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
@@ -156,8 +156,8 @@ namespace benchmark {
 //                    }
 
                     std::vector<double> complianceList;
-                    double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand,
-                                                                           complianceList, true);
+                    double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand,
+                                                                            complianceList, true);
 
                     std::cout << benchmark_compliance << ", " << time << std::endl;
 

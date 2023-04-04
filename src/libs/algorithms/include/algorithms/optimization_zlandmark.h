@@ -8,7 +8,7 @@
 #include "dto/FrameTOSequenceSum.h"
 #include "dto/FrameTOKnitroSolver.h"
 
-namespace benchmark
+namespace algorithms
 {
     void compute_zlandmarks(std::shared_ptr<frame::FrameAssembly> beamAssembly,
                             double maxtime,

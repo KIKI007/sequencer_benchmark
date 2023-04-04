@@ -9,6 +9,7 @@
 #include "algorithms/optimization_zlandmark_recursive.h"
 #include "algorithms/optimization_holisticlandmark_sub_beamsearch.h"
 #include "algorithms/search.h"
+#include "algorithms/computeDeformation.h"
 
 namespace examples
 {
@@ -32,9 +33,10 @@ namespace examples
                 beamAssembly->loadFromJson(outputFileNames[solverID]);
                 search::AssemblySequence sequence;
                 sequence.loadFromFile(outputFileNames[solverID]);
+
                 std::vector<double> complianceList;
-                int numHand = 1;
-                double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand, complianceList, false);
+                int numHand = 6;
+                double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand, complianceList, false);
             }
         }
 
@@ -72,21 +74,21 @@ namespace examples
                     int numLandmark = 2;
                     double maxLandmarkSolverTime = 50 * numLandmark;
                     int maxHolisticSolverTime = 300;
-                    auto result = benchmark::runOptimization_zlandmark_sub_holistic_dynamicsteplength(beamAssembly,
-                                                                                                      numHand,
-                                                                                                      numLandmark,
-                                                                                                      maxLandmarkSolverTime,
-                                                                                                      maxHolisticSolverTime,
-                                                                                                      false,
-                                                                                                      sequence);
+                    auto result = algorithms::runOptimization_zlandmark_sub_holistic_dynamicsteplength(beamAssembly,
+                                                                                                       numHand,
+                                                                                                       numLandmark,
+                                                                                                       maxLandmarkSolverTime,
+                                                                                                       maxHolisticSolverTime,
+                                                                                                       false,
+                                                                                                       sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
                     json_output["num_landmark"] = numLandmark;
                 }
 
                 std::vector<double> complianceList;
-                double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand,
-                                                                       complianceList, true);
+                double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand,
+                                                                        complianceList, true);
 
                 std::cout << benchmark_compliance << ", " << time << std::endl;
 

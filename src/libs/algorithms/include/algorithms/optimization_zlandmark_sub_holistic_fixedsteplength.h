@@ -7,7 +7,7 @@
 
 #include "optimization_holistic_fixedsteplength.h"
 
-namespace benchmark {
+namespace algorithms {
 
     static std::tuple<double, double>
     runOptimization_zlandmark_sub_holistic_fixedsteplength(std::shared_ptr<frame::FrameAssembly> beamAssembly,

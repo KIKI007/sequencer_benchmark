@@ -9,15 +9,15 @@
 #include "mip_heuristics_benchmark.h"
 int main()
 {
-    benchmark::SingleBar_BenchMark app1;
-    benchmark::FourBars_BenchMark app4;
-    benchmark::SixBars_BenchMark app6;
-    benchmark::TenBars_BenchMark app10;
+    algorithms::SingleBar_BenchMark app1;
+    algorithms::FourBars_BenchMark app4;
+    algorithms::SixBars_BenchMark app6;
+    algorithms::TenBars_BenchMark app10;
 
 
     //benchmark::Roboarch_BenchMark app;
     //    benchmark::Bridge_BenchMark app;
-    benchmark::MipHeuristicApp app;
+    algorithms::MipHeuristicApp app;
 
     //app.launch();
     //app10.launch();

@@ -9,6 +9,7 @@
 #include "algorithms/optimization_zlandmark_recursive.h"
 #include "algorithms/optimization_holisticlandmark_sub_beamsearch.h"
 #include "algorithms/search.h"
+#include "algorithms/computeDeformation.h"
 
 namespace examples
 {
@@ -21,8 +22,32 @@ namespace examples
         };
 
     public:
-        void launch() {
+        void launch()
+        {
             runBenchMark();
+        }
+
+       void render()
+       {
+           for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
+           {
+               std::string filename = outputFileNames[solverID];
+               beamAssembly = std::make_shared<frame::FrameAssembly>();
+               beamAssembly->loadFromJson(filename);
+               search::AssemblySequence sequence;
+               sequence.loadFromFile(filename);
+
+               std::string deform_filename = filename;
+               deform_filename.replace(deform_filename.end() - 5, deform_filename.end(), "_deform.json");
+
+               algorithms::computeDeformation(beamAssembly, sequence);
+               nlohmann::json json_content;
+               beamAssembly->writeToJson(json_content);
+               sequence.writeToJson(json_content);
+               std::ofstream fout(deform_filename);
+               fout << json_content;
+               fout.close();
+           }
         }
 
         void read(){
@@ -34,7 +59,7 @@ namespace examples
                 sequence.loadFromFile(outputFileNames[solverID]);
                 std::vector<double> complianceList;
                 int numHand = 1;
-                double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand, complianceList, false);
+                double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand, complianceList, false);
             }
         }
 
@@ -70,13 +95,13 @@ namespace examples
                     std::cout << "holisticlandmark_greedy" << ": " << beamAssembly->beams_.size() << std::endl;
                     int numLandmark = 3;
                     int maxTime = 10000;
-                    auto result = benchmark::runOptimization_holisticlandmark_sub_beamsearch(beamAssembly,
-                                                                                             numHand,
-                                                                                             numLandmark,
-                                                                                             1,
-                                                                                             maxTime,
-                                                                                             false,
-                                                                                             sequence);
+                    auto result = algorithms::runOptimization_holisticlandmark_sub_beamsearch(beamAssembly,
+                                                                                              numHand,
+                                                                                              numLandmark,
+                                                                                              1,
+                                                                                              maxTime,
+                                                                                              false,
+                                                                                              sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
                     json_output["num_landmark"] = numLandmark;
@@ -86,21 +111,21 @@ namespace examples
                     std::cout << "zlandmark_greedy" << ": " << beamAssembly->beams_.size() << std::endl;
                     int numLandmark = 3;
                     double maxLandmarkTime = 300 * numLandmark;
-                    auto result = benchmark::runOptimization_zlandmark_sub_beamsearch(beamAssembly,
-                                                                                      numHand,
-                                                                                      numLandmark,
-                                                                                      1,
-                                                                                      maxLandmarkTime,
-                                                                                      false,
-                                                                                      sequence);
+                    auto result = algorithms::runOptimization_zlandmark_sub_beamsearch(beamAssembly,
+                                                                                       numHand,
+                                                                                       numLandmark,
+                                                                                       1,
+                                                                                       maxLandmarkTime,
+                                                                                       true,
+                                                                                       sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
                     json_output["num_landmark"] = numLandmark;
                 }
 
                 std::vector<double> complianceList;
-                double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand,
-                                                                       complianceList, false);
+                double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand,
+                                                                        complianceList, false);
 
                 std::cout << benchmark_compliance << ", " << time << std::endl;
 
@@ -108,7 +133,7 @@ namespace examples
                 beamAssembly->writeToJson(json_output);
                 sequence.writeToJson(json_output);
                 json_output["benchmark_time"] = time;
-                json_output["benchmark_compliance"] = compliance;
+                json_output["benchmark_compliance"] = benchmark_compliance;
 
                 std::ofstream fout(outputFileNames[solverID]);
                 fout << json_output;

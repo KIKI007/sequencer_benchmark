@@ -19,7 +19,7 @@
 
 #include <filesystem>
 
-namespace benchmark {
+namespace algorithms {
     class TenBars_BenchMark {
     public:
 
@@ -87,14 +87,14 @@ namespace benchmark {
                                   << std::endl;
 
                         double maxtime = 1000;
-                        auto result = benchmark::runOptimization_holistic_dynamicsteplength(beamAssembly,
-                                                                                            numHand,
-                                                                                            numStep,
-                                                                                            maxtime,
-                                                                                            startPartIDs,
-                                                                                            endPartIDs,
-                                                                                            false,
-                                                                                            sequence);
+                        auto result = algorithms::runOptimization_holistic_dynamicsteplength(beamAssembly,
+                                                                                             numHand,
+                                                                                             numStep,
+                                                                                             maxtime,
+                                                                                             startPartIDs,
+                                                                                             endPartIDs,
+                                                                                             false,
+                                                                                             sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                     } else if (folderNames[solverID].find("opt-z-landmark-holistic") != std::string::npos) {
@@ -103,20 +103,20 @@ namespace benchmark {
                         double maxHolisticSolverTime = 100;
                         int numLandmark = beamAssembly->beams_.size() / 40;
                         double maxLandmarkTime = 30 * numLandmark;
-                        auto result = benchmark::runOptimization_zlandmark_sub_holistic_dynamicsteplength(beamAssembly,
-                                                                                                          numHand,
-                                                                                                          numLandmark,
-                                                                                                          maxLandmarkTime,
-                                                                                                          maxHolisticSolverTime,
-                                                                                                          true, sequence);
+                        auto result = algorithms::runOptimization_zlandmark_sub_holistic_dynamicsteplength(beamAssembly,
+                                                                                                           numHand,
+                                                                                                           numLandmark,
+                                                                                                           maxLandmarkTime,
+                                                                                                           maxHolisticSolverTime,
+                                                                                                           true, sequence);
                         time = std::get<0>(result);
                         compliance = std::get<1>(result);
                         json_output["num_landmark"] = numLandmark;
                     }
 
                     std::vector<double> complianceList;
-                    double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand,
-                                                                           complianceList, true);
+                    double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand,
+                                                                            complianceList, true);
 
                     std::cout << benchmark_compliance << ", " << time << std::endl;
 

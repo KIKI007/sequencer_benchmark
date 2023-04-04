@@ -49,13 +49,13 @@ namespace examples
                     int numPart = endPartIDs.size() - startPartIDs.size();
                     int numStep = numPart / numHand - 1;
                     if (numPart % numHand != 0) numStep += 1;
-                    auto result = benchmark::runOptimization_holistic_dynamicsteplength(beamAssembly,
-                                                                                        numHand,
-                                                                                        numStep,
-                                                                                        maxtime,
-                                                                                        startPartIDs, endPartIDs,
-                                                                                        false,
-                                                                                        sequence);
+                    auto result = algorithms::runOptimization_holistic_dynamicsteplength(beamAssembly,
+                                                                                         numHand,
+                                                                                         numStep,
+                                                                                         maxtime,
+                                                                                         startPartIDs, endPartIDs,
+                                                                                         false,
+                                                                                         sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
                 } else if (folderNames[solverID].find("hand1") != std::string::npos)
@@ -66,24 +66,24 @@ namespace examples
                     int numLandmark = 2;
                     double maxLandmarkTime = 10 * numLandmark;
                     int maxHolisticNumPart = 10;
-                    auto result = benchmark::runOptimization_zlandmark_recursive(beamAssembly,
-                                                                                 numHand,
-                                                                                 numLandmark,
-                                                                                 maxHolisticNumPart,
-                                                                                 maxLandmarkTime,
-                                                                                 maxHolisticSolverTime,
-                                                                                 startPartIDs,
-                                                                                 endPartIDs,
-                                                                                 true,
-                                                                                 sequence);
+                    auto result = algorithms::runOptimization_zlandmark_recursive(beamAssembly,
+                                                                                  numHand,
+                                                                                  numLandmark,
+                                                                                  maxHolisticNumPart,
+                                                                                  maxLandmarkTime,
+                                                                                  maxHolisticSolverTime,
+                                                                                  startPartIDs,
+                                                                                  endPartIDs,
+                                                                                  true,
+                                                                                  sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
                     json_output["num_landmark"] = numLandmark;
                 }
 
                 std::vector<double> complianceList;
-                double benchmark_compliance = benchmark::runEvaluation(beamAssembly, sequence, numHand,
-                                                                       complianceList, true);
+                double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand,
+                                                                        complianceList, true);
 
                 std::cout << benchmark_compliance << ", " << time << std::endl;
 
