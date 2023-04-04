@@ -14,7 +14,7 @@ public:
     std::vector<int> num_steps_;
     std::vector<int> variable_types_;
     int num_arm_ = 1;
-
+    bool use_priority= false;
 public:
 
     FrameTORangeSum(const frame::FrameAssembly &assembly): FrameTO(assembly)

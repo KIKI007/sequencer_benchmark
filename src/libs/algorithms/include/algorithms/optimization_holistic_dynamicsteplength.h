@@ -29,6 +29,7 @@ namespace algorithms {
         frameTO->sections_ = {{startPartIDs.size(), endPartIDs.size()}};
         frameTO->num_steps_ = {numStep};
         frameTO->num_arm_ = numHand;
+        frameTO->use_priority = true;
 
         frameTO->setParameters(1E-8, 0);
         dto::FrameTOKnitroSolver solver(frameTO);
