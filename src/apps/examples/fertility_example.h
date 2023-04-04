@@ -116,7 +116,7 @@ namespace examples
                                                                                        numLandmark,
                                                                                        1,
                                                                                        maxLandmarkTime,
-                                                                                       true,
+                                                                                       false,
                                                                                        sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);
