@@ -22,5 +22,5 @@ int main(){
     //fertilityApp.render();
     //towerApp.launch();
     //bunnyApp.launch();
-    cshapeApp.launch();
+    cshapeApp.render();
 }
