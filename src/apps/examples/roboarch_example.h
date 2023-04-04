@@ -13,8 +13,8 @@ namespace examples
     class Roboarch_Example {
     public:
         std::vector<std::string> outputFileNames ={
-                ROBOCRAFT_DATA_FOLDER "/examples/roboarch/z-landmark.json",
                 ROBOCRAFT_DATA_FOLDER "/examples/roboarch/holistic.json",
+                ROBOCRAFT_DATA_FOLDER "/examples/roboarch/z-landmark.json",
         };
 
 
@@ -45,7 +45,7 @@ namespace examples
                     std::cout << "opt-holistic" << ": " << beamAssembly->beams_.size()
                               << std::endl;
                     
-                    double maxtime = 30000;
+                    double maxtime = 1000;
                     int numPart = endPartIDs.size() - startPartIDs.size();
                     int numStep = numPart / numHand - 1;
                     if (numPart % numHand != 0) numStep += 1;
@@ -54,7 +54,7 @@ namespace examples
                                                                                          numStep,
                                                                                          maxtime,
                                                                                          startPartIDs, endPartIDs,
-                                                                                         true,
+                                                                                         false,
                                                                                          sequence);
                     time = std::get<0>(result);
                     compliance = std::get<1>(result);

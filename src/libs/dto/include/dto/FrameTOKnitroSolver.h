@@ -113,8 +113,8 @@ static int frameMIPNodeCallBack (KN_context_ptr  kcSub,
     xdata.resize(nV, 0);
     if(KN_get_mip_incumbent_x(kc, xdata.data()) == 0)
     {
-        //if(objective < data->objective){
-        if(objective < data->objective || bnd > data->lbnd_obj ){
+        if(objective < data->objective){
+        //if(objective < data->objective || bnd > data->lbnd_obj ){
             data->time.push_back(time);
             data->compliance.push_back(objective / 2);
             data->low_bnd.push_back(bnd / 2);
