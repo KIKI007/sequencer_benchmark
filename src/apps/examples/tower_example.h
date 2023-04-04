@@ -102,6 +102,17 @@ namespace examples
                     json_output["benchmark_time"] = time;
                     json_output["benchmark_compliance"] = c;
                     json_output["benchmark_lowerbound"] = lb;
+
+                    Eigen::VectorXd displacement;
+                    beamAssembly->solveElasticity(endPartIDs, {}, displacement);
+                    double final_compliance = beamAssembly->computeCompliance(displacement, endPartIDs);
+                    for(int id = 0; id < time.size(); id++){
+                        c[id] += final_compliance;
+                        c[id] *= 1E3;
+
+                        lb[id] += final_compliance;
+                        lb[id] *= 1E3;
+                    }
                 }
 
                 std::vector<double> complianceList;
