@@ -8,6 +8,7 @@
 #include "frustum_example.h"
 #include "tower_example.h"
 #include "bunny_example.h"
+#include "cshape_example.h"
 int main(){
     examples::Bridge_Example bridgeApp;
     examples::Roboarch_Example roboarchApp;
@@ -15,9 +16,11 @@ int main(){
     examples::Frustum_Example frustumApp;
     examples::Tower_Example towerApp;
     examples::Bunny_Example bunnyApp;
+    examples::CShape_Example cshapeApp;
     //fertilityApp.launch();
     //fertilityApp.read();
     //fertilityApp.render();
     //towerApp.launch();
-    bunnyApp.launch();
+    //bunnyApp.launch();
+    cshapeApp.launch();
 }
