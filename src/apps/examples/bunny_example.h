@@ -82,9 +82,9 @@ namespace examples
                     std::vector<int> start = startPartIDs;
                     std::vector<int> end = endPartIDs;
                     std::vector<int> pre_partIDs = {};
-                    std::vector<int> num_bars = {20, 20, 20, 20, 20, 20, 20, 21};
+                    std::vector<int> num_bars = {20, 20, 20, 20, 20, 20};
 
-                    for(int step = 0; step < 7; step++)
+                    for(int step = 0; step < 6; step++)
                     {
                         frameTO->setStartnEnd(start, end);
                         frameTO->sections_ = {{num_bars[step] + start.size(), num_bars[step] + start.size()}};
@@ -102,7 +102,7 @@ namespace examples
                         double value = solver.solve(x);
 
                         double sub_time = algorithms::computeShortestTimeFindingIncumbentSolution(solver);
-                        time+= sub_time;
+                        time += sub_time;
 
                         std::vector<Eigen::VectorXd> rhos;
                         frameTO->computeRhos(x.data(), rhos);
