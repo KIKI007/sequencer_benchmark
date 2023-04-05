@@ -14,9 +14,11 @@
 #include <fstream>
 
 namespace statistics {
-    class MultiBars_Statistics {
+    class MultiBars_Statistics
+            {
     public:
-        void getFileNames() {
+        void getFileNames()
+        {
             filenames.clear();
             for (const auto &entry: std::filesystem::directory_iterator(dataFolderString)) {
                 if (entry.path().stem() != ".DS_Store") {
@@ -27,13 +29,14 @@ namespace statistics {
 
         void print_table_head() {
             std::cout << R"(\begin{tabular}{|c|c|ccc|ccc|}
-\hline
-\multirow{2}{*}{h}  & \multirow{2}{*}{Methods} & \multicolumn{3}{c|}{Assembly Cost}                                                                               & \multicolumn{3}{c|}{Time (s)}                                                                                         \\ \cline{3-8}
-                    &                          & \multicolumn{1}{c|}{Small}                  & \multicolumn{1}{c|}{Medium}                & Large                 & \multicolumn{1}{c|}{Small}                   & \multicolumn{1}{c|}{Medium}                  & Large                   \\ \hline)"
-                      << std::endl;
+                            \hline
+                            \multirow{2}{*}{$h$}  & \multirow{2}{*}{Methods} & \multicolumn{3}{c|}{Assembly Cost}  & \multicolumn{3}{c|}{Time (s)} \\ \cline{3-8}
+                            &   & \multicolumn{1}{c|}{Small} & \multicolumn{1}{c|}{Medium}  & Large & \multicolumn{1}{c|}{Small} & \multicolumn{1}{c|}{Medium}   & Large
+                            \\ \hline)" << std::endl;
         }
 
-        void print_time(double number) {
+        void print_time(double number)
+        {
             int num_digit = 0;
             if (number > 100) {
                 num_digit = 0;
@@ -113,49 +116,55 @@ namespace statistics {
             print_table_head();
 
             std::vector<int> numParts;
-            for (int id = 0; id < filenames.size(); id++) {
+            for (int id = 0; id < filenames.size(); id++)
+            {
                 beamAssembly = std::make_shared<frame::FrameAssembly>();
                 beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
                 numParts.push_back(beamAssembly->beams_.size());
             }
-            for (int benchmark: benchmark_hands) {
+
+            for (int numHand: benchmark_hands)
+            {
                 std::vector<std::vector<double>> compliances;
                 std::vector<std::vector<double>> times;
 
                 int num_row = 0;
-                for (int fid = 0; fid < folderNames.size(); fid++) {
-                    std::string foldername =
-                            ROBOCRAFT_DATA_FOLDER "/benchmark-" + std::to_string(benchmark) + "/" + folderNames[fid];
-                    if (std::filesystem::exists(foldername)) {
+                for (int fid = 0; fid < folderNames.size(); fid++)
+                {
+                    std::string foldername = ROBOCRAFT_DATA_FOLDER "/benchmark/benchmark-" + std::to_string(numHand) + "/" + folderNames[fid];
+                    if (std::filesystem::exists(foldername))
+                    {
                         num_row++;
                         compliances.resize(folderNames.size());
                         times.resize(folderNames.size());
                         compliances[fid].resize(filenames.size(), -1);
                         times[fid].resize(filenames.size(), 0);
-                        for (int id = 0; id < filenames.size(); id++) {
+                        for (int id = 0; id < filenames.size(); id++)
+                        {
                             std::string result_filename = foldername + "/" + filenames[id] + ".json";
-                            if (std::filesystem::exists(result_filename)) {
+                            if (std::filesystem::exists(result_filename))
+                            {
                                 nlohmann::json json_file;
                                 std::ifstream fin(result_filename);
                                 fin >> json_file;
                                 fin.close();
 
-//                                if (json_file.contains("benchmark_compliance")) {
-//                                    compliances[fid][id] = json_file["benchmark_compliance"].get<double>();
-//                                } else {
-                                {
-                                    beamAssembly = std::make_shared<frame::FrameAssembly>();
-                                    beamAssembly->loadFromJson(result_filename);
-                                    search::AssemblySequence sequence;
-                                    sequence.loadFromJson(json_file);
-                                    std::vector<double> complianceList;
-                                    double compliance = algorithms::runEvaluation(beamAssembly,
-                                                                                  sequence,
-                                                                                  benchmark,
-                                                                                  complianceList,
-                                                                                  true);
-                                    compliances[fid][id] = compliance;
+                                beamAssembly = std::make_shared<frame::FrameAssembly>();
+                                beamAssembly->loadFromJson(result_filename);
+
+                                if(fid == 3 && numHand == 10 && beamAssembly->beams_.size() >= 60){
+                                    continue;
                                 }
+
+                                search::AssemblySequence sequence;
+                                sequence.loadFromJson(json_file);
+                                std::vector<double> complianceList;
+                                double compliance = algorithms::runEvaluation(beamAssembly,
+                                                                              sequence,
+                                                                              numHand,
+                                                                              complianceList,
+                                                                              true);
+                                compliances[fid][id] = compliance;
 
                                 times[fid][id] = json_file["benchmark_time"].get<double>();
                             }
@@ -163,11 +172,10 @@ namespace statistics {
                     }
                 }
 
-                std::cout << R"(\multirow{)" << num_row << "}{*}{" << benchmark << "}";
+                std::cout << R"(\multirow{)" << num_row << "}{*}{" << numHand << "}";
                 for (int fid = 0; fid < folderNames.size(); fid++)
                 {
-                    std::string foldername =
-                            ROBOCRAFT_DATA_FOLDER "/benchmark-" + std::to_string(benchmark) + "/" + folderNames[fid];
+                    std::string foldername = ROBOCRAFT_DATA_FOLDER "/benchmark/benchmark-" + std::to_string(numHand) + "/" + folderNames[fid];
                     if (std::filesystem::exists(foldername))
                     {
                         Eigen::Vector3i num_c;
@@ -176,14 +184,12 @@ namespace statistics {
                         Eigen::Vector3d sum_c;
                         sum_c.setZero();
                         Eigen::Vector3d min_c(1E8, 1E8, 1E8);
-                        Eigen::Vector3d max_c;
-                        max_c.setZero();
+                        Eigen::Vector3d max_c(0, 0, 0);
 
                         Eigen::Vector3d sum_t;
                         sum_t.setZero();
                         Eigen::Vector3d min_t(1E8, 1E8, 1E8);
-                        Eigen::Vector3d max_t;
-                        max_t.setZero();
+                        Eigen::Vector3d max_t(0, 0, 0);
 
                         for (int id = 0; id < filenames.size(); id++)
                         {
@@ -193,7 +199,9 @@ namespace statistics {
                             if (curr_compliance < 0)
                             {
                                 continue;
-                            } else {
+                            }
+                            else
+                            {
                                 int index = -1;
                                 if (numParts[id] < 40)
                                 {
