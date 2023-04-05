@@ -79,6 +79,12 @@ namespace suppl
 
                 for (int id = 0; id < filenames.size(); id++)
                 {
+                    std::string outputfilename = foldername + "/" + filenames[id] + ".json";
+
+                    if(std::filesystem::exists(outputfilename)){
+                        continue;
+                    }
+
                     beamAssembly = std::make_shared<frame::FrameAssembly>();
                     beamAssembly->loadFromJson(dataFolderString + "/" + filenames[id] + ".json");
 
@@ -113,7 +119,6 @@ namespace suppl
                     json_output["benchmark_time"] = time;
                     json_output["benchmark_compliance"] = benchmark_compliance;
 
-                    std::string outputfilename = foldername + "/" + filenames[id] + ".json";
                     std::ofstream fout(outputfilename);
                     fout << json_output;
                     fout.close();
