@@ -129,14 +129,15 @@ namespace statistics {
                 std::vector<std::vector<double>> times;
 
                 int num_row = 0;
+                compliances.resize(folderNames.size());
+                times.resize(folderNames.size());
+
                 for (int fid = 0; fid < folderNames.size(); fid++)
                 {
                     std::string foldername = ROBOCRAFT_DATA_FOLDER "/benchmark/benchmark-" + std::to_string(numHand) + "/" + folderNames[fid];
                     if (std::filesystem::exists(foldername))
                     {
                         num_row++;
-                        compliances.resize(folderNames.size());
-                        times.resize(folderNames.size());
                         compliances[fid].resize(filenames.size(), -1);
                         times[fid].resize(filenames.size(), 0);
                         for (int id = 0; id < filenames.size(); id++)

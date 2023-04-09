@@ -4,9 +4,11 @@
 
 #include "singlebar_statistics.h"
 #include "multibars_statistics.h"
+#include "beamsearch_statistics.h"
 int main()
 {
-    statistics::SingleBar_Statistics app;
+    statistics::BeamSearch_Statistics app;
+    //statistics::SingleBar_Statistics app;
     //statistics::MultiBars_Statistics app;
     app.launch();
     return 0;
