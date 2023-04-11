@@ -21,7 +21,8 @@ namespace algorithms {
             search::AssemblySequence &sequence,
             std::vector<double> &time,
             std::vector<double> &c,
-            std::vector<double> &lb) {
+            std::vector<double> &lb,
+            bool priority) {
         std::shared_ptr<dto::FrameTORangeSum> frameTO = std::make_shared<dto::FrameTORangeSum>(*beamAssembly);
 
         frameTO->setStartnEnd(startPartIDs, endPartIDs);
@@ -29,7 +30,7 @@ namespace algorithms {
         frameTO->sections_ = {{startPartIDs.size(), endPartIDs.size()}};
         frameTO->num_steps_ = {numStep};
         frameTO->num_arm_ = numHand;
-        frameTO->use_priority = true;
+        frameTO->use_priority = priority;
 
         frameTO->setParameters(1E-8, 0);
         dto::FrameTOKnitroSolver solver(frameTO);

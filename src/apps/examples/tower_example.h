@@ -9,17 +9,16 @@
 #include "algorithms/search.h"
 #include "algorithms/computeDeformation.h"
 
-namespace examples
-{
-    class Tower_Example{
+namespace examples {
+    class Tower_Example {
     public:
         std::vector<std::string> outputFileNames = {
-                ROBOCRAFT_DATA_FOLDER "/examples/tower/holistic.json",
+                ROBOCRAFT_DATA_FOLDER "/examples/tower/holistic_wo_priority.json",
+                ROBOCRAFT_DATA_FOLDER "/examples/tower/holistic_wt_priority.json",
         };
 
     public:
-        void launch()
-        {
+        void launch() {
             runBenchMark();
         }
 
@@ -46,7 +45,7 @@ namespace examples
             }
         }
 
-        void read(){
+        void read() {
             for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
             {
                 beamAssembly = std::make_shared<frame::FrameAssembly>();
@@ -55,12 +54,13 @@ namespace examples
                 sequence.loadFromFile(outputFileNames[solverID]);
                 std::vector<double> complianceList;
                 int numHand = 1;
-                double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand, complianceList, false);
+                double benchmark_compliance = algorithms::runEvaluation(beamAssembly, sequence, numHand, complianceList,
+                                                                        false);
             }
         }
 
-        void runBenchMark()
-        {
+        void runBenchMark() {
+
             for (int solverID = 0; solverID < outputFileNames.size(); solverID++)
             {
                 beamAssembly = std::make_shared<frame::FrameAssembly>();
@@ -76,7 +76,45 @@ namespace examples
                 double compliance = 0;
                 //
                 int numHand = 5;
-                if (outputFileNames[solverID].find("holistic") != std::string::npos)
+                if (outputFileNames[solverID].find("holistic_wo_priority") != std::string::npos) {
+                    int numPart = endPartIDs.size() - startPartIDs.size();
+                    int numStep = numPart / numHand - 1;
+                    if (numPart % numHand != 0) numStep += 1;
+                    std::cout << "holistic" << ": " << beamAssembly->beams_.size()
+                              << std::endl;
+
+                    double maxtime = 1000;
+                    std::vector<double> time;
+                    std::vector<double> c;
+                    std::vector<double> lb;
+                    algorithms::runOptimization_holistic_dynamicsteplength_return_intermediate_solutions(beamAssembly,
+                                                                                                         numHand,
+                                                                                                         numStep,
+                                                                                                         maxtime,
+                                                                                                         startPartIDs,
+                                                                                                         endPartIDs,
+                                                                                                         false,
+                                                                                                         sequence,
+                                                                                                         time,
+                                                                                                         c,
+                                                                                                         lb,
+                                                                                                         false);
+
+                    Eigen::VectorXd displacement;
+                    beamAssembly->solveElasticity(endPartIDs, {}, displacement);
+                    double final_compliance = beamAssembly->computeCompliance(displacement, endPartIDs);
+                    for (int id = 0; id < time.size(); id++) {
+                        //c[id] += final_compliance;
+                        c[id] *= 1E2;
+
+                        //lb[id] += final_compliance;
+                        lb[id] *= 1E2;
+                    }
+                    json_output["benchmark_time"] = time;
+                    json_output["benchmark_compliance"] = c;
+                    json_output["benchmark_lowerbound"] = lb;
+                }
+                else if (outputFileNames[solverID].find("holistic_wt_priority") != std::string::npos)
                 {
                     int numPart = endPartIDs.size() - startPartIDs.size();
                     int numStep = numPart / numHand - 1;
@@ -98,19 +136,19 @@ namespace examples
                                                                                                          sequence,
                                                                                                          time,
                                                                                                          c,
-                                                                                                         lb);
+                                                                                                         lb,
+                                                                                                         true);
 
                     Eigen::VectorXd displacement;
                     beamAssembly->solveElasticity(endPartIDs, {}, displacement);
                     double final_compliance = beamAssembly->computeCompliance(displacement, endPartIDs);
-                    for(int id = 0; id < time.size(); id++){
+                    for (int id = 0; id < time.size(); id++) {
                         //c[id] += final_compliance;
                         c[id] *= 1E2;
 
                         //lb[id] += final_compliance;
                         lb[id] *= 1E2;
                     }
-
                     json_output["benchmark_time"] = time;
                     json_output["benchmark_compliance"] = c;
                     json_output["benchmark_lowerbound"] = lb;
@@ -132,9 +170,9 @@ namespace examples
             }
         }
 
-    public:
-        std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/examples/model";
-        std::shared_ptr<frame::FrameAssembly> beamAssembly;
-    };
+public:
+    std::string dataFolderString = ROBOCRAFT_DATA_FOLDER "/examples/model";
+    std::shared_ptr<frame::FrameAssembly> beamAssembly;
+};
 }
 #endif //GITIGNORE_TOWER_EXAMPLE_H
